@@ -1,15 +1,42 @@
-<!DOCTYPE html>
+#  <!DOCTYPE html>
 <html>
 <head>
     <title>Edit and Display</title>
 </head>
 <body>
+    
+ 
+
+    <h1>Welcome to the Editable HTML Page</h1>
+
+    <!-- This is a placeholder for your editable content -->
+    <div id="editable-content" contenteditable="true">
+        <p>Edit and modify this text as needed.</p>
+    </div>
+
+    <script>
+        // Save the edited content to local storage
+        var editableContent = document.getElementById('editable-content');
+        editableContent.addEventListener('input', function() {
+            localStorage.setItem('editedContent', editableContent.innerHTML);
+        });
+
+        // Load the saved content from local storage
+        var savedContent = localStorage.getItem('editedContent');
+        if (savedContent) {
+            editableContent.innerHTML = savedContent;
+        }
+    </script>
+
+
 
 <h1>Welcome to the Editable HTML Page</h1>
 
+<p>This is an example of an HTML page that you can display in your app's WebView and edit outside the app.</p>
+
 <!-- This is a placeholder for your editable content -->
 <div id="editable-content" contenteditable="true">
-    <p>Edit and modify this text as needed.</p>
+    <p>Edit and modify this text as needed. jhduyernjkjfvekfmfljkvekmlv</p>
 </div>
 
 <script>
@@ -28,3 +55,5 @@
 
 </body>
 </html>
+
+
