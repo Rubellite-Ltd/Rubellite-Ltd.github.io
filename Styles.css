@@ -1,0 +1,74 @@
+ page styles */
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+canvas {
+    border: 2px solid #000;
+}
+
+<style>
+        #iconsContainer {
+            display: flex;
+        }
+
+        .draggable-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px; /* Add some margin between icons */
+            cursor: pointer;
+        }
+    </style>
+
+
+.custom-shape-button:hover {
+    background-color: #eee;
+}
+
+
+
+#shapeButtonsContainer {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent buttons from wrapping to the next line */
+}
+
+.custom-shape-button {
+    flex: 0 0 30px; /* Set flex properties to control the width */
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    border-right: 1px solid #ccc;
+    background-color: #ff8800;
+    color: #fff;
+    font-family: 'Avenir', sans-serif;
+}
+
+.custom-shape-button:last-child {
+    border-right: none;
+}
+
+.custom-shape-button:hover {
+    background-color: #cc6600;
+}
+
+.horizontal-scroll-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent content from wrapping to the next line */
+    margin-bottom: 10px; /* Add some space at the bottom */
+}
+
+#imageSelect {
+    /* Add any additional styling for the select element if needed */
+}
+

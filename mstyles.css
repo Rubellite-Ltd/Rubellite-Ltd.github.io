@@ -1,0 +1,167 @@
+    <style>
+        /* Hamburger Icon Styles */
+        .hamburger {
+            cursor: pointer;
+            position: fixed;
+            top: 20px; /* Adjust top position as needed */
+            left: 20px; /* Adjust left position as needed */
+            z-index: 1000;
+        }
+
+        .hamburger-icon {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: transform 0.3s ease;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 60px; /* Thinner width */
+            height: 100%;
+            background-color: #DB7093;
+            padding: 20px;
+            z-index: 1000;
+            transition: width 0.3s ease; /* Smooth width transition */
+        }
+
+        .sidebar.active {
+            width: 250px; /* Expanded width when active */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc; /* Line between buttons */
+        }
+
+        /* Content Section Styles */
+   .content {
+            display: none; /* Initially hidden */
+            margin-left: 5px; /* Adjust for sidebar width */
+            padding-top: 60px; /* Adjust for top space occupied by hamburger */
+            text-align: left; /* Center align content */
+        }
+
+        .content.active {
+            display: block; /* Display when active */
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidebar.active {
+                display: block; /* Show sidebar when active */
+            }
+
+            /* Adjustments for small screens */
+            .content {
+                margin-left: 0; /* Reset margin for small screens */
+                padding-top: 0; /* Reset padding for small screens */
+            }
+        }
+
+    .content {
+        position: relative;
+        width: 100%;
+    }
+
+    .content img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .content .text {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: left;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .content .additional-content {
+        text-align: center;
+        color: blue;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+section {
+            margin: 2em;
+            text-align: center;
+        }
+
+        .feature {
+            margin: 2em;
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+ 
+        .cta-button {
+            display: inline-block;
+            padding: 1em 2em;
+            margin: 1em;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        /* Footer styles */
+        footer {
+            /* Your footer styles */
+            background-color: #333; /* Adjust background color as needed */
+            color: #fff; /* Adjust text color as needed */
+            text-align: center;
+            padding: 10px 0; /* Adjust padding as needed */
+        }
+        
+        /* Header container */
+        .header-container {
+            position: relative;
+        }
+
+        /* Header image */
+        .header-image {
+            width: 100%; /* Ensure the image takes up the full width of its container */
+        }
+
+        /* Text overlay */
+        .text-overlay {
+            position: absolute;
+            top: 50%; /* Place the text in the middle vertically */
+            left: 50%; /* Place the text in the middle horizontally */
+            transform: translate(-50%, -50%); /* Center the text */
+            color: #fff; /* Adjust text color as needed */
+            font-size: 24px; /* Adjust font size as needed */
+            font-weight: bold; /* Adjust font weight as needed */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+            z-index: 1; /* Ensure text appears above the image */
+        }
+         .social-links a {
+        margin-right: 10px; /* Adjust the value to increase or decrease the space */
+    }
+    </style>

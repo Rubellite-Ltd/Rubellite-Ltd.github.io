@@ -1,0 +1,668 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patterns</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="CP.css">
+ <style>
+        /* Hamburger Icon Styles */
+        .hamburger {
+            cursor: pointer;
+            position: fixed;
+            top: 20px; /* Adjust top position as needed */
+            left: 20px; /* Adjust left position as needed */
+            z-index: 1000;
+        }
+
+        .hamburger-icon {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: transform 0.3s ease;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 60px; /* Thinner width */
+            height: 100%;
+            background-color: #DB7093;
+            padding: 20px;
+            z-index: 1000;
+            transition: width 0.3s ease; /* Smooth width transition */
+        }
+
+        .sidebar.active {
+            width: 250px; /* Expanded width when active */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc; /* Line between buttons */
+        }
+
+        /* Content Section Styles */
+   .content {
+            display: none; /* Initially hidden */
+            margin-left: 5px; /* Adjust for sidebar width */
+            padding-top: 60px; /* Adjust for top space occupied by hamburger */
+            text-align: left; /* Center align content */
+        }
+
+        .content.active {
+            display: block; /* Display when active */
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidebar.active {
+                display: block; /* Show sidebar when active */
+            }
+
+            /* Adjustments for small screens */
+            .content {
+                margin-left: 0; /* Reset margin for small screens */
+                padding-top: 0; /* Reset padding for small screens */
+            }
+        }
+
+    .content {
+        position: relative;
+        width: 100%;
+    }
+
+    .content img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .content .text {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: left;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .content .additional-content {
+        text-align: center;
+        color: blue;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+section {
+            margin: 2em;
+            text-align: center;
+        }
+
+        .feature {
+            margin: 2em;
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+ 
+        .cta-button {
+            display: inline-block;
+            padding: 1em 2em;
+            margin: 1em;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        /* Footer styles */
+        footer {
+            /* Your footer styles */
+            background-color: #333; /* Adjust background color as needed */
+            color: #fff; /* Adjust text color as needed */
+            text-align: center;
+            padding: 10px 0; /* Adjust padding as needed */
+        }
+        
+        /* Header container */
+        .header-container {
+            position: relative;
+        }
+
+        /* Header image */
+        .header-image {
+            width: 100%; /* Ensure the image takes up the full width of its container */
+        }
+
+        /* Text overlay */
+        .text-overlay {
+            position: absolute;
+            top: 50%; /* Place the text in the middle vertically */
+            left: 50%; /* Place the text in the middle horizontally */
+            transform: translate(-50%, -50%); /* Center the text */
+            color: #fff; /* Adjust text color as needed */
+            font-size: 24px; /* Adjust font size as needed */
+            font-weight: bold; /* Adjust font weight as needed */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+            z-index: 1; /* Ensure text appears above the image */
+        }
+         .social-links a {
+        margin-right: 10px; /* Adjust the value to increase or decrease the space */
+    }
+    </style>
+
+<style>
+  h1 {
+    color: white; /* Change 'blue' to any color you prefer */
+  }
+
+.text {
+    margin-top: -220px; /* Adjust the value as needed */
+}
+
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .button-container {
+    margin-bottom: 10px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-right: 5px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #B0C4DE;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid silver;
+  }
+
+  .button:hover, .button:active {
+    background-color: #45a049;
+  }
+
+  #about-us-content {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid silver;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  /* Hamburger Icon Styles */
+  .hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+  }
+
+  .hamburger-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+  }
+
+  /* Show hamburger icon only for mobile screens */
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: block; /* Show only on mobile */
+    }
+    .button-container {
+      display: none; /* Hide button container on mobile */
+    }
+  }
+</style>
+   
+</head>
+<body>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger-icon"></div>
+        <div class="hamburger-icon"></div>
+        <div class="hamburger-icon"></div>
+    </div>
+
+<!-- Hamburger Icon -->
+<div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger-icon"></div>
+    <div class="hamburger-icon"></div>
+    <div class="hamburger-icon"></div>
+</div>
+
+<div class="button-container">
+    <a class="button" href="#" onclick="showContent('Home')">Home</a>
+    <a class="button" href="#" onclick="showContent('About')">About</a>
+    <a class="button" href="#" onclick="showContent('Contact')">Contact</a>
+</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul class="nav-list">
+            <li><a href="#" onclick="showContent('Home')">Home</a></li>
+            <li><a href="#" onclick="showContent('About')">About</a></li>
+            <li><a href="#" onclick="showContent('Contact')">Contact</a></li>
+        </ul>
+    </div>
+
+
+<!-- Header container -->
+<div class="header-container">
+    <!-- Header image -->
+    <img class="header-image" src="header-image.jpg" alt="Header Image">
+    <!-- Text overlay -->
+    <div class="text-overlay">Patterns</div>
+</div>
+
+    <!-- Content Sections -->
+
+<div class="content active" id="Home">
+
+
+ <header>
+        <h1>Pattern Designing App</h1>
+
+    </header>
+
+    <section>
+        <div class="feature">
+            <h2>Intuitive Design Editor</h2>
+            <p>Craft intricate patterns effortlessly with our user-friendly design editor. Customize every detail with ease.</p>
+        </div>
+
+        <div class="feature">
+            <h2>Cloud Sync Across Devices</h2>
+            <p>Seamlessly sync your designs across iOS and Mac devices. Your creativity knows no bounds.</p>
+        </div>
+
+        <!-- Add more features as needed -->
+
+        <a href="yourappdownloadlink.com" class="cta-button">Download Now</a>
+    </section>
+
+    <section>
+        <div class="feature">
+            <h2>Versatile Export Options</h2>
+            <p>Choose from a range of export options for your patterns. Print, share online, or use in your favorite applications.</p>
+        </div>
+
+        <div class="feature">
+            <h2>Community & Marketplace</h2>
+            <p>Join a vibrant community of designers! Share, sell, and explore unique patterns in our dynamic marketplace.</p>
+        </div>
+
+        <!-- Add more features as needed -->
+
+        <a href="https://new-beta-jet.vercel.app/features.html" class="cta-button">Explore Features</a>
+    </section>
+
+    <section>
+        <div class="feature">
+            <h2>Advanced Tools for Designers</h2>
+            <p>Explore advanced features tailored for designers – from machine learning suggestions to AR previews, we've got you covered.</p>
+        </div>
+
+    <section>
+        <div class="feature">
+            <h2>Intuitive Design Editor</h2>
+            <p>Craft intricate patterns effortlessly with our user-friendly design editor. Customize every detail with ease.</p>
+        </div>
+
+        <div class="additional-content">
+            Additional Home Content Below Image
+        </div>
+    </section>
+
+    <div>
+        <p>This is the About Us content. Feel free to customize it as needed.</p>
+    </div>
+
+    <p>This is the About Us content. Feel free to customize it as needed.</p>
+
+    <p>This is the About Us content. Feel free to customize it as needed.</p>
+
+    <p>This is the About Us content. Feel free to customize it as needed.</p>
+</div>
+
+
+    <div class="content" id="About">
+
+    <div class="text">About Us</div>
+
+    <header>
+        <h1>Pattern Designing App</h1>
+
+    </header>
+
+    <section>
+        <div class="feature">
+            <h2>Intuitive Design Editor</h2>
+            <p>Craft intricate patterns effortlessly with our user-friendly design editor. Customize every detail with ease.</p>
+        </div>
+
+        <div class="feature">
+            <h2>Cloud Sync Across Devices</h2>
+            <p>Seamlessly sync your designs across iOS and Mac devices. Your creativity knows no bounds.</p>
+        </div>
+
+        <!-- Add more features as needed -->
+
+        <a href="yourappdownloadlink.com" class="cta-button">Download Now</a>
+    </section>
+
+    <section>
+        <div class="feature">
+            <h2>Versatile Export Options</h2>
+            <p>Choose from a range of export options for your patterns. Print, share online, or use in your favorite applications.</p>
+        </div>
+
+        <div class="feature">
+            <h2>Community & Marketplace</h2>
+            <p>Join a vibrant community of designers! Share, sell, and explore unique patterns in our dynamic marketplace.</p>
+        </div>
+
+        <!-- Add more features as needed -->
+
+        <a href="https://new-beta-jet.vercel.app/features.html" class="cta-button">Explore Features</a>
+    </section>
+
+    <section>
+        <div class="feature">
+            <h2>Advanced Tools for Designers</h2>
+            <p>Explore advanced features tailored for designers – from machine learning suggestions to AR previews, we've got you covered.</p>
+        </div>
+
+    <section>
+        <div class="feature">
+            <h2>Intuitive Design Editor</h2>
+            <p>Craft intricate patterns effortlessly with our user-friendly design editor. Customize every detail with ease.</p>
+        </div>
+
+        <div class="additional-content">
+            Additional Home Content Below Image
+        </div>
+    </section>
+
+    <div>
+        <p>This is the About Us content. Feel free to customize it as needed.</p>
+    </div>
+
+    <p>This is the About Us content. Feel free to customize it as needed.</p>
+
+    <p>This is the About Us content. Feel free to customize it as needed.</p>
+
+    <p>This is the About Us content. Feel free to customize it as needed.</p>
+</div>
+
+
+    <div class="content" id="Contact">
+    <div class="text">Contact Us</div>
+ <header>
+        <h1>Pattern Designing App</h1>
+
+    </header>
+
+            <h2>Contact Us</h2>
+  <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/551c559373b3f0e0ac7008e8bbe16eb0?embedded=1"></div>
+
+<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+<script type="text/javascript" src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
+
+<!-- Get notified when the form is submitted, add your own code below: -->
+<script>
+const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+  console.log('Submitting form...')
+})
+
+formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+  console.log('Submitted form...')
+})
+</script>
+    <div id="response-message"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.getElementById("contact-form");
+            var responseMessage = document.getElementById("response-message");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                var formData = new FormData(form);
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://new-avccyfky8-trdsphrs-projects.vercel.app/send_email.php", true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.onload = function() {
+                    var response = JSON.parse(xhr.responseText);
+                    if (xhr.status === 200) {
+                        responseMessage.innerText = response.message;
+                        responseMessage.style.color = "green";
+                        form.reset();
+                    } else {
+                        responseMessage.innerText = response.message;
+                        responseMessage.style.color = "red";
+                    }
+                };
+                xhr.send(JSON.stringify(Object.fromEntries(formData)));
+            });
+        });
+    </script>
+
+    <section>
+        <div class="feature">
+            <h2>Intuitive Design Editor</h2>
+            <p>Craft intricate patterns effortlessly with our user-friendly design editor. Customize every detail with ease.</p>
+        </div>
+
+        <div class="feature">
+            <h2>Cloud Sync Across Devices</h2>
+            <p>Seamlessly sync your designs across iOS and Mac devices. Your creativity knows no bounds.</p>
+        </div>
+
+        <!-- Add more features as needed -->
+
+        <a href="yourappdownloadlink.com" class="cta-button">Download Now</a>
+    </section>
+
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>General Inquiries</h3>
+            <p>Email: info@pattern-design-app.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+        </div>
+        <div class="contact-info">
+            <h3>Technical Support</h3>
+            <p>Email: support@pattern-design-app.com</p>
+            <p>Phone: +1 (555) 987-6543</p>
+        </div>
+        <div class="contact-info">
+            <h3>Customer Feedback</h3>
+            <p>Email: feedback@pattern-design-app.com</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="feature">
+            <h2>Welcome to our Pattern Designing App Support Page!</h2>
+            <h2>Frequently Asked Questions (FAQs):</h2>
+            <p> How do I download the app on iOS and Mac? </p>
+                <p> Visit Download Page for easy installation instructions.</p>
+                    <p>Can I access my patterns on multiple devices?</p>
+                        <p>Yes! Our app supports seamless cloud sync. </p>
+                            <p>Learn more here. </p>
+                                <p>What export options are available? </p>
+                                    <p>Explore a variety of export options for different needs. </p>
+                                        <p> Details here. </p>
+                                            <p>Is there a community or marketplace for sharing designs?</p> 
+                                                <p>Absolutely! Join our vibrant community here and discover a marketplace for sharing and selling your designs.</p> 
+                                                    <p>Troubleshooting: </p>
+                                                        <p>App Crashes or Freezes: If you're experiencing issues, follow our troubleshooting guide here. </p>
+                                                            <p>Problems with Exporting Patterns: Check our guide on resolving export-related issues here. </p>
+                                                                <p>Contact Support: General Inquiries: For any general queries, visit our Contact Page. </p>
+                                                                    <p>Technical Support: Facing technical challenges? Reach out to our support team here. </p>
+                                                                        <p>User Guides and Tutorials: Pattern Editing Tutorial: Dive into our step-by-step tutorial for pattern editing here. </p>
+                                                                            <p>Collaboration Features Guide: Learn how to collaborate with others on pattern designs here.</p> 
+                                                                                <p>Stay Connected: Follow us on social media for updates, tips, and inspiration! Facebook Instagram Twitter</p>
+        </div>
+
+        <div class="feature">
+            <p>Join a vibrant community of designers! Share, sell, and explore unique patterns in our dynamic marketplace.</p>
+        </div>
+
+        <!-- Add more features as needed -->
+
+        <a href="https://new-beta-jet.vercel.app/features.html" class="cta-button">Explore Features</a>
+    </section>
+
+    <section>
+        <div class="feature">
+            <h2>Advanced Tools for Designers</h2>
+            <p>Explore advanced features tailored for designers – from machine learning suggestions to AR previews, we've got you covered.</p>
+        </div>
+
+    <section>
+        <div class="feature">
+            <h2>Intuitive Design Editor</h2>
+            <p>Craft intricate patterns effortlessly with our user-friendly design editor. Customize every detail with ease.</p>
+        </div>
+
+        <div class="additional-content">
+            Additional Home Content Below Image
+        </div>
+    </section>
+
+    <div>
+        <p>This is the About Us content. Feel free to customize it as needed.</p>
+    </div>
+    </div>
+              
+   <div class="cookie-popup">
+        <div class="cookie-content">
+            <p>We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising, and analytics partners. By clicking "Accept", you consent to our use of cookies and similar technologies. For more information and to customize your preferences, please see our <a href="cookie_policy.html">Privacy Policy</a> and <a href="#">Cookie Policy</a>.</p>
+            <div class="buttons">
+                <button id="accept-btn">Accept</button>
+                <button id="customize-btn">Customize Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="cookie.js"></script>
+
+    <div id="custom-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cookie Preferences</h2>
+            <p>Customize your cookie preferences below:</p>
+            <form id="cookie-form">
+                <label for="functional-cookies">
+                    <input type="checkbox" id="functional-cookies" name="functional-cookies" checked>
+                    Functional Cookies
+                </label>
+                <label for="analytical-cookies">
+                    <input type="checkbox" id="analytical-cookies" name="analytical-cookies" checked>
+                    Analytical Cookies
+                </label>
+                <label for="advertising-cookies">
+                    <input type="checkbox" id="advertising-cookies" name="advertising-cookies" checked>
+                    Advertising Cookies
+                </label>
+                <button type="submit">Save Preferences</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="CP.js"></script>
+
+
+
+    <script>
+        // Function to toggle sidebar visibility
+        function toggleMenu() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Function to show individual content section
+        function showContent(contentId) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+            document.getElementById(contentId).classList.add('active');
+
+            // Hide sidebar after clicking a button (only for small screens)
+            var sidebar = document.getElementById('sidebar');
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+            }
+        }
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var currentYear = new Date().getFullYear();
+            document.getElementById('copyright-year').innerText = '© ' + currentYear + ' Rubellite Ltd. All rights reserved.';
+        });
+    </script>
+
+
+  <footer>
+
+        <div class="social-links">
+        <a href="https://www.tumblr.com/shoprubellite"><img src="tumb.png" alt="Tumblr"></a>
+        <a href="https://pin.it/7DrgQuVsl"><img src="pint.png" alt="Pinterest"></a>
+        <a href="https://www.instagram.com/shop_rubellite"><img src="Insta.png" alt="Instagram"></a>
+    </div>
+     
+        <p id="copyright-year">&copy; 2024 Rubellite Ltd. All rights reserved.</p>
+        
+  
+    </footer>
+
+</body>
+</html>

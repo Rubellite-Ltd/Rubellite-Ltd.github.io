@@ -1,0 +1,94 @@
+<style>
+        aboutbody {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .aboutcontainer {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    abouth1 {
+      text-align: center;
+      margin-bottom: 30px;
+        color: purple;
+    }
+    aboutp {
+      line-height: 1.6;
+    }
+  h1 {
+    color: white; /* Change 'blue' to any color you prefer */
+  }
+
+.text {
+    margin-top: -220px; /* Adjust the value as needed */
+}
+
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .button-container {
+    margin-bottom: 10px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-right: 5px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #B0C4DE;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid silver;
+  }
+
+  .button:hover, .button:active {
+    background-color: #45a049;
+  }
+
+  #about-us-content {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid silver;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  /* Hamburger Icon Styles */
+  .hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+  }
+
+  .hamburger-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+  }
+
+  /* Show hamburger icon only for mobile screens */
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: block; /* Show only on mobile */
+    }
+    .button-container {
+      display: none; /* Hide button container on mobile */
+    }
+  }
+</style>
