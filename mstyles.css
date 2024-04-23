@@ -107,18 +107,19 @@
        margin-top: 20px;
    }
 
-section {
-           margin: 2em;
-           text-align: center;
-       }
 
-       .feature {
-           margin: 2em;
-           padding: 2em;
-           background-color: #fff;
-           border-radius: 8px;
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-       }
+  section {
+               margin: 1em;
+               text-align: center;
+           }
+
+           .feature {
+               margin: 1em;
+               padding: 2em;
+               background-color: white;
+               border-radius: 4px;
+               box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+           }
 
        .cta-button {
            display: inline-block;
@@ -272,19 +273,6 @@ section {
            font-size: 18px;
            margin-top: 20px;
        }
-
-   section {
-               margin: 2em;
-               text-align: center;
-           }
-
-           .feature {
-               margin: 2em;
-               padding: 2em;
-               background-color: #fff;
-               border-radius: 8px;
-               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-           }
     
            .cta-button {
                display: inline-block;
