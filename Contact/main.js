@@ -7,7 +7,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         message: event.target.message.value
     };
     try {
-        const response = await fetch('/.netlify/functions/submit-form', {
+        const response = await fetch('/.netlify/Functions/submit-form', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
