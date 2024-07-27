@@ -17,8 +17,8 @@ exports.handler = async function(event, context) {
 
     try {
         await client.connect();
-        const database = client.db('your-database-name');
-        const collection = database.collection('ContactForm');
+        const database = client.db('contactudbname');
+        const collection = database.collection('contactuscollection');
         await collection.insertOne(data);
 
         return {
