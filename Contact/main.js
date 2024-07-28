@@ -1,4 +1,4 @@
-document.getElementById('contactudbname').addEventListener('submit', async function(event) {
+document.getElementById('contactForm').addEventListener('submit', async function(event) {
     event.preventDefault();
     const formData = {
         name: event.target.name.value,
