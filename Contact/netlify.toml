@@ -3,5 +3,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/contact-us/:splat"
+  to = "/Contact/index.html"
   status = 200
