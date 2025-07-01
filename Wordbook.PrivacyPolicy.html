@@ -44,9 +44,36 @@
                 padding: 20px;
             }
         }
+
+         .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .back-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
     </style>
 </head>
 <body>
+
+    <a href="https://rubellite-ltd.github.io/Wordbook.html" class="back-button">← Back to Home</a>
     <div class="container">
         <h1>Privacy Policy</h1>
         <p><strong>Effective Date: June 22, 2025</strong></p>
