@@ -1,7 +1,53 @@
-<p>Play <strong>Wordbook</strong> to enhance your vocabulary and spelling skills! This engaging educational game is designed to help you practice finding and forming words using alphabet tiles. As you play, you'll learn new vocabulary words, improve your spelling, and deepen your understanding of English grammar.</p>
+ <section id="contact" class="content">
+            <h2>Contact Us</h2>
+            
+            <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/551c559373b3f0e0ac7008e8bbe16eb0?embedded=1"></div>
 
-<p>The app offers a variety of interactive activities that focus on key parts of speech, including <em>nouns</em>, <em>verbs</em>, <em>adjectives</em>, and <em>adverbs</em>. You'll encounter levels that challenge you to identify and use these parts of speech correctly, reinforcing your grammar knowledge in a fun and effective way.</p>
+          <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+          <script type="text/javascript" src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
 
-<p>Whether you're a beginner or an advanced learner, <strong>Wordbook</strong> provides a comprehensive learning experience suitable for all ages. Discover new words, practice spelling, and master English grammar through entertaining gameplay. Perfect for improving language skills at school, at home, or on the go!</p>
+          <!-- Get notified when the form is submitted, add your own code below: -->
+          <script>
+          const formkeepEmbed = document.querySelector('#formkeep-embed')
 
-<p>Download now and start your journey to becoming a vocabulary and grammar expert!</p>
+          formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+            console.log('Submitting form...')
+          })
+
+          formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+            console.log('Submitted form...')
+          })
+          </script>
+              <div id="response-message"></div>
+
+              <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                      var form = document.getElementById("contact-form");
+                      var responseMessage = document.getElementById("response-message");
+
+                      form.addEventListener("submit", function(event) {
+                          event.preventDefault();
+
+                          var formData = new FormData(form);
+                          var xhr = new XMLHttpRequest();
+                          xhr.open("POST", "https://new-avccyfky8-trdsphrs-projects.vercel.app/send_email.php", true);
+                          xhr.setRequestHeader("Content-Type", "application/json");
+                          xhr.onload = function() {
+                              var response = JSON.parse(xhr.responseText);
+                              if (xhr.status === 200) {
+                                  responseMessage.innerText = response.message;
+                                  responseMessage.style.color = "green";
+                                  form.reset();
+                              } else {
+                                  responseMessage.innerText = response.message;
+                                  responseMessage.style.color = "red";
+                              }
+                          };
+                          xhr.send(JSON.stringify(Object.fromEntries(formData)));
+                      });
+                  });
+              </script>
+<!--            <p>If you have any questions or would like to learn more about our apps, please reach out to us:</p>-->
+<!--            <p>Email: info@ourappcompany.co.uk</p>-->
+<!--            <p>Phone: +44 1234 567890</p>-->
+        </section>
