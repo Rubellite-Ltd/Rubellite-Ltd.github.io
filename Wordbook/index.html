@@ -569,12 +569,7 @@
 
     
     
-     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var currentYear = new Date().getFullYear();
-    document.getElementById('copyright-year').innerText = '© ' + currentYear + ' Rubellite Ltd. All rights reserved.';
-  });
-</script>
+
     
         
         <script>
@@ -806,7 +801,17 @@
          nav.classList.toggle('show');
        }
      </script>
+<p>Contact us: <a href="#" id="email-link">Email Us</a></p>
 
+<script>
+  // Obfuscate email address
+  const user = "tradesphere";
+  const domain = "icloud.com";
+  const email = user + "@" + domain;
+
+  // Set the email link dynamically
+  document.getElementById("email-link").href = "mailto:" + email;
+</script>
 <footer class="footer">
   <p>© <span id="year"></span> Rubellite Ltd. WordBook is a trading name of Rubellite Ltd. Registered in England & Wales No. 13504030.</p>
   <p>Contact us: <a href="mailto:tradesphere@icloud.com" style="color:#fff;">tradesphere@icloud.com</a></p>
