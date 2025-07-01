@@ -536,20 +536,7 @@
 <!--            <p>Phone: +44 1234 567890</p>-->
         </section>
     </div>
-    
-<!--    Footer-->
 
-
-    <footer>
-<!--        <p>Connect with us:</p>-->
-        <div class="social-media">
-                   <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr"><i class="fab fa-tumblr"></i></a>
-                   <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest"><i class="fab fa-pinterest"></i></a>
-                   <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-               </div>
-        
-        <p id="copyright-year">&copy; 2025 Rubellite Ltd. All rights reserved.</p>
-    </footer>
     
     
 <!--    Scripts-->
@@ -801,9 +788,35 @@
          nav.classList.toggle('show');
        }
      </script>
-<p>Contact us: <a href="#" id="email-link">Email Us</a></p>
+
+        
+<!--    Footer-->
+
+<footer>
+  <!-- Social Media Links -->
+  <div class="social-media">
+    <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr" aria-label="Tumblr"><i class="fab fa-tumblr"></i></a>
+    <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+    <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <!-- Dynamic Year -->
+  <p>© <span id="year"></span> Rubellite Ltd. All rights reserved.</p>
+
+  <!-- Contact link with obfuscated email -->
+  <p>Contact us: <a href="#" id="email-link">Email Us</a></p>
+
+  <!-- Hidden email for spam protection -->
+  <div id="email-hidden">tradesphere@icloud.com</div>
+</footer>
+
+<!-- Font Awesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <script>
+  // Set the current year dynamically
+  document.getElementById('year').textContent = new Date().getFullYear();
+
   // Obfuscate email address
   const user = "tradesphere";
   const domain = "icloud.com";
@@ -811,15 +824,9 @@
 
   // Set the email link dynamically
   document.getElementById("email-link").href = "mailto:" + email;
-</script>
-<footer class="footer">
-  <p>© <span id="year"></span> Rubellite Ltd. WordBook is a trading name of Rubellite Ltd. Registered in England & Wales No. 13504030.</p>
-  <p>Contact us: <a href="mailto:tradesphere@icloud.com" style="color:#fff;">tradesphere@icloud.com</a></p>
-</footer>
 
-<script>
-  // Set the current year dynamically
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Optional: set up email display
+  document.getElementById("email-link").textContent = email;
 </script>
     
 </body>
