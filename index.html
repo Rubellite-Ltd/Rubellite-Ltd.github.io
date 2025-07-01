@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,17 +26,114 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Rubellite</title>
             <style>
+                
+                .logo {
+                  color: #fff;
+                  font-weight: bold;
+                  font-size: 18px;
+                }
+                .nav-links {
+                  display: flex;
+                  gap: 15px;
+                }
+
+                .nav-links a {
+                  color: #fff;
+                  text-decoration: none;
+                  font-weight: bold;
+                }
+
+                .nav-links a:hover {
+                  text-decoration: underline;
+                }
+
+                .hamburger {
+                  display: none;
+                  flex-direction: column;
+                  cursor: pointer;
+                }
+
+                .hamburger span {
+                  height: 3px;
+                  width: 25px;
+                  background-color: #fff;
+                  margin: 2px 0;
+                  border-radius: 1px;
+                }
+
+                @media (max-width: 768px) {
+                  .nav-links {
+                    display: none;
+                    position: absolute;
+                    top: 60px;
+                    right: 20px;
+                    background-color: #444;
+                    flex-direction: column;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                    padding: 20px;
+                  }
+
+                  .nav-links.show {
+                    display: flex;
+                  }
+
+                  .hamburger {
+                    display: flex;
+                  }
+                }
+
+                main {
+                  padding: 20px;
+                  text-align: center;
+                }
+
+                .app-link {
+                  display: inline-block;
+                  margin: 20px;
+                  padding: 20px;
+                  background: #fff;
+                  border-radius: 12px;
+                  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                  width: 200px;
+                  text-align: center;
+                  text-decoration: none;
+                  color: #333;
+                  transition: box-shadow 0.3s ease;
+                }
+
+                .app-link:hover {
+                  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                }
+
+                footer {
+                  background-color: #222;
+                  color: #ccc;
+                  padding: 15px;
+                  text-align: center;
+                }
                 body {
                     font-family: Arial, sans-serif;
                     color: #555555;
                     margin: 0;
                     padding: 0;
                     line-height: 1.6;
+<!--                    background-color: #f9f9f9;-->
                 }
                 header {
                     background-color: #f4f4f4;
                     padding: 20px;
                     text-align: center;
+                }
+                
+                header2 {
+                  background-color: #333;
+                  padding: 10px 20px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  position: relative;
                 }
                 nav {
                     display: flex;
@@ -114,44 +212,44 @@
                        .social-media a:hover {
                            color: #999;
                        }
-                .hamburger {
-                           display: none;
-                           flex-direction: column;
-                           cursor: pointer;
-                           position: absolute;
-                           top: 20px;
-                           left: 20px;
-                       }
-                       .hamburger div {
-                           width: 30px;
-                           height: 3px;
-                           background-color: #555555;
-                           margin: 3px 0;
-                       }
-                       @media (max-width: 768px) {
-                           nav {
-                               flex-direction: column;
-                               display: none;
-                               position: fixed;
-                               left: 0;
-                               top: 0;
-                               width: 200px;
-                               height: 100%;
-                               background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent black */
-                               padding-top: 60px;
-                               align-items: flex-start; /* Align items at the top */
-                           }
-                           nav a {
-                               text-align: left;
-                               padding: 10px 20px;
-                           }
-                           nav.show {
-                               display: flex;
-                           }
-                           .hamburger {
-                               display: flex;
-                           }
-                       }
+<!--                .hamburger {-->
+<!--                           display: none;-->
+<!--                           flex-direction: column;-->
+<!--                           cursor: pointer;-->
+<!--                           position: absolute;-->
+<!--                           top: 20px;-->
+<!--                           left: 20px;-->
+<!--                       }-->
+<!--                       .hamburger div {-->
+<!--                           width: 30px;-->
+<!--                           height: 3px;-->
+<!--                           background-color: #555555;-->
+<!--                           margin: 3px 0;-->
+<!--                       }-->
+<!--                       @media (max-width: 768px) {-->
+<!--                           nav {-->
+<!--                               flex-direction: column;-->
+<!--                               display: none;-->
+<!--                               position: fixed;-->
+<!--                               left: 0;-->
+<!--                               top: 0;-->
+<!--                               width: 200px;-->
+<!--                               height: 100%;-->
+<!--                               background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent black */-->
+<!--                               padding-top: 60px;-->
+<!--                               align-items: flex-start; /* Align items at the top */-->
+<!--                           }-->
+<!--                           nav a {-->
+<!--                               text-align: left;-->
+<!--                               padding: 10px 20px;-->
+<!--                           }-->
+<!--                           nav.show {-->
+<!--                               display: flex;-->
+<!--                           }-->
+<!--                           .hamburger {-->
+<!--                               display: flex;-->
+<!--                           }-->
+<!--                       }-->
                 
                 .cookie-popup {
                     position: fixed;
@@ -234,10 +332,33 @@
                 }
              
                 
+                .back-button {
+                  display: inline-block;
+                  padding: 10px 20px;
+                  margin-bottom: 20px;
+                  background-color: #333;
+                  color: #fff;
+                  border: none;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  font-weight: bold;
+                  transition: background 0.3s;
+                }
 
+                .back-button:hover {
+                  background-color: #555;
+                }
+
+                @media (max-width: 600px) {
+                  .back-button {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                  }
+                }
 
                 
-            </style>
+        </style>
             
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
                 
@@ -246,34 +367,55 @@
 </head>
 
 <body>
+<!--    <a href="file:///Users/gnaaz/Documents/WEB%20Wordbook/ALLAPPHOME.html" class="back-button">← Back to Home</a>-->
     
     <!-- Back button -->
 <!--       <button id="backBtn">X</button>-->
 
+
+    <header2>
+      <div class="logo">My Apps</div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+<!--        <a href="index.html">Home</a>-->
+<a href="#home" onclick="hideMenu()">Home</a>
+      <!--  <a href="https://rubellite-ltd.github.io/Wordbook.html">Wordbook</a> -->
+    <!--     <a href="https://rubellite-ltd.github.io/WOrdbookSupport.html">Contact Us</a> -->
+           <a href="#wrdbok" onclick="hideMenu()">Wordbook</a>
+          <a href="#contact" onclick="hideMenu()">Contact</a>
+<!--        <a href="#contact" onclick="hideMenu()">Contact</a>-->
+     <a href="#privacypolicy" onclick="hideMenu()">Privacy Policy</a>
+     
+     <a href="#apps" onclick="hideMenu()">Our Apps</a>
+      </nav>
+    </header2>
     
-    <header>
-        <h1>Welcome to Our App Company</h1>
-        <p>Innovative solutions for modern problems</p>
-<!--        <div class="logo">-->
-<!--           <a href="index.html"><img src="logo.png" alt="Rubellite Logo"></a>-->
-<!--         </div>-->
-        
-        
-    </header>
     
     <div class="hamburger" onclick="toggleMenu()">
            <div></div>
            <div></div>
            <div></div>
        </div>
-    <nav id="nav-menu">
-            <a href="#home" onclick="hideMenu()">Home</a>
-            <a href="#apps" onclick="hideMenu()">Our Apps</a>
-            <a href="#about" onclick="hideMenu()">About Us</a>
-            <a href="#contact" onclick="hideMenu()">Contact</a>
-        </nav>
+<!--    <nav id="nav-menu">-->
+<!--            <a href="#home" onclick="hideMenu()">Home</a>-->
+<!--            <a href="#apps" onclick="hideMenu()">Our Apps</a>-->
+<!--            <a href="#wrdbok" onclick="hideMenu()">Wordbook</a>-->
+<!--            <a href="#contact" onclick="hideMenu()">Contact</a>-->
+<!--         <a href="#privacypolicy" onclick="hideMenu()">Privacy Policy</a>-->
+<!--        </nav>-->
        
-
+       <header>
+           <h1>Welcome to Our App Company</h1>
+           <p>Innovative solutions for modern problems</p>
+   <!--        <div class="logo">-->
+   <!--           <a href="index.html"><img src="logo.png" alt="Rubellite Logo"></a>-->
+   <!--         </div>-->
+                  
+       </header>
     <div class="container">
         <section id="home" class="content">
             <h2>Introduction</h2>
@@ -326,10 +468,20 @@
 <!--            </div>-->
          
         </section>
-        <section id="about" class="content">
-            <h2>About Us</h2>
+        <section id="wrdbok" class="content">
+            <h2>WordBook</h2>
             <p>we specialize in creating innovative and high-quality Apple apps that enhance user experience and productivity. We are a team of passionate developers, designers, and strategists committed to innovation and excellence.</p>
         </section>
+
+          <section id="privacypolicy" class="content">
+            <h2>Privacy Policy</h2>
+<p>
+  We specialize in creating innovative and high-quality Apple apps that enhance user experience and productivity. 
+  We are a team of passionate developers, designers, and strategists committed to innovation and excellence. 
+  <a href="https://rubellite-ltd.github.io/Wordbook.PrivacyPolicy.html" target="_blank" rel="noopener noreferrer">More</a>
+</p>        </section>
+
+        
         <section id="contact" class="content">
             <h2>Contact Us</h2>
             
@@ -384,45 +536,28 @@
 <!--            <p>Phone: +44 1234 567890</p>-->
         </section>
     </div>
-    
-<!--    Footer-->
 
-
-    <footer>
-<!--        <p>Connect with us:</p>-->
-        <div class="social-media">
-                   <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr"><i class="fab fa-tumblr"></i></a>
-                   <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest"><i class="fab fa-pinterest"></i></a>
-                   <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-               </div>
-        
-        <p id="copyright-year">&copy; 2025 Rubellite Ltd. All rights reserved.</p>
-    </footer>
     
     
 <!--    Scripts-->
 
 
-    <script>
-            function toggleMenu() {
-                const navMenu = document.getElementById('nav-menu');
-                navMenu.classList.toggle('show');
-            }
-            
-            function hideMenu() {
-                const navMenu = document.getElementById('nav-menu');
-                navMenu.classList.remove('show');
-            }
-    </script>
+<!--    <script>-->
+<!--            function toggleMenu() {-->
+<!--                const navMenu = document.getElementById('nav-menu');-->
+<!--                navMenu.classList.toggle('show');-->
+<!--            }-->
+<!--            -->
+<!--            function hideMenu() {-->
+<!--                const navMenu = document.getElementById('nav-menu');-->
+<!--                navMenu.classList.remove('show');-->
+<!--            }-->
+<!--    </script>-->
+
     
-        <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var currentYear = new Date().getFullYear();
-            document.getElementById('copyright-year').innerText = '© ' + currentYear + ' Rubellite Ltd. All rights reserved.';
-        });
-        
-        }
-        </script>
+    
+
+    
         
         <script>
             // JavaScript Document
@@ -647,7 +782,42 @@
          </div>
      </div>
 
-    
+     <script>
+       function toggleMenu() {
+         const nav = document.getElementById('navLinks');
+         nav.classList.toggle('show');
+       }
+     </script>
+
+        
+<!--    Footer-->
+
+<!-- Footer -->
+<footer style="background-color: #1f1f1f; color: #ccc; padding: 30px 20px; text-align: center; font-size: 14px;">
+  <div style="margin-bottom: 15px;">
+    <p style="margin: 0 0 10px;">Connect with us:</p>
+    <div class="social-media" style="display: flex; justify-content: center; gap: 15px; font-size: 20px;">
+      <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-tumblr"></i></a>
+      <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-pinterest"></i></a>
+      <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <p style="margin: 10px 0;">&copy; <span id="year"></span> Rubellite Ltd. WordBook is a trading name of Rubellite Ltd. Registered in England & Wales No. 13504030.</p>
+
+  <p style="margin: 10px 0;">Contact us: <a href="#" id="email-link" style="color: #fff; text-decoration: underline;">Email Us</a></p>
+</footer>
+
+<!-- Footer Scripts -->
+<script>
+  // Dynamic Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Email obfuscation
+  const user = "tradesphere";
+  const domain = "icloud.com";
+  document.getElementById("email-link").href = "mailto:" + user + "@" + domain;
+</script>
     
 </body>
 </html>
