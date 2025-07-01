@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wordbook</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .back-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="file:///Users/gnaaz/Documents/WEB%20Wordbook/ALLAPPHOME.html" class="back-button">← Back to Home</a>
+
+  <h1>Wordbook App</h1>
+  <p>Welcome to the Wordbook app!</p>
+  <!-- App content goes here -->
+  
+  <section id="contact" class="content">
+             <h2>Contact Us</h2>
+             
+             <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/551c559373b3f0e0ac7008e8bbe16eb0?embedded=1"></div>
+
+           <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+           <script type="text/javascript" src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
+
+           <!-- Get notified when the form is submitted, add your own code below: -->
+           <script>
+           const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+           formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+             console.log('Submitting form...')
+           })
+
+           formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+             console.log('Submitted form...')
+           })
+           </script>
+               <div id="response-message"></div>
+
+               <script>
+                   document.addEventListener("DOMContentLoaded", function() {
+                       var form = document.getElementById("contact-form");
+                       var responseMessage = document.getElementById("response-message");
+
+                       form.addEventListener("submit", function(event) {
+                           event.preventDefault();
+
+                           var formData = new FormData(form);
+                           var xhr = new XMLHttpRequest();
+                           xhr.open("POST", "https://new-avccyfky8-trdsphrs-projects.vercel.app/send_email.php", true);
+                           xhr.setRequestHeader("Content-Type", "application/json");
+                           xhr.onload = function() {
+                               var response = JSON.parse(xhr.responseText);
+                               if (xhr.status === 200) {
+                                   responseMessage.innerText = response.message;
+                                   responseMessage.style.color = "green";
+                                   form.reset();
+                               } else {
+                                   responseMessage.innerText = response.message;
+                                   responseMessage.style.color = "red";
+                               }
+                           };
+                           xhr.send(JSON.stringify(Object.fromEntries(formData)));
+                       });
+                   });
+               </script>
+ <!--            <p>If you have any questions or would like to learn more about our apps, please reach out to us:</p>-->
+ <!--            <p>Email: info@ourappcompany.co.uk</p>-->
+ <!--            <p>Phone: +44 1234 567890</p>-->
+         </section>
+  
+
+</body>
+</html>
