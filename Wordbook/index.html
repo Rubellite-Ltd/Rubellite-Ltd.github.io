@@ -792,41 +792,31 @@
         
 <!--    Footer-->
 
-<footer>
-  <!-- Social Media Links -->
-  <div class="social-media">
-    <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr" aria-label="Tumblr"><i class="fab fa-tumblr"></i></a>
-    <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-    <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<!-- Footer -->
+<footer style="background-color: #1f1f1f; color: #ccc; padding: 30px 20px; text-align: center; font-size: 14px;">
+  <div style="margin-bottom: 15px;">
+    <p style="margin: 0 0 10px;">Connect with us:</p>
+    <div class="social-media" style="display: flex; justify-content: center; gap: 15px; font-size: 20px;">
+      <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-tumblr"></i></a>
+      <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-pinterest"></i></a>
+      <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
 
-  <!-- Dynamic Year -->
-  <p>© <span id="year"></span> Rubellite Ltd. All rights reserved.</p>
+  <p style="margin: 10px 0;">&copy; <span id="year"></span> Rubellite Ltd. WordBook is a trading name of Rubellite Ltd. Registered in England & Wales No. 13504030.</p>
 
-  <!-- Contact link with obfuscated email -->
-  <p>Contact us: <a href="#" id="email-link">Email Us</a></p>
-
-  <!-- Hidden email for spam protection -->
-  <div id="email-hidden">tradesphere@icloud.com</div>
+  <p style="margin: 10px 0;">Contact us: <a href="#" id="email-link" style="color: #fff; text-decoration: underline;">Email Us</a></p>
 </footer>
 
-<!-- Font Awesome CDN for icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+<!-- Footer Scripts -->
 <script>
-  // Set the current year dynamically
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // Dynamic Year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Obfuscate email address
+  // Email obfuscation
   const user = "tradesphere";
   const domain = "icloud.com";
-  const email = user + "@" + domain;
-
-  // Set the email link dynamically
-  document.getElementById("email-link").href = "mailto:" + email;
-
-  // Optional: set up email display
-  document.getElementById("email-link").textContent = email;
+  document.getElementById("email-link").href = "mailto:" + user + "@" + domain;
 </script>
     
 </body>
