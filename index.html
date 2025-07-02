@@ -34,7 +34,7 @@
                 }
                 .nav-links {
                   display: flex;
-                  gap: 15px;
+                  gap: 0px;
                 }
 
                 .nav-links a {
@@ -67,7 +67,7 @@
                     position: absolute;
                     top: 60px;
                     right: 20px;
-                    background-color: #444;
+                    background-color: rgba(51, 51, 51, 0.9);
                     flex-direction: column;
                     border-radius: 8px;
                     overflow: hidden;
@@ -128,7 +128,7 @@
                 }
                 
                 header2 {
-                  background-color: #333;
+                  background-color: #999999;
                   padding: 10px 20px;
                   display: flex;
                   justify-content: space-between;
@@ -138,7 +138,7 @@
                 nav {
                     display: flex;
                     justify-content: top;
-                    background-color: #333333;
+                    background-color: #999999;
                 }
                 nav a {
                     color: #ffffff;
@@ -235,7 +235,7 @@
 <!--                               top: 0;-->
 <!--                               width: 200px;-->
 <!--                               height: 100%;-->
-<!--                               background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent black */-->
+<!--                               background-color: rgba(51, 51, 51, 0.4); /* Semi-transparent black */-->
 <!--                               padding-top: 60px;-->
 <!--                               align-items: flex-start; /* Align items at the top */-->
 <!--                           }-->
@@ -374,7 +374,9 @@
 
 
     <header2>
-      <div class="logo">My Apps</div>
+        <div class="logo">
+          <a href="https://rubellite-ltd.github.io/RLOGO.png"><img src="https://rubellite-ltd.github.io/RLOGO.png" alt="Rubellite Logo" /></a>
+        </div>
       <div class="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -383,14 +385,15 @@
       <nav class="nav-links" id="navLinks">
 <!--        <a href="index.html">Home</a>-->
 <a href="#home" onclick="hideMenu()">Home</a>
+<a href="#apps" onclick="hideMenu()">Our Apps</a>
       <!--  <a href="https://rubellite-ltd.github.io/Wordbook.html">Wordbook</a> -->
     <!--     <a href="https://rubellite-ltd.github.io/WOrdbookSupport.html">Contact Us</a> -->
-           <a href="#wrdbok" onclick="hideMenu()">Wordbook</a>
+<!--           <a href="#wrdbok" onclick="hideMenu()">Wordbook</a>-->
           <a href="#contact" onclick="hideMenu()">Contact</a>
 <!--        <a href="#contact" onclick="hideMenu()">Contact</a>-->
    
      
-     <a href="#apps" onclick="hideMenu()">Our Apps</a>
+    
       </nav>
     </header2>
     
@@ -409,7 +412,7 @@
 <!--        </nav>-->
        
        <header>
-           <h1>Welcome to Our App Company</h1>
+           <h1>Welcome to Rubellite</h1>
            <p>Innovative solutions for modern problems</p>
    <!--        <div class="logo">-->
    <!--           <a href="index.html"><img src="logo.png" alt="Rubellite Logo"></a>-->
@@ -420,22 +423,10 @@
         <section id="home" class="content">
             <h2>Introduction</h2>
             <p>We are a leading UK-based company dedicated to developing innovative and user-friendly applications. Our mission is to leverage technology to create solutions that enhance productivity, connectivity, and entertainment.</p>
-            
-            <h2> Explore Our Apps </h2>
-             <p> Check out our latest app, ready for launch.
-            Stay tuned for more exciting projects currently in development.</p>
-            
-            <h2>Join Our Community</h2>
-            Follow us on social media for updates, insights, and behind-the-scenes looks at our development process.
-            
-            <h2>Our Team</h2>
-            Our team comprises skilled developers, designers, and strategists who bring their expertise and creativity to every project. With a shared vision of excellence, we work collaboratively to turn ideas into reality.
-            
-            <h2>Custom App Development</h2>
-            At Rubellite LTD, we offer bespoke app development services tailored to your unique needs. From conceptualization to deployment, we ensure your app stands out in the competitive market.
-            
-            <h2>UI/UX Design</h2>
-            Our design team creates intuitive and visually appealing interfaces that enhance user engagement and satisfaction.
+            <p>We believe learning should be a joyful, rewarding experience. Our mission is to create educational tools that feel like games — helping users learn naturally while staying engaged. All our apps are available on Apple devices for seamless learning across platforms.</p>
+          
+              <section>
+     
             
         </section>
         <section id="apps" class="content">
@@ -458,19 +449,38 @@
            <p> <strong> Art and Craft: </strong>  Use your patterns in scrapbooking, DIY projects, and other creative endeavors.</p>
            <p> <strong> Marketing and Branding: </strong>  Develop distinctive patterns for packaging, branding materials, and promotional items.</p>
            
-           <p> <strong> Coming Soon: </strong>  Get ready to experience PatternPro – launching soon on the App Store!</p>
+          
+          <a href="https://apps.apple.com/gb/app/patternpix/id6670605733?itscg=30200&itsct=apps_box_badge&mttnsubad=6670605733" style="display: inline-block;">
+          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1725753600" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />
+          </a>
+          
+           
+           <h2>WordBook</h2>
+<!--           Download WordBook (iOS & macOS)-->
+           <p><strong>WordBook</strong> is an engaging educational game that helps players boost vocabulary and grammar skills. Learn nouns, verbs, adjectives, and adverbs while playing fun word-building levels.</p>
+           <p>Perfect for learners of all ages, whether you're studying at school or brushing up your English on the go.</p>
+           <p><a href="https://rubellite-ltd.github.io/Wordbook.html" target="_blank" rel="noopener noreferrer">▶ More</a></p>
+           
+           <a href="https://apps.apple.com/gb/app/wordbook/id1562875029?itscg=30200&itsct=apps_box_badge&mttnsubad=1562875029" style="display: inline-block;">
+           <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1618531200" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />
+           </a>
+           
  
             </div>
+            
+            
             
 <!--            <div class="app">-->
 <!--                <h3>App Two</h3>-->
 <!--                <p>App Two is a social networking app that connects you with friends and family. Share updates, photos, and stay in touch with the people who matter most to you.</p>-->
 <!--            </div>-->
-         
+<section>
+  <h2>Stay Updated</h2>
+  <p>We're just getting started. More apps and learning experiences are on the way. Follow us and check back for updates!</p>
+</section>
         </section>
         <section id="wrdbok" class="content">
-            <h2>WordBook</h2>
-            <p>we specialize in creating innovative and high-quality Apple apps that enhance user experience and productivity. We are a team of passionate developers, designers, and strategists committed to innovation and excellence.</p>
+<!--           add wordbookk detail if needed-->
         </section>
 
 
@@ -527,10 +537,13 @@
 <!--            <p>Email: info@ourappcompany.co.uk</p>-->
 <!--            <p>Phone: +44 1234 567890</p>-->
         </section>
+        
     </div>
 
     
     
+ 
+
 <!--    Scripts-->
 
 
@@ -786,24 +799,32 @@
 
 <!-- Footer -->
 <footer style="background-color: #1f1f1f; color: #ccc; padding: 30px 20px; text-align: center; font-size: 14px;">
-  <div style="margin-bottom: 15px;">
-    <p style="margin: 0 0 10px;">Connect with us:</p>
-    <div class="social-media" style="display: flex; justify-content: center; gap: 15px; font-size: 20px;">
-      <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-tumblr"></i></a>
-      <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-pinterest"></i></a>
-      <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
+
+  <section>
+      <div style="margin-bottom: 15px;">
+       
+        <h2>Contact Us</h2>
+        <p>Questions, feedback, or suggestions? We'd love to hear from you.</p>
+        <p style="margin: 10px 0;">Contact us: <a href="#" id="email-link" style="color: #fff; text-decoration: underline;">Email Us</a></p>
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:15px;">
+          <div style="flex:1; text-align:center;">
+              
+          </div>
+          <a href="https://rubellite-ltd.github.io/Wordbook.PrivacyPolicy.html" style="color:#ccc; text-decoration:none;">Privacy Policy</a>
+        </div>
+        <div class="social-media" style="display: flex; justify-content: center; gap: 15px; font-size: 20px;">
+          <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-tumblr"></i></a>
+          <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+   
+   
   
+   <p style="margin: 10px 0;">&copy; <span id="year"></span> Rubellite Ltd. WordBook is a trading name of Rubellite Ltd. Registered in England & Wales No. 13504030.</p>
+  </section>
 
-  <p style="margin: 10px 0;">&copy; <span id="year"></span> Rubellite Ltd. Registered in England & Wales No. 13504030.</p>
 
-  <p style="margin: 10px 0;">Contact us: <a href="#" id="email-link" style="color: #fff; text-decoration: underline;">Email Us</a></p>
-  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:15px;">
-    <div style="flex:1; text-align:center;">
-    </div>
-    <a href="https://rubellite-ltd.github.io/Wordbook.PrivacyPolicy.html" style="color:#ccc; text-decoration:none;">Privacy Policy</a>
-  </div>
 </footer>
 
 <!-- Footer Scripts -->
