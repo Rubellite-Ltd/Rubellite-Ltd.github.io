@@ -1,662 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WSJZWEM1D7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WordBook - The Ultimate Word Puzzle Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #282c34;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+    }
+    .hero h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .download-buttons img {
+      width: 200px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .features, .screenshots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .feature, .screenshot {
+      flex: 1 1 300px;
+      margin: 10px;
+      padding: 10px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background-color: #0056b3;
+    }
+      mysection {
+        display: flex;
+        justify-content: center; /* center horizontally */
+        align-items: center;     /* center vertically if needed */
+        flex-direction: column;  /* stack children vertically */
+        text-align: center;      /* center text and inline elements */
+        padding: 20px;           /* optional: add some spacing */
+      }
+      
+      .screenshots {
+        display: flex;
+        justify-content: center; /* centers all child elements horizontally */
+        flex-wrap: wrap; /* allows images to wrap to new line if needed */
+        gap: 20px; /* optional: space between images */
+      }
+      
+      .back-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
 
-  gtag('config', 'G-WSJZWEM1D7');
-</script>
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN6T5G1FVX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      .back-button:hover {
+        background-color: #555;
+      }
 
-  gtag('config', 'G-QN6T5G1FVX');
-</script>
-
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Rubellite</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    color: #555555;
-                    margin: 0;
-                    padding: 0;
-                    line-height: 1.6;
-                }
-                header {
-                    background-color: #f4f4f4;
-                    padding: 20px;
-                    text-align: center;
-                }
-                nav {
-                    display: flex;
-                    justify-content: top;
-                    background-color: #333333;
-                }
-                nav a {
-                    color: #ffffff;
-                    padding: 14px 20px;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                }
-                nav a:hover {
-                    background-color: #575757;
-                }
-                .container {
-                    width: 80%;
-                    margin: auto;
-                    overflow: hidden;
-                    padding: 20px 0;
-                }
-                .content {
-                    padding: 20px;
-                    background-color: #f9f9f9;
-                    margin-bottom: 20px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                }
-                h1, h2, h3, h4 {
-                    color: #333333;
-                }
-                h1 {
-                    font-size: 2.5em;
-                    margin-bottom: 10px;
-                }
-                h2 {
-                    font-size: 1.8em;
-                    margin-bottom: 10px;
-                }
-                
-                h3 {
-                    font-size: 1.4em;
-                    margin-bottom: 8px;
-                }
-                
-                
-                h4 {
-                    font-size: 1.0em;
-                    margin-bottom: 6px;
-                }
-                p {
-                    margin-bottom: 20px;
-                    font-size: 1em;
-                }
-                .app {
-                    margin-bottom: 40px;
-                }
-                footer {
-                    text-align: center;
-                    padding: 20px;
-                    background-color: #333333;
-                    color: #ffffff;
-                }
-                
-                .social-media {
-                           display: flex;
-                           justify-content: center;
-                           background-color: #333;
-                           padding: 20px;
-                       }
-                       .social-media a {
-                           color: white;
-                           margin: 0 15px;
-                           text-decoration: none;
-                           font-size: 24px;
-                       }
-                       .social-media a:hover {
-                           color: #999;
-                       }
-                .hamburger {
-                           display: none;
-                           flex-direction: column;
-                           cursor: pointer;
-                           position: absolute;
-                           top: 20px;
-                           left: 20px;
-                       }
-                       .hamburger div {
-                           width: 30px;
-                           height: 3px;
-                           background-color: #555555;
-                           margin: 3px 0;
-                       }
-                       @media (max-width: 768px) {
-                           nav {
-                               flex-direction: column;
-                               display: none;
-                               position: fixed;
-                               left: 0;
-                               top: 0;
-                               width: 200px;
-                               height: 100%;
-                               background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent black */
-                               padding-top: 60px;
-                               align-items: flex-start; /* Align items at the top */
-                           }
-                           nav a {
-                               text-align: left;
-                               padding: 10px 20px;
-                           }
-                           nav.show {
-                               display: flex;
-                           }
-                           .hamburger {
-                               display: flex;
-                           }
-                       }
-                
-                .cookie-popup {
-                    position: fixed;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    background-color: #f0f0f0;
-                    padding: 20px;
-                    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-                    z-index: 9999;
-                }
-
-                .cookie-content {
-                    max-width: 600px;
-                    margin: 0 auto;
-                }
-
-                .buttons {
-                    margin-top: 10px;
-                }
-
-                button {
-                    padding: 10px 20px;
-                    margin-right: 10px;
-                    cursor: pointer;
-                }
-                
-                /* Modal styles */
-                .modal {
-                    display: none; /* Hidden by default */
-                    position: fixed;
-                    z-index: 9999;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-                }
-
-                .modal-content {
-                    background-color: #fefefe;
-                    opacity: 0.95;
-                    margin: 15% auto;
-                    padding: 20px;
-                    border: 1px solid #888;
-                    width: 50%;
-                    max-width: 600px;
-                    font-size: 10px;
-                    
-                }
-
-                /* Close button */
-                .close {
-                    color: #aaa;
-                    float: right;
-                    font-size: 28px;
-                    font-weight: bold;
-                }
-
-                .close:hover,
-                .close:focus {
-                    color: black;
-                    text-decoration: none;
-                    cursor: pointer;
-                    
-                }
-                
-                /* Logo styling */
-                .logo img {
-                  width: 150px; /* Adjust the size as needed */
-                  height: auto;
-                  display: block; /* Ensures the image behaves like a block element */
-                  margin: 0 auto; /* Centers the logo within its container */
-                  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition effects */
-                }
-
-                .logo img:hover {
-                  transform: scale(1.1); /* Slightly enlarge the logo on hover */
-                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
-                }
-             
-                
-
-
-                
-            </style>
-            
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                
-                <link rel="icon" href="favicon.ico" type="image/x-icon">
-                    <link rel="stylesheet" href="CP.css">
+      @media (max-width: 600px) {
+        .back-button {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      
+  </style>
 </head>
-
 <body>
-    
-    <!-- Back button -->
-<!--       <button id="backBtn">X</button>-->
+    <a href="https://rubellite-ltd.github.io/Wordbook.html" class="back-button">← Back to Home</a>
 
-    
-    <header>
-        <h1>Welcome to Our App Company</h1>
-        <p>Innovative solutions for modern problems</p>
-<!--        <div class="logo">-->
-<!--           <a href="index.html"><img src="logo.png" alt="Rubellite Logo"></a>-->
-<!--         </div>-->
-        
-        
-    </header>
-    
-    <div class="hamburger" onclick="toggleMenu()">
-           <div></div>
-           <div></div>
-           <div></div>
-       </div>
-    <nav id="nav-menu">
-            <a href="#home" onclick="hideMenu()">Home</a>
-            <a href="#apps" onclick="hideMenu()">Our Apps</a>
-            <a href="#about" onclick="hideMenu()">About Us</a>
-            <a href="#contact" onclick="hideMenu()">Contact</a>
-         <a href="#privacypolicy" onclick="hideMenu()">Privacy Policy</a>
-        </nav>
-       
 
-    <div class="container">
-        <section id="home" class="content">
-            <h2>Introduction</h2>
-            <p>We are a leading UK-based company dedicated to developing innovative and user-friendly applications. Our mission is to leverage technology to create solutions that enhance productivity, connectivity, and entertainment.</p>
-            
-            <h2> Explore Our Apps </h2>
-             <p> Check out our latest app, ready for launch.
-            Stay tuned for more exciting projects currently in development.</p>
-            
-            <h2>Join Our Community</h2>
-            Follow us on social media for updates, insights, and behind-the-scenes looks at our development process.
-            
-            <h2>Our Team</h2>
-            Our team comprises skilled developers, designers, and strategists who bring their expertise and creativity to every project. With a shared vision of excellence, we work collaboratively to turn ideas into reality.
-            
-            <h2>Custom App Development</h2>
-            At Rubellite LTD, we offer bespoke app development services tailored to your unique needs. From conceptualization to deployment, we ensure your app stands out in the competitive market.
-            
-            <h2>UI/UX Design</h2>
-            Our design team creates intuitive and visually appealing interfaces that enhance user engagement and satisfaction.
-            
-        </section>
-        <section id="apps" class="content">
-            <div class="app">
-                
-           <h2> Our Apps </h2>
-           <h3> Featured App: PatternPro </h3>
-            <p> <strong>Overview:</strong> Unleash your creativity with PatternPro, the ultimate pattern design app. Whether you're a professional designer or an enthusiast, PatternPro offers a suite of powerful tools to create stunning patterns effortlessly.</p>
-           
-           <h2> Features: </h2>
-           <p> <strong> Design Variety: </strong> Choose from an extensive library of shapes, colors, and design elements to craft unique patterns.</p>
-           <p> <strong> Easy Customization: </strong>  Adjust sizes, colors, and orientations to suit your creative vision.</p>
-           <p> <strong> Export Options: </strong>  Export your designs in high-quality PNG and JPEG formats for seamless integration into your projects.</p>
-           <p> <strong> Unlimited Possibilities: </strong>  Generate hundreds of different designs with just a few taps, making each creation truly unique.</p>
-           
-           <h2> Use Cases: </h2>
-           <p> <strong> Textile and Fashion Design: </strong> Create intricate patterns for fabric printing, clothing, and accessories.</p>
-           <p> <strong> Graphic Design: </strong>  Enhance your graphic design projects with custom backgrounds, wallpapers, and textures.</p>
-           <p> <strong> Interior Design: </strong>  Design unique patterns for wallpapers, upholstery, and home decor.</p>
-           <p> <strong> Art and Craft: </strong>  Use your patterns in scrapbooking, DIY projects, and other creative endeavors.</p>
-           <p> <strong> Marketing and Branding: </strong>  Develop distinctive patterns for packaging, branding materials, and promotional items.</p>
-           
-           <p> <strong> Coming Soon: </strong>  Get ready to experience PatternPro – launching soon on the App Store!</p>
+<header>
+  <h1>WordBook</h1>
+  <p>The Ultimate Word Puzzle Challenge!</p>
+</header>
+
+<section class="hero">
+  <h2>Are You Ready to Test Your Word Skills?</h2>
+  <div class="download-buttons">
+   
+
+   <a href="https://apps.apple.com/gb/app/wordbook/id1562875029?itscg=30200&itsct=apps_box_artwork&mttnsubad=1562875029" style="position: relative; width: 170px; height: 170px; overflow: hidden; display: inline-block; vertical-align: middle; 
+     --app-icon-mask: url('data:image/svg+xml,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xml%3Aspace%3D%22preserve%22%20viewBox%3D%220%200%20230.5%20230.5%22%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.4%22%20clip-rule%3D%22evenodd%22%20d%3D%22M158.2%20230H64.1a320%20320%200%200%201-7-.1c-5%200-10-.5-15-1.3a50.8%2050.8%200%200%201-14.4-4.8%2048.2%2048.2%200%200%201-21-21%2050.9%2050.9%200%200%201-4.8-14.4%20100.7%20100.7%200%200%201-1.3-15v-7l-.1-8.2V64.1a320%20320%200%200%201%20.1-7c0-5%20.5-10%201.3-15a50.7%2050.7%200%200%201%204.8-14.4%2048.2%2048.2%200%200%201%2021-21%2051%2051%200%200%201%2014.4-4.8c5-.8%2010-1.2%2015-1.3a320%20320%200%200%201%207%200l8.2-.1h94.1a320%20320%200%200%201%207%20.1c5%200%2010%20.5%2015%201.3a52%2052%200%200%201%2014.4%204.8%2048.2%2048.2%200%200%201%2021%2021%2050.9%2050.9%200%200%201%204.8%2014.4c.8%205%201.2%2010%201.3%2015a320%20320%200%200%201%20.1%207v102.3l-.1%207c0%205-.5%2010-1.3%2015a50.7%2050.7%200%200%201-4.8%2014.4%2048.2%2048.2%200%200%201-21%2021%2050.8%2050.8%200%200%201-14.4%204.8c-5%20.8-10%201.2-15%201.3a320%20320%200%200%201-7%200l-8.2.1z%22%2F%3E%0A%3C%2Fsvg%3E%0A');">
+   
+       <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/af/0d/48/af0d48b6-b176-3f46-b9cf-30c92f591e61/AppIcon-0-1x_U007epad-0-1-P3-85-220-0.png/540x540bb.jpg" alt="WordBook"
+            style="width: 100%; height: 100%; object-fit: contain;
+            mask-image: var(--app-icon-mask); -webkit-mask-image: var(--app-icon-mask);" />
+     </a>
+  </div>
+  <p style="margin-top: 20px;">Available now on iOS! Play & Download Today!</p>
+</section>
+
+<section class="section" id="about">
+  <h3>About WordBook</h3>
+  <p>WordBook is an addictive word puzzle game that challenges your vocabulary and quick thinking. It's perfect for word lovers of all ages. </p>
+  <p style="margin-top: 20px;">WordBook – The Ultimate Word Puzzle Game for iOS & macOS"
+  Challenge your vocabulary and sharpen your mind on your iPhone, iPad, or Mac. </p>
+  
+  <section>
+    <h2>Enjoy Word Puzzle Fun on Your Devices</h2>
+    <p>Enjoy addictive word puzzles designed for iPhone, iPad, and Mac. Play anytime, anywhere—perfect for quick breaks or long sessions.</p>
+
+    <h3>Compatibility & Features</h3>
+    <ul>
+      <li>Optimized for iOS and macOS</li>
+      <li>Works seamlessly on iPhone, iPad, and Mac</li>
+      <li>Beautiful, intuitive design for all devices</li>
+    </ul>
+  </section>
+  
+
+
+  <h2>Transform Learning Into Play – Master Grammar Through Interactive Word Building</h2>
+  <p>Discover the fun side of language learning with our innovative word game that turns grammar concepts into engaging gameplay. Perfect for word enthusiasts of all ages.</p>
+
  
-            </div>
-            
-<!--            <div class="app">-->
-<!--                <h3>App Two</h3>-->
-<!--                <p>App Two is a social networking app that connects you with friends and family. Share updates, photos, and stay in touch with the people who matter most to you.</p>-->
-<!--            </div>-->
-         
-        </section>
-        <section id="about" class="content">
-            <h2>About Us</h2>
-            <p>we specialize in creating innovative and high-quality Apple apps that enhance user experience and productivity. We are a team of passionate developers, designers, and strategists committed to innovation and excellence.</p>
-        </section>
 
-          <section id="privacypolicy" class="content">
-            <h2>Privacy Policy</h2>
-            <p>we specialize in creating innovative and high-quality Apple apps that enhance user experience and productivity. We are a team of passionate developers, designers, and strategists committed to innovation and excellence.</p>
-        </section>
+  <h2>Exciting News! The New Version is Here!</h2>
+  <p>Level up your vocabulary and grammar skills with our latest update, featuring more levels, bug fixes, and a smoother learning experience.</p>
 
-        
-        <section id="contact" class="content">
-            <h2>Contact Us</h2>
-            
-            <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/551c559373b3f0e0ac7008e8bbe16eb0?embedded=1"></div>
+  <h2>What’s New</h2>
+  <ul>
+    <li>More challenging grammar levels</li>
+    <li>Improved performance and stability</li>
+    <li>Fun, interactive learning suitable for kids and adults alike</li>
+    <li>Available now on iOS and macOS—learn anytime, anywhere!</li>
+  </ul>
 
-          <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
-          <script type="text/javascript" src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
+  <p>Download the update today and make learning English fun and easy!</p>
 
-          <!-- Get notified when the form is submitted, add your own code below: -->
-          <script>
-          const formkeepEmbed = document.querySelector('#formkeep-embed')
-
-          formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
-            console.log('Submitting form...')
-          })
-
-          formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
-            console.log('Submitted form...')
-          })
-          </script>
-              <div id="response-message"></div>
-
-              <script>
-                  document.addEventListener("DOMContentLoaded", function() {
-                      var form = document.getElementById("contact-form");
-                      var responseMessage = document.getElementById("response-message");
-
-                      form.addEventListener("submit", function(event) {
-                          event.preventDefault();
-
-                          var formData = new FormData(form);
-                          var xhr = new XMLHttpRequest();
-                          xhr.open("POST", "https://new-avccyfky8-trdsphrs-projects.vercel.app/send_email.php", true);
-                          xhr.setRequestHeader("Content-Type", "application/json");
-                          xhr.onload = function() {
-                              var response = JSON.parse(xhr.responseText);
-                              if (xhr.status === 200) {
-                                  responseMessage.innerText = response.message;
-                                  responseMessage.style.color = "green";
-                                  form.reset();
-                              } else {
-                                  responseMessage.innerText = response.message;
-                                  responseMessage.style.color = "red";
-                              }
-                          };
-                          xhr.send(JSON.stringify(Object.fromEntries(formData)));
-                      });
-                  });
-              </script>
-<!--            <p>If you have any questions or would like to learn more about our apps, please reach out to us:</p>-->
-<!--            <p>Email: info@ourappcompany.co.uk</p>-->
-<!--            <p>Phone: +44 1234 567890</p>-->
-        </section>
+<section class="section" id="features">
+  <h3>Features</h3>
+  <div class="features">
+    <div class="feature">
+      <h4>Interactive Grammar Building</h4>
+      <p>Create and categorize words by parts of speech including nouns, verbs, adjectives, adverbs, and more.</p>
     </div>
-    
-<!--    Footer-->
+    <div class="feature">
+      <h4>Progressive Learning</h4>
+      <p>Advance through levels as your grammar knowledge grows, making learning natural and engaging.</p>
+    </div>
+    <div class="feature">
+      <h4>Educational & Entertaining</h4>
+      <p>Learn grammar rules naturally through immersive gameplay that makes language learning fun.</p>
+    </div>
+    <div class="feature">
+      <h4>Universal & Offline Access</h4>
+      <p>Seamlessly works on iOS and macOS devices, and no internet connection is required—learn anytime, anywhere.</p>
+    </div>
+   
+  </div>
+</section>
 
 
-    <footer>
-<!--        <p>Connect with us:</p>-->
-        <div class="social-media">
-                   <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr"><i class="fab fa-tumblr"></i></a>
-                   <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest"><i class="fab fa-pinterest"></i></a>
-                   <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-               </div>
-        
-        <p id="copyright-year">&copy; 2025 Rubellite Ltd. All rights reserved.</p>
-    </footer>
-    
-    
-<!--    Scripts-->
+<mysection>
+  <div class="centered-image">
+    <img src="https://rubellite-ltd.github.io/Wordbook/Square%20Post%20-%201080x1080.png" alt="Banner Ad" width="300" />
+  </div>
+</mysection>
+
+<section class="section" id="screenshots" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 20px;">
+  <h3 style="text-align: center;">Screenshots & Demo</h3>
+  <div class="screenshots" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+    <div class="screenshot"><img src="https://rubellite-ltd.github.io/Wordbook/IMG_8884.PNG" alt="Gameplay Screenshot 1" width="300" /></div>
+    <div class="screenshot"><img src="https://rubellite-ltd.github.io/Wordbook/IMG_8885.PNG" alt="Gameplay Screenshot 2" width="300" /></div>
+  </div>
+</section>
+
+<!-- LATER in SHA Allah  -->
+<!--<section class="section" id="reviews">-->
+<!--  <h3>What Players Say</h3>-->
+<!--  <p>"Addictive and fun! I can't stop playing." - User123</p>-->
+<!--  <p>"Great way to improve my vocabulary." - WordLover</p>-->
+<!--</section>-->
+
+<section class="section" style="text-align:center;">
+  <h3>Download Now</h3>
+  
+  <a href="https://apps.apple.com/gb/app/wordbook/id1562875029?itscg=30200&itsct=apps_box_badge&mttnsubad=1562875029" style="display: inline-block;">
+  <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1618531200" alt="Download on the App Store" style="width: 248px; height: 82px; vertical-align: middle; object-fit: contain;" />
+  </a>
+  
+<!--  <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank" class="button">Download on the App Store</a>-->
+</section>
+
+<footer class="footer">
+    <p>&copy; 2025 Rubellite Ltd. WordBook is a trading name of Rubellite Ltd. Registered in England & Wales No. 13504030.</p>
+  <p>Contact us: <a href="mailto:support@WordBook.com" style="color:#fff;">tradesphere@icloud.com</a></p>
+</footer>
 
 
-    <script>
-            function toggleMenu() {
-                const navMenu = document.getElementById('nav-menu');
-                navMenu.classList.toggle('show');
-            }
-            
-            function hideMenu() {
-                const navMenu = document.getElementById('nav-menu');
-                navMenu.classList.remove('show');
-            }
-    </script>
-
-    
-    
-     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var currentYear = new Date().getFullYear();
-    document.getElementById('copyright-year').innerText = '© ' + currentYear + ' Rubellite Ltd. All rights reserved.';
-  });
-</script>
-    
-        
-        <script>
-            // JavaScript Document
-            // JavaScript Document
-
-            document.addEventListener("DOMContentLoaded", function() {
-                var acceptBtn = document.getElementById("accept-btn");
-                var customizeBtn = document.getElementById("customize-btn");
-                var modal = document.getElementById("custom-modal");
-                var closeModal = document.querySelector(".close");
-
-                acceptBtn.addEventListener("click", function() {
-                    // Set cookie to indicate user consent
-                    // You would typically set a cookie here to remember the user's choice
-                    modal.style.display = "none"; // Hide the modal
-                });
-
-                customizeBtn.addEventListener("click", function() {
-                    modal.style.display = "block"; // Display the modal
-                });
-
-                closeModal.addEventListener("click", function() {
-                    modal.style.display = "none"; // Hide the modal when close button is clicked
-                });
-
-                // Close the modal if user clicks outside of it
-                window.addEventListener("click", function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                });
-
-                // Handle form submission (saving preferences)
-                var form = document.getElementById("cookie-form");
-                form.addEventListener("submit", function(event) {
-                    event.preventDefault(); // Prevent form submission
-                    // Handle saving preferences (e.g., update cookie settings)
-                    alert("Preferences saved successfully!"); // Temporary alert for demonstration
-                    modal.style.display = "none"; // Hide the modal after saving preferences
-                });
-            });
-
-            // Function to set a cookie with the given name, value, and expiration date
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-
-            // Function to get the value of a cookie with the given name
-            function getCookie(name) {
-                var nameEQ = name + "=";
-                var ca = document.cookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                        c = c.substring(1, c.length);
-                    }
-                    if (c.indexOf(nameEQ) == 0) {
-                        return c.substring(nameEQ.length, c.length);
-                    }
-                }
-                return null;
-            }
-
-            document.addEventListener("DOMContentLoaded", function() {
-                var acceptBtn = document.getElementById("accept-btn");
-                var customizeBtn = document.getElementById("customize-btn");
-                var modal = document.getElementById("custom-modal");
-                var closeModal = document.querySelector(".close");
-
-                // Check if cookie preferences are saved
-                var cookiePreferences = getCookie("cookie_preferences");
-                if (cookiePreferences) {
-                    // Apply saved preferences here (e.g., load scripts based on preferences)
-                    console.log("Cookie preferences found:", cookiePreferences);
-                }
-
-                acceptBtn.addEventListener("click", function() {
-                    // Set cookie to indicate user consent
-                    // You would typically set a cookie here to remember the user's choice
-                    modal.style.display = "none"; // Hide the modal
-                    setCookie("cookie_preferences", "accepted", 365); // Save cookie preferences for 1 year
-                });
-
-                customizeBtn.addEventListener("click", function() {
-                    modal.style.display = "block"; // Display the modal
-                });
-
-                closeModal.addEventListener("click", function() {
-                    modal.style.display = "none"; // Hide the modal when close button is clicked
-                });
-
-                // Close the modal if user clicks outside of it
-                window.addEventListener("click", function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                });
-
-                // Handle form submission (saving preferences)
-                var form = document.getElementById("cookie-form");
-                form.addEventListener("submit", function(event) {
-                    event.preventDefault(); // Prevent form submission
-                    // Handle saving preferences (e.g., update cookie settings)
-                    var selectedPreferences = [];
-                    var checkboxes = form.querySelectorAll("input[type='checkbox']");
-                    checkboxes.forEach(function(checkbox) {
-                        if (checkbox.checked) {
-                            selectedPreferences.push(checkbox.id);
-                        }
-                    });
-                    setCookie("cookie_preferences", JSON.stringify(selectedPreferences), 365); // Save cookie preferences for 1 year
-                    modal.style.display = "none"; // Hide the modal after saving preferences
-                });
-            });
-
-
-        </script>
-        
-        
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var acceptBtn = document.getElementById("accept-btn");
-                var customizeBtn = document.getElementById("customize-btn");
-                var closeBtn = document.getElementById("closeBtn"); // Assuming you have a close button with id "closeBtn"
-                var cookiePopup = document.querySelector(".cookie-popup");
-                var openedFromPopup = sessionStorage.getItem("openedFromPopup");
-
-                // Function to show the cookie popup with fade-in effect
-                function showCookiePopup() {
-                    cookiePopup.style.opacity = "1";
-                }
-
-                // Function to hide the cookie popup with fade-out effect
-                function hideCookiePopup() {
-                    cookiePopup.style.opacity = "0";
-                    setTimeout(function() {
-                        cookiePopup.style.display = "none";
-                    }, 5000); // Adjust the timeout value to match the transition duration
-                }
-
-                // Event listener for the accept button
-                acceptBtn.addEventListener("click", function() {
-                    // Set cookie to indicate user consent
-                    // You would typically set a cookie here to remember the user's choice
-                    hideCookiePopup(); // Hide the cookie popup with fade-out effect
-                });
-
-                // Event listener for the close button
-                closeBtn.addEventListener("click", function() {
-                    if (openedFromPopup) {
-                        // Close the popup window
-                        window.close();
-                    } else {
-                        // Redirect to the homepage or perform any other action
-                        // For demonstration purposes, let's redirect to the homepage
-                        window.location.href = "index.html";
-                    }
-                });
-
-                // Check if the Cookie Policy page was opened from the cookie popup
-                if (openedFromPopup === null) {
-                    // Set a session storage flag indicating that the Cookie Policy page was opened from the popup
-                    sessionStorage.setItem("openedFromPopup", "true");
-                    // Show the cookie popup with fade-in effect
-                    showCookiePopup();
-                }
-            });
-            
-        </script>
-<!--        <script>-->
-<!--            <!-- Add your JavaScript link or script here -->
-<!--        document.addEventListener("DOMContentLoaded", function() {-->
-<!--            var backBtn = document.getElementById("backBtn");-->
-<!---->
-<!--            backBtn.addEventListener("click", function() {-->
-<!--                // Navigate back to the previous page-->
-<!--                window.history.back();-->
-<!--            });-->
-<!--        });-->
-<!--        </script>-->
-       
-    
-    <div class="cookie-popup">
-         <div class="cookie-content">
-             <p>We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising, and analytics partners. By clicking "Accept", you consent to our use of cookies and similar technologies. For more information and to customize your preferences, please see our <a href="cookie_policy.html">Privacy Policy</a> and <a href="#">Cookie Policy</a>.</p>
-             <div class="buttons">
-                 <button id="accept-btn">Accept</button>
-                 <button id="customize-btn">Customize Preferences</button>
-             </div>
-         </div>
-     </div>
-
-     
-
-
-     <div id="custom-modal" class="modal">
-         <div class="modal-content">
-             <span class="close">&times;</span>
-             <h2>Cookie Preferences</h2>
-             <p>Customize your cookie preferences below:</p>
-             <form id="cookie-form">
-                 <label for="functional-cookies">
-                     <input type="checkbox" id="functional-cookies" name="functional-cookies" checked>
-                     Functional Cookies
-                 </label>
-                 <label for="analytical-cookies">
-                     <input type="checkbox" id="analytical-cookies" name="analytical-cookies" checked>
-                     Analytical Cookies
-                 </label>
-                 <label for="advertising-cookies">
-                     <input type="checkbox" id="advertising-cookies" name="advertising-cookies" checked>
-                     Advertising Cookies
-                 </label>
-                 <button type="submit">Save Preferences</button>
-             </form>
-         </div>
-     </div>
-
-    
-    
 </body>
 </html>
