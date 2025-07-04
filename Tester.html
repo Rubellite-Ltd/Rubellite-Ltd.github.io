@@ -1,4 +1,937 @@
-html my tester
-toggv
 
-ab test 17 april
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN6T5G1FVX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3DVPK416HJ');
+</script>
+
+<script>
+  // Initialize Google Consent Mode with default settings
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied'
+  });
+</script>
+
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Rubellite</title>
+            <style>
+                
+                .logo {
+                  color: #fff;
+                  font-weight: bold;
+                  font-size: 18px;
+                }
+                .nav-links {
+                  display: flex;
+                  gap: 0px;
+                }
+
+                .nav-links a {
+                  color: #fff;
+                  text-decoration: none;
+                  font-weight: bold;
+                }
+
+                .nav-links a:hover {
+                  text-decoration: underline;
+                }
+
+                .hamburger {
+                  display: none;
+                  flex-direction: column;
+                  cursor: pointer;
+                }
+
+                .hamburger span {
+                  height: 3px;
+                  width: 25px;
+                  background-color: #666666;
+                  margin: 2px 0;
+                  border-radius: 1px;
+                }
+
+                @media (max-width: 768px) {
+                  .nav-links {
+                    display: none;
+                    position: absolute;
+                    top: 60px;
+                    right: 20px;
+                    background-color: rgba(51, 51, 51, 0.9);
+                    flex-direction: column;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                    padding: 20px;
+                  }
+
+                  .nav-links.show {
+                    display: flex;
+                  }
+
+                  .hamburger {
+                    display: flex;
+                  }
+                }
+
+                main {
+                  padding: 20px;
+                  text-align: center;
+                }
+
+                .app-link {
+                  display: inline-block;
+                  margin: 20px;
+                  padding: 20px;
+                  background: #fff;
+                  border-radius: 12px;
+                  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                  width: 200px;
+                  text-align: center;
+                  text-decoration: none;
+                  color: #333;
+                  transition: box-shadow 0.3s ease;
+                }
+
+                .app-link:hover {
+                  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                }
+
+                footer {
+                  background-color: #222;
+                  color: #ccc;
+                  padding: 15px;
+                  text-align: center;
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    color: #555555;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.6;
+<!--                    background-color: #f9f9f9;-->
+                }
+                header {
+                    background-color: #f4f4f4;
+                    padding: 20px;
+                    text-align: center;
+                }
+                
+                header2 {
+                  background-color: #fff;
+                  padding: 10px 20px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  position: relative;
+                }
+                nav {
+                    display: flex;
+                    justify-content: top;
+                    background-color: #999999;
+                }
+                nav a {
+                    color: #ffffff;
+                    padding: 14px 20px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+                nav a:hover {
+                    background-color: #575757;
+                }
+                .container {
+                    width: 80%;
+                    margin: auto;
+                    overflow: hidden;
+                    padding: 20px 0;
+                }
+                .content {
+                    padding: 20px;
+                    background-color: #f9f9f9;
+                    margin-bottom: 20px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1, h2, h3, h4 {
+                    color: #333333;
+                }
+                h1 {
+                    font-size: 2.5em;
+                    margin-bottom: 10px;
+                }
+                h2 {
+                    font-size: 1.8em;
+                    margin-bottom: 10px;
+                }
+                
+                h3 {
+                    font-size: 1.4em;
+                    margin-bottom: 8px;
+                }
+                
+                
+                h4 {
+                    font-size: 1.0em;
+                    margin-bottom: 6px;
+                }
+                p {
+                    margin-bottom: 20px;
+                    font-size: 1em;
+                }
+                .app {
+                    margin-bottom: 40px;
+                }
+                footer {
+                    text-align: center;
+                    padding: 20px;
+                    background-color: #333333;
+                    color: #ffffff;
+                }
+                
+                .social-media {
+                           display: flex;
+                           justify-content: center;
+                           background-color: #333;
+                           padding: 20px;
+                       }
+                       .social-media a {
+                           color: white;
+                           margin: 0 15px;
+                           text-decoration: none;
+                           font-size: 24px;
+                       }
+                       .social-media a:hover {
+                           color: #999;
+                       }
+<!--                .hamburger {-->
+<!--                           display: none;-->
+<!--                           flex-direction: column;-->
+<!--                           cursor: pointer;-->
+<!--                           position: absolute;-->
+<!--                           top: 20px;-->
+<!--                           left: 20px;-->
+<!--                       }-->
+<!--                       .hamburger div {-->
+<!--                           width: 30px;-->
+<!--                           height: 3px;-->
+<!--                           background-color: #555555;-->
+<!--                           margin: 3px 0;-->
+<!--                       }-->
+<!--                       @media (max-width: 768px) {-->
+<!--                           nav {-->
+<!--                               flex-direction: column;-->
+<!--                               display: none;-->
+<!--                               position: fixed;-->
+<!--                               left: 0;-->
+<!--                               top: 0;-->
+<!--                               width: 200px;-->
+<!--                               height: 100%;-->
+<!--                               background-color: rgba(51, 51, 51, 0.4); /* Semi-transparent black */-->
+<!--                               padding-top: 60px;-->
+<!--                               align-items: flex-start; /* Align items at the top */-->
+<!--                           }-->
+<!--                           nav a {-->
+<!--                               text-align: left;-->
+<!--                               padding: 10px 20px;-->
+<!--                           }-->
+<!--                           nav.show {-->
+<!--                               display: flex;-->
+<!--                           }-->
+<!--                           .hamburger {-->
+<!--                               display: flex;-->
+<!--                           }-->
+<!--                       }-->
+                
+                .cookie-popup {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: #f0f0f0;
+                    padding: 20px;
+                    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+                    z-index: 9999;
+                }
+
+                .cookie-content {
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+
+                .buttons {
+                    margin-top: 10px;
+                }
+
+                button {
+                    padding: 10px 20px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+                
+                /* Modal styles */
+                .modal {
+                    display: none; /* Hidden by default */
+                    position: fixed;
+                    z-index: 9999;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+                }
+
+                .modal-content {
+                    background-color: #fefefe;
+                    opacity: 0.95;
+                    margin: 15% auto;
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 50%;
+                    max-width: 600px;
+                    font-size: 10px;
+                    
+                }
+
+                /* Close button */
+                .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+
+                .close:hover,
+                .close:focus {
+                    color: black;
+                    text-decoration: none;
+                    cursor: pointer;
+                    
+                }
+                
+                /* Logo styling */
+                .logo img {
+                  width: 150px; /* Adjust the size as needed */
+                  height: auto;
+                  display: block; /* Ensures the image behaves like a block element */
+                  margin: 0 auto; /* Centers the logo within its container */
+                  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition effects */
+                }
+
+                .logo img:hover {
+                  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+                }
+             
+                
+                .back-button {
+                  display: inline-block;
+                  padding: 10px 20px;
+                  margin-bottom: 20px;
+                  background-color: #333;
+                  color: #fff;
+                  border: none;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  font-weight: bold;
+                  transition: background 0.3s;
+                }
+
+                .back-button:hover {
+                  background-color: #555;
+                }
+
+                @media (max-width: 600px) {
+                  .back-button {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                  }
+                }
+
+                
+        </style>
+            
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                
+                <link rel="icon" href="favicon.ico" type="image/x-icon">
+                    <link rel="stylesheet" href="CP.css">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3DVPK416HJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3DVPK416HJ');
+</script>
+
+
+<body>
+<!--    <a href="file:///Users/gnaaz/Documents/WEB%20Wordbook/ALLAPPHOME.html" class="back-button">← Back to Home</a>-->
+    
+    <!-- Back button -->
+<!--       <button id="backBtn">X</button>-->
+
+
+    <header2>
+        <div class="logo" style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 8px 0;
+          margin-left: 70px
+        ">
+          <a href="https://rubellite-ltd.github.io/RueblliteLOGO25BK.png"><img src="https://rubellite-ltd.github.io/RueblliteLOGO25BK.png" alt="Rubellite Logo" /></a>
+          <span style="font-size: 11px; color: #666666; margin-top: 4px; margin-left: 30px;">From Concepts to Creation</span>
+        </div>
+      
+
+
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+<!--        <a href="index.html">Home</a>-->
+<a href="#home" onclick="hideMenu()">Home</a>
+<a href="#apps" onclick="hideMenu()">Our Apps</a>
+      <!--  <a href="https://rubellite-ltd.github.io/Wordbook.html">Wordbook</a> -->
+    <!--     <a href="https://rubellite-ltd.github.io/WOrdbookSupport.html">Contact Us</a> -->
+<!--           <a href="#wrdbok" onclick="hideMenu()">Wordbook</a>-->
+          <a href="#contact" onclick="hideMenu()">Contact</a>
+<!--        <a href="#contact" onclick="hideMenu()">Contact</a>-->
+   
+     
+    
+      </nav>
+    </header2>
+    
+    
+    <div class="hamburger" onclick="toggleMenu()">
+           <div></div>
+           <div></div>
+           <div></div>
+       </div>
+<!--    <nav id="nav-menu">-->
+<!--            <a href="#home" onclick="hideMenu()">Home</a>-->
+<!--            <a href="#apps" onclick="hideMenu()">Our Apps</a>-->
+<!--            <a href="#wrdbok" onclick="hideMenu()">Wordbook</a>-->
+<!--            <a href="#contact" onclick="hideMenu()">Contact</a>-->
+<!--         <a href="#privacypolicy" onclick="hideMenu()">Privacy Policy</a>-->
+<!--        </nav>-->
+       
+       <header>
+           <h1>Welcome to Rubellite</h1>
+           <p>Innovative solutions for modern problems</p>
+   <!--        <div class="logo">-->
+   <!--           <a href="index.html"><img src="logo.png" alt="Rubellite Logo"></a>-->
+   <!--         </div>-->
+                  
+       </header>
+    <div class="container">
+        <section id="home" class="content">
+            <h2>Introduction</h2>
+            <p>We are a leading UK-based company dedicated to developing innovative and user-friendly applications. Our mission is to leverage technology to create solutions that enhance productivity, connectivity, and entertainment.</p>
+            <p>We believe learning should be a joyful, rewarding experience. Our mission is to create educational tools that feel like games — helping users learn naturally while staying engaged. All our apps are available on Apple devices for seamless learning across platforms.</p>
+          
+              <section>
+     
+            
+        </section>
+        <section id="apps" class="content">
+            <div class="app">
+                
+           <h2> Our Apps </h2>
+           
+           <h2>BrightSprout</h2>
+           
+           <a href="https://apps.apple.com/us/app/brightsprout/id6748116586?itscg=30200&itsct=apps_box_artwork&mttnsubad=6748116586" style="position: relative; width: 170px; height: 170px; overflow: hidden; display: inline-block; vertical-align: middle; 
+             --app-icon-mask: url('data:image/svg+xml,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xml%3Aspace%3D%22preserve%22%20viewBox%3D%220%200%20230.5%20230.5%22%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.4%22%20clip-rule%3D%22evenodd%22%20d%3D%22M158.2%20230H64.1a320%20320%200%200%201-7-.1c-5%200-10-.5-15-1.3a50.8%2050.8%200%200%201-14.4-4.8%2048.2%2048.2%200%200%201-21-21%2050.9%2050.9%200%200%201-4.8-14.4%20100.7%20100.7%200%200%201-1.3-15v-7l-.1-8.2V64.1a320%20320%200%200%201%20.1-7c0-5%20.5-10%201.3-15a50.7%2050.7%200%200%201%204.8-14.4%2048.2%2048.2%200%200%201%2021-21%2051%2051%200%200%201%2014.4-4.8c5-.8%2010-1.2%2015-1.3a320%20320%200%200%201%207%200l8.2-.1h94.1a320%20320%200%200%201%207%20.1c5%200%2010%20.5%2015%201.3a52%2052%200%200%201%2014.4%204.8%2048.2%2048.2%200%200%201%2021%2021%2050.9%2050.9%200%200%201%204.8%2014.4c.8%205%201.2%2010%201.3%2015a320%20320%200%200%201%20.1%207v102.3l-.1%207c0%205-.5%2010-1.3%2015a50.7%2050.7%200%200%201-4.8%2014.4%2048.2%2048.2%200%200%201-21%2021%2050.8%2050.8%200%200%201-14.4%204.8c-5%20.8-10%201.2-15%201.3a320%20320%200%200%201-7%200l-8.2.1z%22%2F%3E%0A%3C%2Fsvg%3E%0A');">
+           
+               <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/6a/be/1f6abeef-0ff9-e85c-d4f3-cd6528f35a74/AppIcon-1x_U007epad-0-1-sRGB-85-220-0.png/540x540bb.jpg" alt="BrightSprout"
+                    style="width: 100%; height: 100%; object-fit: contain;
+                    mask-image: var(--app-icon-mask); -webkit-mask-image: var(--app-icon-mask);" />
+             
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.5 230.5" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; box-sizing: border-box;">
+           <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="1.4" stroke-opacity=".1" stroke-width="1" d="M158.2 230H64.1a320 320 0 0 1-7-.1c-5 0-10-.5-15-1.3a50.8 50.8 0 0 1-14.4-4.8 48.2 48.2 0 0 1-21-21 50.9 50.9 0 0 1-4.8-14.4 100.7 100.7 0 0 1-1.3-15v-7l-.1-8.2V64.1a320 320 0 0 1 .1-7c0-5 .5-10 1.3-15a50.7 50.7 0 0 1 4.8-14.4 48.2 48.2 0 0 1 21-21 51 51 0 0 1 14.4-4.8c5-.8 10-1.2 15-1.3a320 320 0 0 1 7 0l8.2-.1h94.1a320 320 0 0 1 7 .1c5 0 10 .5 15 1.3a52 52 0 0 1 14.4 4.8 48.2 48.2 0 0 1 21 21 50.9 50.9 0 0 1 4.8 14.4c.8 5 1.2 10 1.3 15a320 320 0 0 1 .1 7v102.3l-.1 7c0 5-.5 10-1.3 15a50.7 50.7 0 0 1-4.8 14.4 48.2 48.2 0 0 1-21 21 50.8 50.8 0 0 1-14.4 4.8c-5 .8-10 1.2-15 1.3a320 320 0 0 1-7 0l-8.2.1z" clip-rule="evenodd" vector-effect="non-scaling-stroke"/>
+         </svg>
+         </a>
+           
+             <h1>Fun Year 1 Maths Quizzes to Boost Skills — Ideal for iPad, iPhone & Mac!</h1>
+             <p>Boost your child’s confidence in maths with fun, curriculum-based quizzes! Designed for Year 1 students in the UK, this app offers engaging questions aligned with the national curriculum. Whether you’re on an iPad, iPhone, or Mac, learning maths is now interactive and enjoyable.</p>
+
+             <h2>Key Features</h2>
+             <ul>
+               <li>Covers key Year 1 maths topics: numbers, addition, subtraction, shapes & more</li>
+               <li>Based on the UK National Curriculum</li>
+               <li>Universal app: use it on iOS and macOS</li>
+               <li>Immediate feedback and fun animations</li>
+               <li>No login required — safe for young learners</li>
+               <li>Beautiful visual design with child-friendly UI</li>
+             </ul>
+
+             <h2>Topics Covered</h2>
+             <ul>
+               <li>Counting and number recognition</li>
+               <li>Simple addition and subtraction</li>
+               <li>Shapes and patterns</li>
+               <li>Place value and number bonds</li>
+               <li>Basic measurement concepts</li>
+             </ul>
+
+             <h2>Safe for Children</h2>
+             <ul>
+               <li>No ads</li>
+               <li>No data tracking</li>
+             </ul>
+
+             <p>Perfect for home learning, revision, or classroom support. Give your child a head start in maths —
+             <a href="https://apps.apple.com/us/app/brightsprout/id6748116586?itscg=30200&itsct=apps_box_badge&mttnsubad=6748116586" style="display: inline-block;">
+             <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1751500800" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />
+             </a>
+             </p>
+         
+         
+          <br>
+          <br>
+
+          <br>
+
+          <br>
+
+           <h3> Featured App: PatternPro </h3>
+           
+           <a href="https://apps.apple.com/us/app/patternpix/id6670605733?itscg=30200&itsct=apps_box_artwork&mttnsubad=6670605733" style="position: relative; width: 170px; height: 170px; overflow: hidden; display: inline-block; vertical-align: middle; 
+             --app-icon-mask: url('data:image/svg+xml,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xml%3Aspace%3D%22preserve%22%20viewBox%3D%220%200%20230.5%20230.5%22%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.4%22%20clip-rule%3D%22evenodd%22%20d%3D%22M158.2%20230H64.1a320%20320%200%200%201-7-.1c-5%200-10-.5-15-1.3a50.8%2050.8%200%200%201-14.4-4.8%2048.2%2048.2%200%200%201-21-21%2050.9%2050.9%200%200%201-4.8-14.4%20100.7%20100.7%200%200%201-1.3-15v-7l-.1-8.2V64.1a320%20320%200%200%201%20.1-7c0-5%20.5-10%201.3-15a50.7%2050.7%200%200%201%204.8-14.4%2048.2%2048.2%200%200%201%2021-21%2051%2051%200%200%201%2014.4-4.8c5-.8%2010-1.2%2015-1.3a320%20320%200%200%201%207%200l8.2-.1h94.1a320%20320%200%200%201%207%20.1c5%200%2010%20.5%2015%201.3a52%2052%200%200%201%2014.4%204.8%2048.2%2048.2%200%200%201%2021%2021%2050.9%2050.9%200%200%201%204.8%2014.4c.8%205%201.2%2010%201.3%2015a320%20320%200%200%201%20.1%207v102.3l-.1%207c0%205-.5%2010-1.3%2015a50.7%2050.7%200%200%201-4.8%2014.4%2048.2%2048.2%200%200%201-21%2021%2050.8%2050.8%200%200%201-14.4%204.8c-5%20.8-10%201.2-15%201.3a320%20320%200%200%201-7%200l-8.2.1z%22%2F%3E%0A%3C%2Fsvg%3E%0A');">
+           
+               <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/bd/01/35/bd0135a1-7e26-a334-5438-37834174c089/AppIcon-1x_U007epad-0-1-P3-85-220-0.png/540x540bb.jpg" alt="PatternPix"
+                    style="width: 100%; height: 100%; object-fit: contain;
+                    mask-image: var(--app-icon-mask); -webkit-mask-image: var(--app-icon-mask);" />
+             
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.5 230.5" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; box-sizing: border-box;">
+           <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="1.4" stroke-opacity=".1" stroke-width="1" d="M158.2 230H64.1a320 320 0 0 1-7-.1c-5 0-10-.5-15-1.3a50.8 50.8 0 0 1-14.4-4.8 48.2 48.2 0 0 1-21-21 50.9 50.9 0 0 1-4.8-14.4 100.7 100.7 0 0 1-1.3-15v-7l-.1-8.2V64.1a320 320 0 0 1 .1-7c0-5 .5-10 1.3-15a50.7 50.7 0 0 1 4.8-14.4 48.2 48.2 0 0 1 21-21 51 51 0 0 1 14.4-4.8c5-.8 10-1.2 15-1.3a320 320 0 0 1 7 0l8.2-.1h94.1a320 320 0 0 1 7 .1c5 0 10 .5 15 1.3a52 52 0 0 1 14.4 4.8 48.2 48.2 0 0 1 21 21 50.9 50.9 0 0 1 4.8 14.4c.8 5 1.2 10 1.3 15a320 320 0 0 1 .1 7v102.3l-.1 7c0 5-.5 10-1.3 15a50.7 50.7 0 0 1-4.8 14.4 48.2 48.2 0 0 1-21 21 50.8 50.8 0 0 1-14.4 4.8c-5 .8-10 1.2-15 1.3a320 320 0 0 1-7 0l-8.2.1z" clip-rule="evenodd" vector-effect="non-scaling-stroke"/>
+         </svg>
+         </a>
+            <p> <strong>Overview:</strong> Unleash your creativity with PatternPro, the ultimate pattern design app. Whether you're a professional designer or an enthusiast, PatternPro offers a suite of powerful tools to create stunning patterns effortlessly.</p>
+           
+           <h2> Features: </h2>
+           <p> <strong> Design Variety: </strong> Choose from an extensive library of shapes, colors, and design elements to craft unique patterns.</p>
+           <p> <strong> Easy Customization: </strong>  Adjust sizes, colors, and orientations to suit your creative vision.</p>
+           <p> <strong> Export Options: </strong>  Export your designs in high-quality PNG and JPEG formats for seamless integration into your projects.</p>
+           <p> <strong> Unlimited Possibilities: </strong>  Generate hundreds of different designs with just a few taps, making each creation truly unique.</p>
+           
+           <h2> Use Cases: </h2>
+           <p> <strong> Textile and Fashion Design: </strong> Create intricate patterns for fabric printing, clothing, and accessories.</p>
+           <p> <strong> Graphic Design: </strong>  Enhance your graphic design projects with custom backgrounds, wallpapers, and textures.</p>
+           <p> <strong> Interior Design: </strong>  Design unique patterns for wallpapers, upholstery, and home decor.</p>
+           <p> <strong> Art and Craft: </strong>  Use your patterns in scrapbooking, DIY projects, and other creative endeavors.</p>
+           <p> <strong> Marketing and Branding: </strong>  Develop distinctive patterns for packaging, branding materials, and promotional items.</p>
+           
+          
+          <a href="https://apps.apple.com/gb/app/patternpix/id6670605733?itscg=30200&itsct=apps_box_badge&mttnsubad=6670605733" style="display: inline-block;">
+          <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1725753600" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />
+          </a>
+          
+          
+           <br>
+           <br>
+
+           <br>
+
+           <br>
+
+           <h2>WordBook</h2>
+           
+           <a href="https://apps.apple.com/us/app/wordbook/id1562875029?itscg=30200&itsct=apps_box_artwork&mttnsubad=1562875029" style="position: relative; width: 170px; height: 170px; overflow: hidden; display: inline-block; vertical-align: middle; 
+             --app-icon-mask: url('data:image/svg+xml,%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xml%3Aspace%3D%22preserve%22%20viewBox%3D%220%200%20230.5%20230.5%22%3E%0A%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20stroke-linejoin%3D%22round%22%20stroke-miterlimit%3D%221.4%22%20clip-rule%3D%22evenodd%22%20d%3D%22M158.2%20230H64.1a320%20320%200%200%201-7-.1c-5%200-10-.5-15-1.3a50.8%2050.8%200%200%201-14.4-4.8%2048.2%2048.2%200%200%201-21-21%2050.9%2050.9%200%200%201-4.8-14.4%20100.7%20100.7%200%200%201-1.3-15v-7l-.1-8.2V64.1a320%20320%200%200%201%20.1-7c0-5%20.5-10%201.3-15a50.7%2050.7%200%200%201%204.8-14.4%2048.2%2048.2%200%200%201%2021-21%2051%2051%200%200%201%2014.4-4.8c5-.8%2010-1.2%2015-1.3a320%20320%200%200%201%207%200l8.2-.1h94.1a320%20320%200%200%201%207%20.1c5%200%2010%20.5%2015%201.3a52%2052%200%200%201%2014.4%204.8%2048.2%2048.2%200%200%201%2021%2021%2050.9%2050.9%200%200%201%204.8%2014.4c.8%205%201.2%2010%201.3%2015a320%20320%200%200%201%20.1%207v102.3l-.1%207c0%205-.5%2010-1.3%2015a50.7%2050.7%200%200%201-4.8%2014.4%2048.2%2048.2%200%200%201-21%2021%2050.8%2050.8%200%200%201-14.4%204.8c-5%20.8-10%201.2-15%201.3a320%20320%200%200%201-7%200l-8.2.1z%22%2F%3E%0A%3C%2Fsvg%3E%0A');">
+           
+               <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/af/0d/48/af0d48b6-b176-3f46-b9cf-30c92f591e61/AppIcon-0-1x_U007epad-0-1-P3-85-220-0.png/540x540bb.jpg" alt="WordBook"
+                    style="width: 100%; height: 100%; object-fit: contain;
+                    mask-image: var(--app-icon-mask); -webkit-mask-image: var(--app-icon-mask);" />
+             
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.5 230.5" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; box-sizing: border-box;">
+           <path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="1.4" stroke-opacity=".1" stroke-width="1" d="M158.2 230H64.1a320 320 0 0 1-7-.1c-5 0-10-.5-15-1.3a50.8 50.8 0 0 1-14.4-4.8 48.2 48.2 0 0 1-21-21 50.9 50.9 0 0 1-4.8-14.4 100.7 100.7 0 0 1-1.3-15v-7l-.1-8.2V64.1a320 320 0 0 1 .1-7c0-5 .5-10 1.3-15a50.7 50.7 0 0 1 4.8-14.4 48.2 48.2 0 0 1 21-21 51 51 0 0 1 14.4-4.8c5-.8 10-1.2 15-1.3a320 320 0 0 1 7 0l8.2-.1h94.1a320 320 0 0 1 7 .1c5 0 10 .5 15 1.3a52 52 0 0 1 14.4 4.8 48.2 48.2 0 0 1 21 21 50.9 50.9 0 0 1 4.8 14.4c.8 5 1.2 10 1.3 15a320 320 0 0 1 .1 7v102.3l-.1 7c0 5-.5 10-1.3 15a50.7 50.7 0 0 1-4.8 14.4 48.2 48.2 0 0 1-21 21 50.8 50.8 0 0 1-14.4 4.8c-5 .8-10 1.2-15 1.3a320 320 0 0 1-7 0l-8.2.1z" clip-rule="evenodd" vector-effect="non-scaling-stroke"/>
+         </svg>
+         </a>
+<!--           Download WordBook (iOS & macOS)-->
+           <p><strong>WordBook</strong> is an engaging educational game that helps players boost vocabulary and grammar skills. Learn nouns, verbs, adjectives, and adverbs while playing fun word-building levels.</p>
+           <p>Perfect for learners of all ages, whether you're studying at school or brushing up your English on the go.</p>
+           <p><a href="https://rubellite-ltd.github.io/Wordbook.html" target="_blank" rel="noopener noreferrer">▶ More</a></p>
+           
+           <a href="https://apps.apple.com/gb/app/wordbook/id1562875029?itscg=30200&itsct=apps_box_badge&mttnsubad=1562875029" style="display: inline-block;">
+           <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1618531200" alt="Download on the App Store" style="width: 245px; height: 82px; vertical-align: middle; object-fit: contain;" />
+           </a>
+           
+ 
+            </div>
+            
+            
+            
+<!--            <div class="app">-->
+<!--                <h3>App Two</h3>-->
+<!--                <p>App Two is a social networking app that connects you with friends and family. Share updates, photos, and stay in touch with the people who matter most to you.</p>-->
+<!--            </div>-->
+<section>
+  <h2>Stay Updated</h2>
+  <p>We're just getting started. More apps and learning experiences are on the way. Follow us and check back for updates!</p>
+</section>
+        </section>
+        <section id="wrdbok" class="content">
+<!--           add wordbookk detail if needed-->
+        </section>
+
+
+        <section id="contact" class="content">
+            <h2>Contact Us</h2>
+            
+            <div id="formkeep-embed" data-formkeep-url="https://formkeep.com/p/551c559373b3f0e0ac7008e8bbe16eb0?embedded=1"></div>
+
+          <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+          <script type="text/javascript" src="https://formkeep-production-herokuapp-com.global.ssl.fastly.net/formkeep-embed.js"></script>
+
+          <!-- Get notified when the form is submitted, add your own code below: -->
+          <script>
+          const formkeepEmbed = document.querySelector('#formkeep-embed')
+
+          formkeepEmbed.addEventListener('formkeep-embed:submitting', _event => {
+            console.log('Submitting form...')
+          })
+
+          formkeepEmbed.addEventListener('formkeep-embed:submitted', _event => {
+            console.log('Submitted form...')
+          })
+          </script>
+              <div id="response-message"></div>
+
+              <script>
+                  document.addEventListener("DOMContentLoaded", function() {
+                      var form = document.getElementById("contact-form");
+                      var responseMessage = document.getElementById("response-message");
+
+                      form.addEventListener("submit", function(event) {
+                          event.preventDefault();
+
+                          var formData = new FormData(form);
+                          var xhr = new XMLHttpRequest();
+                          xhr.open("POST", "https://new-avccyfky8-trdsphrs-projects.vercel.app/send_email.php", true);
+                          xhr.setRequestHeader("Content-Type", "application/json");
+                          xhr.onload = function() {
+                              var response = JSON.parse(xhr.responseText);
+                              if (xhr.status === 200) {
+                                  responseMessage.innerText = response.message;
+                                  responseMessage.style.color = "green";
+                                  form.reset();
+                              } else {
+                                  responseMessage.innerText = response.message;
+                                  responseMessage.style.color = "red";
+                              }
+                          };
+                          xhr.send(JSON.stringify(Object.fromEntries(formData)));
+                      });
+                  });
+              </script>
+<!--            <p>If you have any questions or would like to learn more about our apps, please reach out to us:</p>-->
+<!--            <p>Email: info@ourappcompany.co.uk</p>-->
+<!--            <p>Phone: +44 1234 567890</p>-->
+        </section>
+        
+    </div>
+
+    
+    
+ 
+
+<!--    Scripts-->
+
+
+<!--    <script>-->
+<!--            function toggleMenu() {-->
+<!--                const navMenu = document.getElementById('nav-menu');-->
+<!--                navMenu.classList.toggle('show');-->
+<!--            }-->
+<!--            -->
+<!--            function hideMenu() {-->
+<!--                const navMenu = document.getElementById('nav-menu');-->
+<!--                navMenu.classList.remove('show');-->
+<!--            }-->
+<!--    </script>-->
+
+    
+    
+
+    
+        
+        <!-- Cookie Consent Modal -->
+        <div id="custom-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000000aa; justify-content:center; align-items:center;">
+          <div style="background:#fff; padding:20px; position:relative; max-width:400px;">
+            <button class="close" style="position:absolute; top:5px; right:10px;">&times;</button>
+            <h2>Cookie Preferences</h2>
+            <form id="cookie-form">
+              <label><input type="checkbox" id="analytics" /> Allow Analytics Cookies</label><br/><br/>
+              <button type="submit">Save Preferences</button>
+            </form>
+          </div>
+        </div>
+
+        <script>
+          // Helper functions to set/get cookies
+          function setCookie(name, value, days) {
+              var expires = "";
+              if (days) {
+                  var date = new Date();
+                  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                  expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + (value || "") + expires + "; path=/";
+          }
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++) {
+                    var c = ca[i].trim();
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length);
+                }
+                return null;
+            }
+
+          // Initialize the modal and preferences
+          document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById("custom-modal");
+            var closeBtn = document.querySelector(".close");
+            var form = document.getElementById("cookie-form");
+            var checkbox = document.getElementById("analytics");
+
+            // Check if preferences are stored
+            var prefCookie = getCookie("cookie_preferences");
+            if (prefCookie) {
+              var prefs = JSON.parse(prefCookie);
+              // If analytics allowed, load GA
+              if (prefs.includes("analytics")) {
+                initGoogleAnalytics();
+              }
+            } else {
+              // Show modal if no preferences
+              modal.style.display = "flex";
+            }
+
+            // Close modal on close button
+            closeBtn.onclick = () => { modal.style.display = "none"; };
+
+            // Save preferences
+            form.onsubmit = (e) => {
+              e.preventDefault();
+              const prefs = [];
+              if (checkbox.checked) {
+                prefs.push("analytics");
+                initGoogleAnalytics(); // Load GA if accepted
+              }
+              setCookie("cookie_preferences", JSON.stringify(prefs), 365);
+              modal.style.display = "none";
+            };
+
+            // Optional: click outside modal to close
+            window.onclick = (e) => {
+              if (e.target == modal) {
+                modal.style.display = "none";
+              }
+            };
+          });
+
+          // Function to initialize Google Analytics with Consent Mode
+          function initGoogleAnalytics() {
+            // Load the gtag.js script
+            var gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"; // Replace with your GA ID
+            document.head.appendChild(gtagScript);
+
+            // Initialize GA and Consent Mode
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            // Set default consent to denied
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
+            });
+
+            // Update consent based on user preferences
+            // Here, we assume consent granted for analytics
+            gtag('consent', 'update', {
+              'ad_storage': 'granted',
+              'analytics_storage': 'granted'
+            });
+
+            // Initialize GA config
+            gtag('config', 'G-3DVPK416HJ'); // Replace with your GA ID
+          }
+        </script>
+        
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var acceptBtn = document.getElementById("accept-btn");
+                var customizeBtn = document.getElementById("customize-btn");
+                var closeBtn = document.getElementById("closeBtn"); // Assuming you have a close button with id "closeBtn"
+                var cookiePopup = document.querySelector(".cookie-popup");
+                var openedFromPopup = sessionStorage.getItem("openedFromPopup");
+
+                // Function to show the cookie popup with fade-in effect
+                function showCookiePopup() {
+                    cookiePopup.style.opacity = "1";
+                }
+
+                // Function to hide the cookie popup with fade-out effect
+                function hideCookiePopup() {
+                    cookiePopup.style.opacity = "0";
+                    setTimeout(function() {
+                        cookiePopup.style.display = "none";
+                    }, 5000); // Adjust the timeout value to match the transition duration
+                }
+
+                // Event listener for the accept button
+                acceptBtn.addEventListener("click", function() {
+                    // Set cookie to indicate user consent
+                    // You would typically set a cookie here to remember the user's choice
+                    hideCookiePopup(); // Hide the cookie popup with fade-out effect
+                });
+
+                // Event listener for the close button
+                closeBtn.addEventListener("click", function() {
+                    if (openedFromPopup) {
+                        // Close the popup window
+                        window.close();
+                    } else {
+                        // Redirect to the homepage or perform any other action
+                        // For demonstration purposes, let's redirect to the homepage
+                        window.location.href = "index.html";
+                    }
+                });
+
+                // Check if the Cookie Policy page was opened from the cookie popup
+                if (openedFromPopup === null) {
+                    // Set a session storage flag indicating that the Cookie Policy page was opened from the popup
+                    sessionStorage.setItem("openedFromPopup", "true");
+                    // Show the cookie popup with fade-in effect
+                    showCookiePopup();
+                }
+            });
+            
+        </script>
+<!--        <script>-->
+<!--            <!-- Add your JavaScript link or script here -->
+<!--        document.addEventListener("DOMContentLoaded", function() {-->
+<!--            var backBtn = document.getElementById("backBtn");-->
+<!---->
+<!--            backBtn.addEventListener("click", function() {-->
+<!--                // Navigate back to the previous page-->
+<!--                window.history.back();-->
+<!--            });-->
+<!--        });-->
+<!--        </script>-->
+       
+    
+<!--    <div class="cookie-popup">-->
+<!--         <div class="cookie-content">-->
+<!--             <p>We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising, and analytics partners. By clicking "Accept", you consent to our use of cookies and similar technologies. For more information and to customize your preferences, please see our <a href="cookie_policy.html">Privacy Policy</a> and <a href="#">Cookie Policy</a>.</p>-->
+<!--             <div class="buttons">-->
+<!--                 <button id="accept-btn">Accept</button>-->
+<!--                 <button id="customize-btn">Customize Preferences</button>-->
+<!--             </div>-->
+<!--         </div>-->
+<!--     </div>-->
+<!---->
+<!--     -->
+<!---->
+<!---->
+<!--     <div id="custom-modal" class="modal">-->
+<!--         <div class="modal-content">-->
+<!--             <span class="close">&times;</span>-->
+<!--             <h2>Cookie Preferences</h2>-->
+<!--             <p>Customize your cookie preferences below:</p>-->
+<!--             <form id="cookie-form">-->
+<!--                 <label for="functional-cookies">-->
+<!--                     <input type="checkbox" id="functional-cookies" name="functional-cookies" checked>-->
+<!--                     Functional Cookies-->
+<!--                 </label>-->
+<!--                 <label for="analytical-cookies">-->
+<!--                     <input type="checkbox" id="analytical-cookies" name="analytical-cookies" checked>-->
+<!--                     Analytical Cookies-->
+<!--                 </label>-->
+<!--                 <label for="advertising-cookies">-->
+<!--                     <input type="checkbox" id="advertising-cookies" name="advertising-cookies" checked>-->
+<!--                     Advertising Cookies-->
+<!--                 </label>-->
+<!--                 <button type="submit">Save Preferences</button>-->
+<!--             </form>-->
+<!--         </div>-->
+<!--     </div>-->
+<!---->
+<!--     <script>-->
+<!--       function toggleMenu() {-->
+<!--         const nav = document.getElementById('navLinks');-->
+<!--         nav.classList.toggle('show');-->
+<!--       }-->
+<!--     </script>-->
+
+        
+<!--    Footer-->
+
+<!-- Footer -->
+<footer style="background-color: #1f1f1f; color: #ccc; padding: 30px 20px; text-align: center; font-size: 14px;">
+
+  <section>
+      <div style="margin-bottom: 15px;">
+       
+        <h2>Contact Us</h2>
+        <p>Questions, feedback, or suggestions? We'd love to hear from you.</p>
+        <p style="margin: 10px 0;">Contact us: <a href="#" id="email-link" style="color: #fff; text-decoration: underline;">Email Us</a></p>
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:15px;">
+          <div style="flex:1; text-align:center;">
+              
+          </div>
+          <a href="https://rubellite-ltd.github.io/Wordbook.PrivacyPolicy.html" style="color:#ccc; text-decoration:none;">Privacy Policy</a>
+        </div>
+        <div class="social-media" style="display: flex; justify-content: center; gap: 15px; font-size: 20px;">
+          <a href="https://www.tumblr.com/shoprubellite" target="_blank" title="Tumblr" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-tumblr"></i></a>
+          <a href="https://pin.it/7DrgQuVsl" target="_blank" title="Pinterest" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-pinterest"></i></a>
+          <a href="https://www.instagram.com/shop_rubellite" target="_blank" title="Instagram" style="color:#ccc; transition: color 0.3s;"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+   
+   
+  
+   <p style="margin: 10px 0;">&copy; <span id="year"></span> Rubellite Ltd. WordBook is a trading name of Rubellite Ltd. Registered in England & Wales No. 13504030.</p>
+  </section>
+
+
+</footer>
+
+<!-- Footer Scripts -->
+<script>
+  // Dynamic Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Email obfuscation
+  const user = "tradesphere";
+  const domain = "icloud.com";
+  document.getElementById("email-link").href = "mailto:" + user + "@" + domain;
+</script>
+    
+</body>
+</html>
