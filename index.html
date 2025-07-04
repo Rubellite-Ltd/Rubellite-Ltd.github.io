@@ -2,14 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3DVPK416HJ"></script>
+
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QN6T5G1FVX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-3DVPK416HJ');
+</script>
+
+<script>
+  // Initialize Google Consent Mode with default settings
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied'
+  });
 </script>
 
     <meta charset="UTF-8">
@@ -356,6 +366,17 @@
                     <link rel="stylesheet" href="CP.css">
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3DVPK416HJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0XQS7G3R9C');
+</script>
+
+
 <body>
 <!--    <a href="file:///Users/gnaaz/Documents/WEB%20Wordbook/ALLAPPHOME.html" class="back-button">← Back to Home</a>-->
     
@@ -654,127 +675,111 @@
 
     
         
+        <!-- Cookie Consent Modal -->
+        <div id="custom-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#000000aa; justify-content:center; align-items:center;">
+          <div style="background:#fff; padding:20px; position:relative; max-width:400px;">
+            <button class="close" style="position:absolute; top:5px; right:10px;">&times;</button>
+            <h2>Cookie Preferences</h2>
+            <form id="cookie-form">
+              <label><input type="checkbox" id="analytics" /> Allow Analytics Cookies</label><br/><br/>
+              <button type="submit">Save Preferences</button>
+            </form>
+          </div>
+        </div>
+
         <script>
-            // JavaScript Document
-            // JavaScript Document
-
-            document.addEventListener("DOMContentLoaded", function() {
-                var acceptBtn = document.getElementById("accept-btn");
-                var customizeBtn = document.getElementById("customize-btn");
-                var modal = document.getElementById("custom-modal");
-                var closeModal = document.querySelector(".close");
-
-                acceptBtn.addEventListener("click", function() {
-                    // Set cookie to indicate user consent
-                    // You would typically set a cookie here to remember the user's choice
-                    modal.style.display = "none"; // Hide the modal
-                });
-
-                customizeBtn.addEventListener("click", function() {
-                    modal.style.display = "block"; // Display the modal
-                });
-
-                closeModal.addEventListener("click", function() {
-                    modal.style.display = "none"; // Hide the modal when close button is clicked
-                });
-
-                // Close the modal if user clicks outside of it
-                window.addEventListener("click", function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                });
-
-                // Handle form submission (saving preferences)
-                var form = document.getElementById("cookie-form");
-                form.addEventListener("submit", function(event) {
-                    event.preventDefault(); // Prevent form submission
-                    // Handle saving preferences (e.g., update cookie settings)
-                    alert("Preferences saved successfully!"); // Temporary alert for demonstration
-                    modal.style.display = "none"; // Hide the modal after saving preferences
-                });
-            });
-
-            // Function to set a cookie with the given name, value, and expiration date
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-
-            // Function to get the value of a cookie with the given name
+          // Helper functions to set/get cookies
+          function setCookie(name, value, days) {
+              var expires = "";
+              if (days) {
+                  var date = new Date();
+                  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                  expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + (value || "") + expires + "; path=/";
+          }
             function getCookie(name) {
                 var nameEQ = name + "=";
                 var ca = document.cookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                        c = c.substring(1, c.length);
-                    }
-                    if (c.indexOf(nameEQ) == 0) {
-                        return c.substring(nameEQ.length, c.length);
-                    }
+                for(var i=0; i<ca.length; i++) {
+                    var c = ca[i].trim();
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length);
                 }
                 return null;
             }
 
-            document.addEventListener("DOMContentLoaded", function() {
-                var acceptBtn = document.getElementById("accept-btn");
-                var customizeBtn = document.getElementById("customize-btn");
-                var modal = document.getElementById("custom-modal");
-                var closeModal = document.querySelector(".close");
+          // Initialize the modal and preferences
+          document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById("custom-modal");
+            var closeBtn = document.querySelector(".close");
+            var form = document.getElementById("cookie-form");
+            var checkbox = document.getElementById("analytics");
 
-                // Check if cookie preferences are saved
-                var cookiePreferences = getCookie("cookie_preferences");
-                if (cookiePreferences) {
-                    // Apply saved preferences here (e.g., load scripts based on preferences)
-                    console.log("Cookie preferences found:", cookiePreferences);
-                }
+            // Check if preferences are stored
+            var prefCookie = getCookie("cookie_preferences");
+            if (prefCookie) {
+              var prefs = JSON.parse(prefCookie);
+              // If analytics allowed, load GA
+              if (prefs.includes("analytics")) {
+                initGoogleAnalytics();
+              }
+            } else {
+              // Show modal if no preferences
+              modal.style.display = "flex";
+            }
 
-                acceptBtn.addEventListener("click", function() {
-                    // Set cookie to indicate user consent
-                    // You would typically set a cookie here to remember the user's choice
-                    modal.style.display = "none"; // Hide the modal
-                    setCookie("cookie_preferences", "accepted", 365); // Save cookie preferences for 1 year
-                });
+            // Close modal on close button
+            closeBtn.onclick = () => { modal.style.display = "none"; };
 
-                customizeBtn.addEventListener("click", function() {
-                    modal.style.display = "block"; // Display the modal
-                });
+            // Save preferences
+            form.onsubmit = (e) => {
+              e.preventDefault();
+              const prefs = [];
+              if (checkbox.checked) {
+                prefs.push("analytics");
+                initGoogleAnalytics(); // Load GA if accepted
+              }
+              setCookie("cookie_preferences", JSON.stringify(prefs), 365);
+              modal.style.display = "none";
+            };
 
-                closeModal.addEventListener("click", function() {
-                    modal.style.display = "none"; // Hide the modal when close button is clicked
-                });
+            // Optional: click outside modal to close
+            window.onclick = (e) => {
+              if (e.target == modal) {
+                modal.style.display = "none";
+              }
+            };
+          });
 
-                // Close the modal if user clicks outside of it
-                window.addEventListener("click", function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    }
-                });
+          // Function to initialize Google Analytics with Consent Mode
+          function initGoogleAnalytics() {
+            // Load the gtag.js script
+            var gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-0XQS7G3R9C"; // Replace with your GA ID
+            document.head.appendChild(gtagScript);
 
-                // Handle form submission (saving preferences)
-                var form = document.getElementById("cookie-form");
-                form.addEventListener("submit", function(event) {
-                    event.preventDefault(); // Prevent form submission
-                    // Handle saving preferences (e.g., update cookie settings)
-                    var selectedPreferences = [];
-                    var checkboxes = form.querySelectorAll("input[type='checkbox']");
-                    checkboxes.forEach(function(checkbox) {
-                        if (checkbox.checked) {
-                            selectedPreferences.push(checkbox.id);
-                        }
-                    });
-                    setCookie("cookie_preferences", JSON.stringify(selectedPreferences), 365); // Save cookie preferences for 1 year
-                    modal.style.display = "none"; // Hide the modal after saving preferences
-                });
+            // Initialize GA and Consent Mode
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            // Set default consent to denied
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied'
             });
 
+            // Update consent based on user preferences
+            // Here, we assume consent granted for analytics
+            gtag('consent', 'update', {
+              'ad_storage': 'granted',
+              'analytics_storage': 'granted'
+            });
 
+            // Initialize GA config
+            gtag('config', 'G-0XQS7G3R9C'); // Replace with your GA ID
+          }
         </script>
         
         
@@ -841,48 +846,48 @@
 <!--        </script>-->
        
     
-    <div class="cookie-popup">
-         <div class="cookie-content">
-             <p>We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising, and analytics partners. By clicking "Accept", you consent to our use of cookies and similar technologies. For more information and to customize your preferences, please see our <a href="cookie_policy.html">Privacy Policy</a> and <a href="#">Cookie Policy</a>.</p>
-             <div class="buttons">
-                 <button id="accept-btn">Accept</button>
-                 <button id="customize-btn">Customize Preferences</button>
-             </div>
-         </div>
-     </div>
-
-     
-
-
-     <div id="custom-modal" class="modal">
-         <div class="modal-content">
-             <span class="close">&times;</span>
-             <h2>Cookie Preferences</h2>
-             <p>Customize your cookie preferences below:</p>
-             <form id="cookie-form">
-                 <label for="functional-cookies">
-                     <input type="checkbox" id="functional-cookies" name="functional-cookies" checked>
-                     Functional Cookies
-                 </label>
-                 <label for="analytical-cookies">
-                     <input type="checkbox" id="analytical-cookies" name="analytical-cookies" checked>
-                     Analytical Cookies
-                 </label>
-                 <label for="advertising-cookies">
-                     <input type="checkbox" id="advertising-cookies" name="advertising-cookies" checked>
-                     Advertising Cookies
-                 </label>
-                 <button type="submit">Save Preferences</button>
-             </form>
-         </div>
-     </div>
-
-     <script>
-       function toggleMenu() {
-         const nav = document.getElementById('navLinks');
-         nav.classList.toggle('show');
-       }
-     </script>
+<!--    <div class="cookie-popup">-->
+<!--         <div class="cookie-content">-->
+<!--             <p>We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising, and analytics partners. By clicking "Accept", you consent to our use of cookies and similar technologies. For more information and to customize your preferences, please see our <a href="cookie_policy.html">Privacy Policy</a> and <a href="#">Cookie Policy</a>.</p>-->
+<!--             <div class="buttons">-->
+<!--                 <button id="accept-btn">Accept</button>-->
+<!--                 <button id="customize-btn">Customize Preferences</button>-->
+<!--             </div>-->
+<!--         </div>-->
+<!--     </div>-->
+<!---->
+<!--     -->
+<!---->
+<!---->
+<!--     <div id="custom-modal" class="modal">-->
+<!--         <div class="modal-content">-->
+<!--             <span class="close">&times;</span>-->
+<!--             <h2>Cookie Preferences</h2>-->
+<!--             <p>Customize your cookie preferences below:</p>-->
+<!--             <form id="cookie-form">-->
+<!--                 <label for="functional-cookies">-->
+<!--                     <input type="checkbox" id="functional-cookies" name="functional-cookies" checked>-->
+<!--                     Functional Cookies-->
+<!--                 </label>-->
+<!--                 <label for="analytical-cookies">-->
+<!--                     <input type="checkbox" id="analytical-cookies" name="analytical-cookies" checked>-->
+<!--                     Analytical Cookies-->
+<!--                 </label>-->
+<!--                 <label for="advertising-cookies">-->
+<!--                     <input type="checkbox" id="advertising-cookies" name="advertising-cookies" checked>-->
+<!--                     Advertising Cookies-->
+<!--                 </label>-->
+<!--                 <button type="submit">Save Preferences</button>-->
+<!--             </form>-->
+<!--         </div>-->
+<!--     </div>-->
+<!---->
+<!--     <script>-->
+<!--       function toggleMenu() {-->
+<!--         const nav = document.getElementById('navLinks');-->
+<!--         nav.classList.toggle('show');-->
+<!--       }-->
+<!--     </script>-->
 
         
 <!--    Footer-->
