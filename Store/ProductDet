@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* full height if needed */
+  }
+  .word-container {
+    display: inline-block;
+    width: 50px; /* set to your measured width */
+    height: 30px; /* set to your measured height */
+    text-align: center;
+    line-height: 30px; /* same as height for vertical centering */
+    font-family: Arial, sans-serif; /* or your font */
+    font-size: 24px; /* your font size */
+    border: 1px solid black; /* optional: frame around the word */
+  }
+</style>
+</head>
+<body>
+  <div class="YES">ate</div>
+</body>
+</html>
