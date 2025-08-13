@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Button Links</title>
+  <!-- Google Fonts for a light, modern font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap" />
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px; /* space between buttons */
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 14px 24px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #4CAF50; /* green */
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    a.button:nth-child(2) {
+      background-color: #2196F3; /* blue */
+    }
+
+    a.button:nth-child(3) {
+      background-color: #FF5722; /* orange */
+    }
+
+    /* Hover effects */
+    a.button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="button" target="_blank" rel="noopener noreferrer" href="https://square.link/u/gcERh6kW">Button 1</a>
+    <a class="button" target="_blank" rel="noopener noreferrer" href="https://example.com/page2">Button 2</a>
+    <a class="button" target="_blank" rel="noopener noreferrer" href="https://example.com/page3">Button 3</a>
+  </div>
+</body>
+</html>
+
