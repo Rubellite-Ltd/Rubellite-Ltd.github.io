@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<div style="display: flex; align-items: center;">
+
+  
+
+<div style="display: flex; gap: 20px;"> <!-- Using gap for spacing -->
+  <a target="_blank" href="https://square.link/u/gcERh6kW" style="
+    display: inline-block;
+    font-size: 18px;
+    line-height: 48px;
+    height: 48px;
+    color: #000000;
+    min-width: 212px;
+    background-color: #12bf94;
+    text-align: center;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
+    border-radius: 6px;
+  ">Smart Iron On</a>
+
+  <a target="_blank" href="https://square.link/u/G7IVhorq" style="
+    display: inline-block;
+    font-size: 18px;
+    line-height: 48px;
+    height: 48px;
+    color: #000000;
+    min-width: 212px;
+    background-color: #2693ff;
+    text-align: center;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset;
+    border-radius: 6px;
+  ">Vinyl</a>
+</div>
+
+
+</body>
+</html>
+
+
