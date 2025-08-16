@@ -1,3 +1,26 @@
+{
+  "CUP2": [
+    "https://rubellite-ltd.github.io/Store/my-app-images/cup2_design1.png",
+    "https://rubellite-ltd.github.io/Store/my-app-images/cup2_design2.png"
+  ],
+  "Jar": [
+    "https://rubellite-ltd.github.io/Store/my-app-images/jar_design1.png",
+    "https://rubellite-ltd.github.io/Store/my-app-images/jar_design2.png"
+  ],
+  "Pot": [
+    "https://rubellite-ltd.github.io/Store/my-app-images/pot_design1.png"
+  ],
+  "Vase": [
+    "https://rubellite-ltd.github.io/Store/my-app-images/vase_design1.png",
+    "https://rubellite-ltd.github.io/Store/my-app-images/vase_design2.png"
+  ],
+  "Planter": [
+    "https://rubellite-ltd.github.io/Store/my-app-images/planter_design1.png"
+  ],
+  "Canvas": [
+    "https://rubellite-ltd.github.io/Store/my-app-images/canvas_design1.png"
+  ]
+}
 
 
 {
