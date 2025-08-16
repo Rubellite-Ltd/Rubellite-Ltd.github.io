@@ -1,12 +1,25 @@
+
+
 {
   "CUP2": [
-     "https://rubellite-ltd.github.io/Store/my-app-images/image1.png",
-    "https://rubellite-ltd.github.io/Store/my-app-images/image2.png"
-    "https://rubellite-ltd.github.io/Store/my-app-images/image3.png",
-    "https://rubellite-ltd.github.io/Store/my-app-images/image4.png"
+    "https://rubellite-ltd.github.io/Store/my-app-images/D1.svg",
+    "https://rubellite-ltd.github.io/Store/my-app-images/D2.svg",
+    "https://rubellite-ltd.github.io/Store/my-app-images/D3.svg"
   ],
   "Jar": [
-    "https://rubellite-ltd.github.io/Store/my-app-images/image1.png",
-    "https://rubellite-ltd.github.io/Store/my-app-images/image2.png"
+    "https://rubellite-ltd.github.io/Store/my-app-images/J1.svg",
+    "https://rubellite-ltd.github.io/Store/my-app-images/J2.svg",
+    "https://rubellite-ltd.github.io/Store/my-app-images/J3.svg
+  ],
+  "Pot": [
+   "https://rubellite-ltd.github.io/Store/my-app-images/P1.svg",
+    "https://rubellite-ltd.github.io/Store/my-app-images/P2.svg",
+    "https://rubellite-ltd.github.io/Store/my-app-images/P3.svg
+  ],
+  "Vase": [
+    "https://rubellite-ltd.github.io/Store/my-app-images/D1.svg",
+    "https://rubellite-ltd.github.io/Store/my-app-images/D2.svg",
+    "https://rubellite-ltd.github.io/Store/my-app-images/D3.svg
   ]
 }
+
