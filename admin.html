@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Firebase SDK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-app-compat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-firestore-compat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-auth-compat.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .upload-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 2px dashed #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .upload-section:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .file-upload-area {
+            border: 3px dashed #ddd;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #f8f9fa, #fff);
+        }
+
+        .file-upload-area:hover {
+            border-color: #667eea;
+            background: linear-gradient(45deg, #f0f4ff, #fff);
+        }
+
+        .file-upload-area.dragover {
+            border-color: #764ba2;
+            background: linear-gradient(45deg, #e8f0ff, #fff);
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .upload-text {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .file-info {
+            color: #999;
+            font-size: 14px;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .preview-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .preview-image {
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .progress-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e1e5e9;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .status-message {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .design-list {
+            margin-top: 40px;
+        }
+
+        .design-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #e1e5e9;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .design-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .design-thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid #e1e5e9;
+        }
+
+        .design-info {
+            flex: 1;
+        }
+
+        .design-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .design-price {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .design-category {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Design Upload Admin</h1>
+        
+        <!-- Logout Button -->
+        <div style="text-align: right; margin-bottom: 20px;">
+            <button onclick="firebase.auth().signOut()" class="btn" style="background: #dc3545; color: white; padding: 10px 20px;">
+                🚪 Logout
+            </button>
+        </div>
+        
+        <form id="uploadForm">
+            <div class="upload-section">
+                <h3 style="margin-bottom: 20px; color: #333;">Upload New Design</h3>
+                
+                <div class="file-upload-area" id="fileUploadArea">
+                    <span class="upload-icon">📁</span>
+                    <div class="upload-text">Click to browse or drag & drop your design</div>
+                    <div class="file-info">Supports: JPG, PNG, SVG (Max: 5MB)</div>
+                    <input type="file" id="fileInput" accept="image/*" required>
+                </div>
+                
+                <div class="preview-container" id="previewContainer">
+                    <img id="previewImage" class="preview-image" alt="Preview">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="designName">Design Name *</label>
+                    <input type="text" id="designName" required placeholder="Enter design name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="designPrice">Price ($) *</label>
+                    <input type="number" id="designPrice" step="0.01" min="0" required placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="designCategory">Category *</label>
+                    <select id="designCategory" required>
+                        <option value="">Select category</option>
+                        <option value="logos">Logos</option>
+                        <option value="illustrations">Illustrations</option>
+                        <option value="patterns">Patterns</option>
+                        <option value="icons">Icons</option>
+                        <option value="templates">Templates</option>
+                        <option value="graphics">Graphics</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="designTags">Tags</label>
+                    <input type="text" id="designTags" placeholder="modern, minimal, business (comma separated)">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="designDescription">Description</label>
+                <textarea id="designDescription" placeholder="Describe your design..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="uploadBtn">
+                🚀 Upload Design
+            </button>
+        </form>
+
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Uploading... 0%</div>
+        </div>
+
+        <div class="status-message" id="statusMessage"></div>
+
+        <div class="design-list">
+            <h3 style="margin-bottom: 20px; color: #333;">📚 Recent Uploads</h3>
+            <div id="designsList"></div>
+        </div>
+    </div>
+
+    <script>
+        class DesignUploader {
+
+
+this.initializeFirebase();
+           this.initializeElements();
+           this.attachEventListeners();
+           this.loadExistingDesigns();
+           this.githubToken = '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'; // You'll need to set this
+           this.githubRepo = 'Rubellite-Ltd/Rubellite-Ltd.github.io'; // Your GitHub username/repo-name
+           this.githubPagesUrl = 'https://rubellite-ltd.github.io/admin.html'; // Your base URL // or remove html
+           this.designs = JSON.parse(localStorage.getItem('designs') || '[]');
+       }
+
+            initializeFirebase() {
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                const firebaseConfig = {
+                  apiKey: "AIzaSyB7rDq-uyJF5z8uVZcvD6G12D9t2BWPM0M",
+                  authDomain: "mydesignapp-29e32.firebaseapp.com",
+                  databaseURL: "https://mydesignapp-29e32-default-rtdb.firebaseio.com",
+                  projectId: "mydesignapp-29e32",
+                  storageBucket: "mydesignapp-29e32.firebasestorage.app",
+                  messagingSenderId: "272487898851",
+                  appId: "1:272487898851:web:dad68474d8cd62c2506fd6",
+                  measurementId: "G-PZTNF40WG4"
+                };
+
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                this.db = firebase.firestore();
+                this.auth = firebase.auth();
+                
+                // Check if user is already logged in
+                this.auth.onAuthStateChanged((user) => {
+                    if (user) {
+                        console.log('✅ Admin logged in:', user.email);
+                        this.showAdminPanel();
+                    } else {
+                        console.log('❌ Admin not logged in');
+                        this.showLoginForm();
+                    }
+                });
+            }
+
+            showLoginForm() {
+                document.getElementById('loginContainer').classList.remove('hidden');
+                document.getElementById('adminPanel').classList.add('hidden');
+            }
+
+            showAdminPanel() {
+                document.getElementById('loginContainer').classList.add('hidden');
+                document.getElementById('adminPanel').classList.remove('hidden');
+            }
+
+            initializeElements() {
+                this.fileUploadArea = document.getElementById('fileUploadArea');
+                this.fileInput = document.getElementById('fileInput');
+                this.previewContainer = document.getElementById('previewContainer');
+                this.previewImage = document.getElementById('previewImage');
+                this.uploadForm = document.getElementById('uploadForm');
+                this.uploadBtn = document.getElementById('uploadBtn');
+                this.progressContainer = document.getElementById('progressContainer');
+                this.progressFill = document.getElementById('progressFill');
+                this.progressText = document.getElementById('progressText');
+                this.statusMessage = document.getElementById('statusMessage');
+                this.designsList = document.getElementById('designsList');
+            }
+
+            attachEventListeners() {
+                // Login form
+                document.getElementById('loginForm').addEventListener('submit', this.handleLogin.bind(this));
+                
+                // File upload area events
+                this.fileUploadArea.addEventListener('click', () => this.fileInput.click());
+                this.fileUploadArea.addEventListener('dragover', this.handleDragOver.bind(this));
+                this.fileUploadArea.addEventListener('dragleave', this.handleDragLeave.bind(this));
+                this.fileUploadArea.addEventListener('drop', this.handleDrop.bind(this));
+                
+                // File input change
+                this.fileInput.addEventListener('change', this.handleFileSelect.bind(this));
+                
+                // Form submission
+                this.uploadForm.addEventListener('submit', this.handleFormSubmit.bind(this));
+            }
+
+            async handleLogin(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('adminEmail').value;
+                const password = document.getElementById('adminPassword').value;
+                
+                try {
+                    await this.auth.signInWithEmailAndPassword(email, password);
+                    this.showLoginStatus('✅ Login successful!', 'success');
+                    setTimeout(() => this.showAdminPanel(), 1000);
+                } catch (error) {
+                    console.error('Login error:', error);
+                    this.showLoginStatus(`❌ Login failed: ${error.message}`, 'error');
+                }
+            }
+
+            showLoginStatus(message, type) {
+                const statusEl = document.getElementById('loginStatus');
+                statusEl.textContent = message;
+                statusEl.className = `status-message status-${type}`;
+                statusEl.style.display = 'block';
+                
+                setTimeout(() => {
+                    statusEl.style.display = 'none';
+                }, 5000);
+            }
+
+            handleDragOver(e) {
+                e.preventDefault();
+                this.fileUploadArea.classList.add('dragover');
+            }
+
+            handleDragLeave(e) {
+                e.preventDefault();
+                this.fileUploadArea.classList.remove('dragover');
+            }
+
+            handleDrop(e) {
+                e.preventDefault();
+                this.fileUploadArea.classList.remove('dragover');
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    this.fileInput.files = files;
+                    this.handleFileSelect();
+                }
+            }
+
+            handleFileSelect() {
+                const file = this.fileInput.files[0];
+                if (!file) return;
+
+                // Validate file
+                if (!file.type.startsWith('image/')) {
+                    this.showStatus('Please select a valid image file.', 'error');
+                    return;
+                }
+
+                if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                    this.showStatus('File size must be less than 5MB.', 'error');
+                    return;
+                }
+
+                // Show preview
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    this.previewImage.src = e.target.result;
+                    this.previewContainer.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+
+                // Auto-fill name if empty
+                const nameInput = document.getElementById('designName');
+                if (!nameInput.value) {
+                    nameInput.value = file.name.replace(/\.[^/.]+$/, "");
+                }
+            }
+
+            async handleFormSubmit(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this.uploadForm);
+                const file = this.fileInput.files[0];
+                
+                if (!file) {
+                    this.showStatus('Please select a file to upload.', 'error');
+                    return;
+                }
+
+                const designData = {
+                    name: document.getElementById('designName').value,
+                    price: parseFloat(document.getElementById('designPrice').value),
+                    category: document.getElementById('designCategory').value,
+                    tags: document.getElementById('designTags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
+                    description: document.getElementById('designDescription').value,
+                    fileName: file.name,
+                    fileSize: file.size,
+                    uploadDate: new Date().toISOString()
+                };
+
+                try {
+                    await this.uploadDesign(file, designData);
+                } catch (error) {
+                    console.error('Upload error:', error);
+                    this.showStatus('Upload failed. Please try again.', 'error');
+                }
+            }
+
+            async uploadDesign(file, designData) {
+                this.showProgress(0);
+                this.uploadBtn.disabled = true;
+
+                try {
+                    // Convert file to base64
+                    const base64Content = await this.fileToBase64(file);
+                    const fileName = `${Date.now()}_${file.name}`;
+                    const filePath = `designs/${designData.category}/${fileName}`;
+                    
+                    this.showProgress(25);
+
+                    // Upload to GitHub
+                    await this.uploadToGitHub(filePath, base64Content, `Add design: ${designData.name}`);
+                    this.showProgress(50);
+
+                    // Create design object with GitHub Pages URL
+                    const uploadedDesign = {
+                        ...designData,
+                        id: Date.now().toString(),
+                        imageUrl: `${this.githubPagesUrl}/${filePath}`,
+                        githubPath: filePath,
+                        fileName: fileName
+                    };
+
+                    this.showProgress(75);
+
+                    // Update Firebase
+                    await this.updateFirestore(uploadedDesign);
+                    this.showProgress(100);
+
+                    // Update local storage
+                    this.designs.unshift(uploadedDesign);
+                    localStorage.setItem('designs', JSON.stringify(this.designs));
+                    
+                    this.showStatus('✅ Design uploaded successfully!', 'success');
+                    this.resetForm();
+                    this.renderDesignsList();
+
+                } catch (error) {
+                    console.error('Upload error:', error);
+                    this.showStatus(`❌ Upload failed: ${error.message}`, 'error');
+                    throw error;
+                } finally {
+                    this.uploadBtn.disabled = false;
+                    setTimeout(() => this.hideProgress(), 2000);
+                }
+            }
+
+            async fileToBase64(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result.split(',')[1]);
+                    reader.onerror = reject;
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            async uploadToGitHub(path, base64Content, commitMessage) {
+                const url = `https://api.github.com/repos/${this.githubRepo}/contents/${path}`;
+                
+                const response = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${this.githubToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: commitMessage,
+                        content: base64Content,
+                        branch: 'main' // or 'gh-pages' if you're using that branch
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(`GitHub upload failed: ${error.message}`);
+                }
+
+                return response.json();
+            }
+
+            async updateFirestore(designData) {
+                try {
+                    // Check if user is authenticated
+                    if (!this.auth.currentUser) {
+                        throw new Error('Not authenticated');
+                    }
+
+                    const docRef = await this.db.collection('designs').add({
+                        name: designData.name,
+                        price: designData.price,
+                        category: designData.category,
+                        tags: designData.tags,
+                        description: designData.description,
+                        imageUrl: designData.imageUrl,
+                        githubPath: designData.githubPath,
+                        fileName: designData.fileName,
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                        updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                        isActive: true,
+                        adminId: this.auth.currentUser.uid,
+                        adminEmail: this.auth.currentUser.email
+                    });
+                    
+                    console.log('✅ Design added to Firestore with ID:', docRef.id);
+                } catch (error) {
+                    console.error('❌ Firestore update error:', error);
+                    throw new Error(`Failed to save to database: ${error.message}`);
+                }
+            }
+
+            showProgress(percentage) {
+                this.progressContainer.style.display = 'block';
+                this.progressFill.style.width = `${percentage}%`;
+                this.progressText.textContent = `Uploading... ${percentage}%`;
+            }
+
+            hideProgress() {
+                this.progressContainer.style.display = 'none';
+            }
+
+            showStatus(message, type) {
+                this.statusMessage.textContent = message;
+                this.statusMessage.className = `status-message status-${type}`;
+                this.statusMessage.style.display = 'block';
+                
+                setTimeout(() => {
+                    this.statusMessage.style.display = 'none';
+                }, 5000);
+            }
+
+            resetForm() {
+                this.uploadForm.reset();
+                this.previewContainer.style.display = 'none';
+                this.fileInput.value = '';
+            }
+
+            loadExistingDesigns() {
+                this.renderDesignsList();
+            }
+
+            renderDesignsList() {
+                const recentDesigns = this.designs.slice(0, 10); // Show last 10
+                
+                if (recentDesigns.length === 0) {
+                    this.designsList.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">No designs uploaded yet.</p>';
+                    return;
+                }
+
+                this.designsList.innerHTML = recentDesigns.map(design => `
+                    <div class="design-item">
+                        <img src="${design.imageUrl}" alt="${design.name}" class="design-thumb">
+                        <div class="design-info">
+                            <div class="design-name">${design.name}</div>
+                            <div class="design-price">$${design.price.toFixed(2)}</div>
+                            <div class="design-category">${design.category}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            delay(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+        }
+
+        // Initialize the uploader when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new DesignUploader();
+        });
+    </script>
+</body>
+</html>
