@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use</title>
+<style>
+  :root {
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --bg: #ffffff;
+    --accent: #2563eb;
+    --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  h1 {
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  .updated {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 19px;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  p, li {
+    font-size: 15px;
+    color: #333;
+  }
+  ul, ol {
+    padding-left: 22px;
+    margin: 8px 0;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  .callout {
+    background: #f5f7fa;
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .toc {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+  }
+  .toc h2 {
+    border: none;
+    margin-top: 0;
+    font-size: 16px;
+  }
+  .toc ol {
+    columns: 2;
+    -webkit-columns: 2;
+    font-size: 14px;
+  }
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .toc a:hover { text-decoration: underline; }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+  }
+  th {
+    background: #fafafa;
+  }
+  @media (max-width: 600px) {
+    .toc ol { columns: 1; }
+    body { padding: 32px 16px 64px; }
+  }
+</style>
+</head>
+<body>
+
+  <h1>Terms of Use</h1>
+  <p class="updated">Last updated: [Month Day, Year]</p>
+
+  <div class="callout">
+    <strong>Before you publish this:</strong> This is a general-purpose template for a subscription
+    business selling downloadable SVG pattern designs. Replace every bracketed
+    <code>[placeholder]</code>, confirm the license terms match what you actually intend to sell, and
+    have a lawyer review it — especially the governing law, liability, and refund sections — before
+    using it live. This page is not legal advice.
+  </div>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+      <li><a href="#account">2. Accounts</a></li>
+      <li><a href="#subscriptions">3. Subscriptions &amp; Billing</a></li>
+      <li><a href="#license">4. License to Use Designs</a></li>
+      <li><a href="#restrictions">5. Restrictions</a></li>
+      <li><a href="#ip">6. Ownership &amp; Intellectual Property</a></li>
+      <li><a href="#usercontent">7. User-Generated Content</a></li>
+      <li><a href="#termination">8. Termination</a></li>
+      <li><a href="#disclaimer">9. Disclaimer of Warranties</a></li>
+      <li><a href="#liability">10. Limitation of Liability</a></li>
+      <li><a href="#indemnity">11. Indemnification</a></li>
+      <li><a href="#law">12. Governing Law</a></li>
+      <li><a href="#changes">13. Changes to These Terms</a></li>
+      <li><a href="#contact">14. Contact</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="acceptance">1. Acceptance of Terms</h2>
+  <p>
+    These Terms of Use ("Terms") govern your access to and use of [App/Company Name]
+    (the "Service"), including any website, application, or software that lets you browse,
+    generate, download, or subscribe to SVG pattern designs ("Designs"). By creating an
+    account, starting a subscription, or otherwise using the Service, you agree to be bound
+    by these Terms. If you do not agree, do not use the Service.
+  </p>
+  <p>
+    You must be at least 18 years old, or the age of legal majority in your jurisdiction, to
+    subscribe. If you are using the Service on behalf of a company, you represent that you
+    have authority to bind that company to these Terms.
+  </p>
+
+  <h2 id="account">2. Accounts</h2>
+  <ul>
+    <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+    <li>You are responsible for all activity that occurs under your account.</li>
+    <li>You must provide accurate account and billing information and keep it up to date.</li>
+    <li>We may suspend or terminate accounts that violate these Terms.</li>
+  </ul>
+
+  <h2 id="subscriptions">3. Subscriptions &amp; Billing</h2>
+
+  <h3>3.1 Plans</h3>
+  <p>
+    The Service is offered on a subscription basis. Available plans, features, and pricing
+    are described at [pricing page URL]. We may introduce new plans or modify existing ones
+    at any time, with notice as required by law.
+  </p>
+
+  <h3>3.2 Billing &amp; Renewal</h3>
+  <p>
+    Subscriptions renew automatically at the end of each billing period (monthly or annual,
+    as selected) until cancelled. You authorize us (or our payment processor, e.g. [Stripe /
+    Apple / Google]) to charge your chosen payment method for each renewal at the then-current
+    price, unless you cancel before the renewal date.
+  </p>
+
+  <h3>3.3 Cancellation</h3>
+  <p>
+    You may cancel your subscription at any time through [account settings / App Store /
+    Google Play subscription management]. Cancellation takes effect at the end of the current
+    billing period; you retain access until then. Cancelling does not retroactively revoke the
+    license already granted for Designs downloaded during an active subscription, subject to
+    Section 4.
+  </p>
+
+  <h3>3.4 Refunds</h3>
+  <p>
+    Except where required by law (including statutory consumer rights in your jurisdiction),
+    payments are non-refundable, including for partial billing periods or unused downloads.
+    Purchases made through the Apple App Store or Google Play are subject to those platforms'
+    refund policies.
+  </p>
+
+  <h3>3.5 Free Trials</h3>
+  <p>
+    If a free trial is offered, your payment method will be charged automatically at the end
+    of the trial unless you cancel beforehand.
+  </p>
+
+  <h2 id="license">4. License to Use Designs</h2>
+  <p>
+    Subject to an active, paid subscription and compliance with these Terms, we grant you a
+    non-exclusive, non-transferable, worldwide license to use, reproduce, and modify Designs
+    downloaded through the Service, according to the tier below tied to your plan:
+  </p>
+
+  <table>
+    <tr>
+      <th>License tier</th>
+      <th>Permitted use</th>
+    </tr>
+    <tr>
+      <td><strong>Personal License</strong></td>
+      <td>
+        Personal, non-commercial projects only — e.g. personal art, hobby crafts, gifts,
+        wallpapers, or content not sold or used to generate revenue.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Commercial License</strong></td>
+      <td>
+        Use in commercial projects for you or your clients — e.g. branding, packaging,
+        merchandise, marketing materials, apps, and products offered for sale — up to
+        [X end-product units / unlimited, per plan], excluding resale of the Designs
+        themselves as described in Section 5.
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    Your license is tied to your active subscription tier at the time of download. Downloads
+    made while subscribed to a given tier retain that tier's rights even if you later
+    downgrade or cancel, unless otherwise stated at checkout.
+  </p>
+
+  <h2 id="restrictions">5. Restrictions</h2>
+  <p>Regardless of your license tier, you may <strong>not</strong>:</p>
+  <ul>
+    <li>Resell, sublicense, rent, lease, or redistribute Designs on a standalone basis (i.e., as SVG/vector files, templates, or design assets themselves), whether for free or for a fee.</li>
+    <li>Upload Designs to other stock asset marketplaces, template libraries, print-on-demand asset stores, or NFT platforms as standalone files.</li>
+    <li>Claim exclusive ownership or trademark rights over an unmodified Design.</li>
+    <li>Use Designs in any way that is defamatory, obscene, unlawful, or infringes third-party rights.</li>
+    <li>Use Designs to train, fine-tune, or build a competing dataset or generative model without our prior written consent.</li>
+    <li>Circumvent, reverse-engineer, or scrape the Service to obtain Designs outside your subscription.</li>
+  </ul>
+  <p>
+    "End product" means a final good or piece of content that incorporates a Design as one
+    element among others (e.g., a printed textile, a poster, an app UI). Selling an end product
+    that merely reproduces the Design essentially unaltered as its entire commercial value
+    (e.g., printing the raw pattern on a blank product and selling it as-is) [is / is not]
+    permitted under the Commercial License — clarify this explicitly, since it's the most
+    common gray area in pattern-licensing disputes.
+  </p>
+
+  <h2 id="ip">6. Ownership &amp; Intellectual Property</h2>
+  <p>
+    All Designs, software, branding, and content made available through the Service are owned
+    by [Company Name] or its licensors and are protected by copyright and other intellectual
+    property laws. Subscribing grants you a license as described in Section 4 — it does not
+    transfer ownership of any Design to you.
+  </p>
+  <p>
+    The Service name, logo, and related marks are trademarks of [Company Name]. Nothing in
+    these Terms grants you rights to use our trademarks without prior written permission.
+  </p>
+
+  <h2 id="usercontent">7. User-Generated Content</h2>
+  <p>
+    If the Service allows you to upload, remix, or generate custom pattern variations, you
+    retain ownership of your original contributions, but you grant us a non-exclusive,
+    royalty-free, worldwide license to host, display, and process that content solely to
+    operate and improve the Service. You are responsible for ensuring you have the rights to
+    any content you upload.
+  </p>
+
+  <h2 id="termination">8. Termination</h2>
+  <p>
+    We may suspend or terminate your access to the Service, without refund, if you violate
+    these Terms, engage in fraudulent or abusive activity, or as required by law. You may stop
+    using the Service and cancel your subscription at any time. Sections that by their nature
+    should survive termination (including Sections 5, 6, 9, 10, 11, and 12) will survive.
+  </p>
+
+  <h2 id="disclaimer">9. Disclaimer of Warranties</h2>
+  <p>
+    The Service and Designs are provided "as is" and "as available," without warranties of any
+    kind, whether express, implied, or statutory, including implied warranties of
+    merchantability, fitness for a particular purpose, and non-infringement. We do not
+    warrant that the Service will be uninterrupted, error-free, or that Designs will meet
+    your specific requirements.
+  </p>
+
+  <h2 id="liability">10. Limitation of Liability</h2>
+  <p>
+    To the maximum extent permitted by law, [Company Name] will not be liable for any
+    indirect, incidental, special, consequential, or punitive damages, or any loss of profits
+    or revenue, arising from your use of the Service or Designs. Our total aggregate liability
+    for any claim arising out of these Terms will not exceed the amount you paid us in the
+    12 months preceding the claim. Nothing in these Terms limits liability that cannot be
+    limited under applicable law.
+  </p>
+
+  <h2 id="indemnity">11. Indemnification</h2>
+  <p>
+    You agree to indemnify and hold harmless [Company Name], its officers, employees, and
+    affiliates from any claims, damages, or expenses (including reasonable legal fees) arising
+    from your use of the Service, your violation of these Terms, or your use of Designs beyond
+    the scope of the license granted.
+  </p>
+
+  <h2 id="law">12. Governing Law</h2>
+  <p>
+    These Terms are governed by the laws of [State/Country], without regard to conflict-of-law
+    principles. Any disputes will be resolved in the courts located in [Jurisdiction], unless
+    otherwise required by mandatory consumer-protection law in your place of residence.
+  </p>
+
+  <h2 id="changes">13. Changes to These Terms</h2>
+  <p>
+    We may update these Terms from time to time. If we make material changes, we will notify
+    you (e.g., by email or an in-app notice) before they take effect. Continued use of the
+    Service after changes take effect constitutes acceptance of the updated Terms.
+  </p>
+
+  <h2 id="contact">14. Contact</h2>
+  <p>
+    Questions about these Terms can be sent to
+    <a href="mailto:[email protected]">rubellite@writeme.com</a>.
+  </p>
+
+  <footer>
+    &copy; <span id="year"></span> Rubellite Ltd. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
