@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F2F2F3">
+<meta name="description" content="Terms of Use for PatternPix, the pattern design app for iPhone and iPad by Rubellite Ltd.">
 <title>Terms of Use — PatternPix</title>
 <style>
   :root {
@@ -76,288 +78,220 @@
     vertical-align: top;
   }
   th { background: #fafafa; }
+
+  /* Theme buttons */
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 32px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    background: var(--bg);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover { background: #f0f5ff; }
+  .btn-primary { background: var(--accent); color: #ffffff; }
+  .btn-primary:hover { background: #1d4fd8; }
+  .btn-row-footer { justify-content: center; margin: 0 0 24px; }
+  .footer-links a { margin: 0 8px; }
+
   @media (max-width: 600px) {
     .toc ol { columns: 1; }
     body { padding: 32px 16px 64px; }
     table { font-size: 13px; }
+    .btn { flex: 1 1 auto; text-align: center; }
   }
 </style>
 </head>
-<body>
+<body id="top">
 
-  <h1>Terms of Use</h1>
-  <p class="updated">Last updated: 19 September 2026</p>
+<nav class="btn-row" aria-label="Site navigation">
+  <a class="btn btn-primary" href="https://rubellite-ltd.github.io/PatternPix/index.html">&larr; Back to PatternPix</a>
+  <a class="btn" href="https://rubellite-ltd.github.io/PatternPix/PrivacyPolicy.html">Privacy Policy</a>
+  <a class="btn" href="https://rubellite-ltd.github.io/PatternPix/support.html">Support</a>
+</nav>
 
-  <nav class="toc">
-    <h2>Contents</h2>
-    <ol>
-      <li><a href="#acceptance">1. About these terms</a></li>
-      <li><a href="#account">2. Eligibility and accounts</a></li>
-      <li><a href="#subscriptions">3. Subscriptions and purchases</a></li>
-      <li><a href="#license">4. Licence to use designs</a></li>
-      <li><a href="#restrictions">5. Restrictions</a></li>
-      <li><a href="#ar">6. AR preview</a></li>
-      <li><a href="#ip">7. Ownership and intellectual property</a></li>
-      <li><a href="#usercontent">8. Your content</a></li>
-      <li><a href="#termination">9. Termination</a></li>
-      <li><a href="#disclaimer">10. Disclaimers and your legal rights</a></li>
-      <li><a href="#liability">11. Limitation of liability</a></li>
-      <li><a href="#indemnity">12. Business use and indemnity</a></li>
-      <li><a href="#apple">13. Apple App Store terms</a></li>
-      <li><a href="#law">14. Governing law</a></li>
-      <li><a href="#changes">15. Changes to these terms</a></li>
-      <li><a href="#contact">16. Contact</a></li>
-    </ol>
-  </nav>
+<h1>Terms of Use</h1>
+<p class="updated">Last updated: 19 September 2026</p>
 
-  <h2 id="acceptance">1. About these terms</h2>
-  <p>
-    These Terms of Use ("Terms") are an agreement between you and <strong>Rubellite Ltd</strong>,
-    a company registered in England and Wales (company number [COMPANY NUMBER]) with its
-    registered office at [REGISTERED OFFICE ADDRESS] ("we", "us" or "our"). They apply to your use of
-    PatternPix, our iPhone and iPad app for creating patterns and designs, previewing them in
-    augmented reality (AR), and exporting them (the "Service").
-  </p>
-  <p>
-    In these Terms, "Designs" means the motifs, patterns, fills, effects, pattern packs and other
-    content that we supply in the Service. "Your Creations" means the patterns and artwork you
-    make using the Service.
-  </p>
-  <p>
-    By downloading, using or buying anything in the Service, you agree to these Terms and to our
-    <a href="privacy-policy.html">Privacy Policy</a>. If you do not agree, do not use the Service.
-  </p>
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#sec1">About these terms</a></li>
+    <li><a href="#sec2">Eligibility and accounts</a></li>
+    <li><a href="#sec3">Subscriptions and purchases</a></li>
+    <li><a href="#sec4">Licence to use designs</a></li>
+    <li><a href="#sec5">Restrictions</a></li>
+    <li><a href="#sec6">AR preview</a></li>
+    <li><a href="#sec7">Ownership and intellectual property</a></li>
+    <li><a href="#sec8">Your content</a></li>
+    <li><a href="#sec9">Termination</a></li>
+    <li><a href="#sec10">Disclaimers and your legal rights</a></li>
+    <li><a href="#sec11">Limitation of liability</a></li>
+    <li><a href="#sec12">Business use and indemnity</a></li>
+    <li><a href="#sec13">Apple App Store terms</a></li>
+    <li><a href="#sec14">Governing law</a></li>
+    <li><a href="#sec15">Changes to these terms</a></li>
+    <li><a href="#sec16">Contact</a></li>
+  </ol>
+</div>
 
-  <h2 id="account">2. Eligibility and accounts</h2>
-  <ul>
-    <li>You must be at least 18 to buy a subscription or make an in-app purchase. The Service is not intended for children under 13.</li>
-    <li>If you use the Service for a business or organisation, you confirm you have authority to agree to these Terms on its behalf.</li>
-    <li>Where the Service asks you to create an account, you are responsible for keeping your login details secure and for activity under your account, and you must give accurate information.</li>
-    <li>We may suspend or close accounts that breach these Terms.</li>
-  </ul>
+<h2 id="sec1">1. About these terms</h2>
+<p>These Terms of Use (&ldquo;Terms&rdquo;) are an agreement between you and Rubellite Ltd, a company registered in England and Wales (company number 13504030) with its registered office at 80 Mary Slessor Street, Coventry, CV3 3BX (&ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;). They apply to your use of PatternPix, our iPhone and iPad app for creating patterns and designs, previewing them in augmented reality (AR), and exporting them (the &ldquo;Service&rdquo;).</p>
+<p>In these Terms, &ldquo;Designs&rdquo; means the motifs, patterns, fills, effects, pattern packs and other content that we supply in the Service. &ldquo;Your Creations&rdquo; means the patterns and artwork you make using the Service.</p>
+<p>By downloading, using or buying anything in the Service, you agree to these Terms and to our <a href="https://rubellite-ltd.github.io/PatternPix/PrivacyPolicy.html">Privacy Policy</a>. If you do not agree, do not use the Service.</p>
+<p>These Terms also serve as the licensed application end user licence agreement (EULA) for PatternPix.</p>
 
-  <h2 id="subscriptions">3. Subscriptions and purchases</h2>
+<h2 id="sec2">2. Eligibility and accounts</h2>
+<ul>
+  <li>You must be at least 18 to buy a subscription or make an in-app purchase. The Service is not intended for children under 13.</li>
+  <li>If you use the Service for a business or organisation, you confirm you have authority to agree to these Terms on its behalf.</li>
+  <li>Where the Service asks you to create an account, you are responsible for keeping your login details secure and for activity under your account, and you must give accurate information.</li>
+  <li>We may suspend or close accounts that breach these Terms.</li>
+</ul>
 
-  <h3>3.1 What is free and what is paid</h3>
-  <p>
-    The Service includes free features, such as basic patterns and design tools, exports with a
-    watermark, and a limited AR preview. A paid subscription ("Pro") unlocks additional features,
-    such as SVG export, exports without a watermark, high-resolution exports and the full AR
-    preview. We may also offer pattern packs and other content as one-time in-app purchases.
-    The current features and prices are shown in the app before you buy. We may add, change or
-    remove plans, features and prices, but changes will not affect a period you have already paid for.
-  </p>
+<h2 id="sec3">3. Subscriptions and purchases</h2>
 
-  <h3>3.2 Billing through Apple</h3>
-  <p>
-    All subscriptions and purchases are processed by Apple using your Apple ID, and we do not
-    receive your payment details. Payment is charged to your Apple ID when you confirm the purchase.
-    Subscriptions renew automatically for the same period, at the then-current price, unless you
-    cancel at least 24 hours before the end of the current period. Apple may charge for renewal
-    within 24 hours before the current period ends.
-  </p>
+<h3>3.1 What is free and what is paid</h3>
+<p>The Service includes free features, such as basic patterns and design tools, exports with a watermark, and a limited AR preview.</p>
+<p>Paid features are available through the following auto-renewable subscriptions:</p>
+<ul>
+  <li><strong>Personal:</strong> unlocks paid features such as SVG export, exports without a watermark and high-resolution exports, for use under the Personal Licence (see <a href="#sec4">Section 4</a>).</li>
+  <li><strong>Commercial:</strong> unlocks the same paid features as Personal, for use under the Commercial Licence (see <a href="#sec4">Section 4</a>).</li>
+  <li><strong>AR Preview:</strong> unlocks the full AR preview.</li>
+  <li><strong>Full Bundle:</strong> unlocks all of the above, including the Commercial Licence and the full AR preview.</li>
+</ul>
+<p>We may also offer pattern packs and other content as one-time in-app purchases.</p>
+<div class="callout">The title, features, length of each subscription period and price are shown on the subscription screen in the app before you buy.</div>
+<p>We may add, change or remove plans, features and prices, but changes will not affect a period you have already paid for.</p>
 
-  <h3>3.3 Managing and cancelling</h3>
-  <p>
-    You can manage or cancel your subscription at any time in your Apple ID settings
-    (Settings &gt; your name &gt; Subscriptions). Cancelling stops the next renewal, and you keep
-    access to paid features until the end of the period you have paid for. Deleting the app does
-    not cancel your subscription, and we cannot cancel Apple subscriptions for you.
-  </p>
+<h3>3.2 Billing through Apple</h3>
+<p>All subscriptions and purchases are processed by Apple using your Apple ID, and we do not receive your payment details. Payment is charged to your Apple ID when you confirm the purchase. Subscriptions renew automatically for the same period, at the then-current price, unless you cancel at least 24 hours before the end of the current period. Apple may charge for renewal within 24 hours before the current period ends.</p>
 
-  <h3>3.3a Free trials</h3>
-  <p>
-    If we offer a free trial, you will be charged when it ends unless you cancel at least 24 hours
-    before the trial ends. If you buy a subscription during a trial, any unused part of the trial is lost.
-  </p>
+<h3>3.3 Managing and cancelling</h3>
+<p>You can manage, change or cancel your subscription at any time in your Apple ID settings (Settings &gt; your name &gt; Subscriptions). Apple decides when a change of plan takes effect. Cancelling stops the next renewal, and you keep access to paid features until the end of the period you have paid for. Deleting the app does not cancel your subscription, and we cannot cancel Apple subscriptions for you.</p>
 
-  <h3>3.4 Refunds</h3>
-  <p>
-    Apple handles payments and refunds for App Store purchases. To ask for a refund, use
-    <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> or contact Apple Support.
-    Nothing in these Terms affects your legal rights as a consumer. Where the law allows, and
-    with your agreement when you buy, you lose the 14-day right to cancel digital content once
-    delivery has started, for example when you download a pattern pack.
-  </p>
+<h3>3.4 Free trials</h3>
+<p>If we offer a free trial, you will be charged when it ends unless you cancel at least 24 hours before the trial ends. If you buy a subscription during a trial, any unused part of the trial is lost.</p>
 
-  <h3>3.5 One-time purchases</h3>
-  <p>
-    Pattern packs and other one-time purchases are licensed to you, not sold. You can restore them
-    on your devices that use the same Apple ID by using "Restore Purchases" in the app.
-  </p>
+<h3>3.5 Refunds</h3>
+<p>Apple handles payments and refunds for App Store purchases. To ask for a refund, use <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> or contact Apple Support. Nothing in these Terms affects your legal rights as a consumer. Where the law allows, and with your agreement when you buy, you lose the 14-day right to cancel digital content once delivery has started, for example when you download a pattern pack.</p>
 
-  <h2 id="license">4. Licence to use designs</h2>
-  <p>
-    Subject to these Terms, we grant you a non-exclusive, non-transferable, worldwide licence to use,
-    reproduce and modify the Designs, as part of Your Creations, in the ways set out below.
-  </p>
+<h3>3.6 One-time purchases</h3>
+<p>Pattern packs and other one-time purchases are licensed to you, not sold. You can restore them, and any active subscription, on your devices that use the same Apple ID by using &ldquo;Restore Purchases&rdquo; in the app.</p>
 
-  <table>
-    <tr>
-      <th>Licence</th>
-      <th>Permitted use</th>
-    </tr>
+<h2 id="sec4">4. Licence to use designs</h2>
+<p>Subject to these Terms, we grant you a non-exclusive, non-transferable, worldwide licence to use, reproduce and modify the Designs, as part of Your Creations, in the ways set out below.</p>
+
+<table>
+  <thead>
+    <tr><th>Licence</th><th>Permitted use</th></tr>
+  </thead>
+  <tbody>
     <tr>
       <td><strong>Personal Licence</strong></td>
-      <td>
-        Personal, non-commercial projects only, such as personal art, hobby crafts, gifts, home
-        decoration, or content that is not sold or used to earn money. Exports from the free
-        version carry a watermark and are for personal preview only.
-      </td>
+      <td>Personal, non-commercial projects only, such as personal art, hobby crafts, gifts, home decoration, or content that is not sold or used to earn money. Exports from the free version carry a watermark and are for personal preview only.</td>
     </tr>
     <tr>
       <td><strong>Commercial Licence</strong></td>
-      <td>
-        Use in commercial projects for you or your clients, such as printed fabric and wallpaper,
-        stationery, packaging, merchandise, print-on-demand products, marketing materials,
-        websites and apps, and other products or services offered for sale, in any number of end products.
-        You may deliver finished work to clients, but not the Designs as standalone files for them to reuse.
-        Selling an end product that shows a pattern (including a pattern printed on a product) is allowed,
-        subject to Section 5.
-      </td>
+      <td>Use in commercial projects for you or your clients, such as printed fabric and wallpaper, stationery, packaging, merchandise, print-on-demand products, marketing materials, websites and apps, and other products or services offered for sale, in any number of end products. You may deliver finished work to clients, but not the Designs as standalone files for them to reuse. Selling an end product that shows a pattern (including a pattern printed on a product) is allowed, subject to <a href="#sec5">Section 5</a>.</td>
     </tr>
-  </table>
+  </tbody>
+</table>
 
-  <p>
-    Which licence you have depends on the plan or purchase you have made. The plans that include the
-    Commercial Licence are stated on the subscription screen in the app. If you are not sure which
-    licence you have, treat your use as personal, or contact us before using a Design commercially.
+<p>Which licence you have depends on the plan or purchase you have made. The Personal plan includes the Personal Licence. The Commercial and Full Bundle plans include the Commercial Licence. The AR Preview plan does not include a licence to use exports commercially. If you are not sure which licence you have, treat your use as personal, or contact us before using a Design commercially.</p>
+<p>Files you export while your plan is active keep the licence that applied at the time of export, even if you later cancel or downgrade. After cancelling, you cannot make new exports under the paid licence.</p>
+
+<h2 id="sec5">5. Restrictions</h2>
+<p>Whatever licence you have, you may not:</p>
+<ul>
+  <li>Resell, sublicense, rent, lease or redistribute the Designs (including pattern packs, motifs or fills) on their own, as SVG or other files, templates or design assets, whether free or paid.</li>
+  <li>Upload the Designs on their own to stock marketplaces, template libraries, print-on-demand asset stores or NFT platforms.</li>
+  <li>Remove, crop or hide the watermark on free exports, or use watermarked exports commercially.</li>
+  <li>Claim exclusive ownership of, or trade mark rights in, a Design or a pattern that is only slightly changed from a Design.</li>
+  <li>Use the Designs in anything unlawful, defamatory, obscene, or that infringes anyone's rights.</li>
+  <li>Use the Designs to train, fine-tune or build a dataset or model for artificial intelligence without our written permission.</li>
+  <li>Copy, scrape, reverse-engineer or extract the Designs or the app's code, or bypass any paywall or licence limit.</li>
+</ul>
+
+<h2 id="sec6">6. AR preview</h2>
+<ul>
+  <li><strong>Preview only.</strong> The AR preview and photo preview are visual aids. Colours, scale, lighting and pattern alignment on screen may differ from the finished product because of your device, camera and room. Check sizes and get a physical sample before ordering or printing.</li>
+  <li><strong>Be safe.</strong> Be aware of your surroundings when using AR, and do not use it while walking, driving or in any situation where it could distract you.</li>
+  <li><strong>Camera use.</strong> The AR preview needs camera access. Only use it where you are allowed to, and do not capture people without their permission. See our <a href="https://rubellite-ltd.github.io/PatternPix/PrivacyPolicy.html">Privacy Policy</a> for how camera data is handled.</li>
+  <li><strong>Compatibility.</strong> AR features need a compatible iPhone or iPad, and some features may work better on devices with a LiDAR scanner.</li>
+</ul>
+
+<h2 id="sec7">7. Ownership and intellectual property</h2>
+<p>The Service, the Designs, our software, branding and other content are owned by Rubellite Ltd or our licensors and are protected by copyright and other laws. These Terms give you a licence to use them as described in <a href="#sec4">Section 4</a>, and do not transfer ownership to you. PatternPix and our logos are our trade marks, and you may not use them without our written permission.</p>
+
+<h2 id="sec8">8. Your content</h2>
+<p>You keep ownership of your original content, including the original elements in Your Creations and any photos or images you add. You give us a limited, non-exclusive licence to store, sync and process that content only as needed to provide the Service to you. We do not publish your designs. You are responsible for making sure you have the right to use any image, photo or artwork you add to the Service.</p>
+
+<h2 id="sec9">9. Termination</h2>
+<p>You can stop using the Service at any time. We may suspend or end your access if you seriously or repeatedly breach these Terms, use the Service fraudulently or abusively, or where the law requires. If we end your access because of your breach, your licence under <a href="#sec4">Section 4</a> ends and we are not required to refund you, except where the law says otherwise. Sections that are meant to continue after termination (including Sections 5, 7, 10, 11, 12 and 14) will continue.</p>
+
+<h2 id="sec10">10. Disclaimers and your legal rights</h2>
+<p>We work hard to keep the Service running well, but we cannot promise that it will always be available, error-free or suit every purpose. To the extent the law allows, the Service is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;.</p>
+<p>If you are a consumer, nothing in these Terms affects your legal rights, including your rights under the Consumer Rights Act 2015 (for example, that digital content should be of satisfactory quality, fit for purpose and as described). For advice about your rights, you can contact Citizens Advice.</p>
+
+<h2 id="sec11">11. Limitation of liability</h2>
+<p>Nothing in these Terms limits or excludes our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for anything else that cannot be limited or excluded by law.</p>
+<p>Subject to that, and to the extent the law allows: we are not liable for losses that were not reasonably foreseeable, or for loss of profit, revenue, business or goodwill; and our total liability to you for all claims arising from the Service will not exceed the amount you paid us (through Apple) in the 12 months before the claim. We are not responsible for losses caused by relying only on the AR preview when ordering, printing or buying products.</p>
+
+<h2 id="sec12">12. Business use and indemnity</h2>
+<p>If you use the Service under the Commercial Licence, or otherwise for business purposes, you agree to compensate us for reasonable losses and costs (including reasonable legal fees) that we suffer because you used the Designs outside the licence, breached these Terms, or used content you had no right to use. This section does not apply to you if you are using the Service only as a consumer.</p>
+
+<h2 id="sec13">13. Apple App Store terms</h2>
+<p>If you get the Service from the Apple App Store, the following also apply. They are between you and us, not Apple.</p>
+<ul>
+  <li><strong>Agreement with us.</strong> These Terms are between you and Rubellite Ltd only. Apple is not a party and is not responsible for the Service or its content.</li>
+  <li><strong>Scope of licence.</strong> The licence to use the app is limited to use on Apple-branded devices that you own or control, as allowed by Apple's App Store Terms of Service.</li>
+  <li><strong>Support.</strong> We, not Apple, are responsible for maintenance and support of the app. Apple has no obligation to provide any.</li>
+  <li><strong>Warranty.</strong> If the app fails to meet any applicable warranty, you may tell Apple and Apple may refund the price of the app, if any. Apple has no other warranty obligation for the app. Any other claims, losses or costs are our responsibility, to the extent required by law.</li>
+  <li><strong>Claims.</strong> We, not Apple, are responsible for dealing with any claims about the app, including product liability, legal or regulatory compliance, and consumer protection claims.</li>
+  <li><strong>Intellectual property.</strong> If a third party claims that the app infringes its intellectual property rights, we, not Apple, are responsible for investigating and dealing with the claim.</li>
+  <li><strong>Legal compliance.</strong> You confirm you are not in a country under a government embargo or on a list of restricted parties, and that you will follow any applicable third-party terms (such as your mobile network's) when using the app.</li>
+  <li><strong>Third-party beneficiary.</strong> Apple and its subsidiaries are third-party beneficiaries of these Terms and, once you accept them, may enforce them against you.</li>
+</ul>
+<p>Our contact details are in <a href="#sec16">Section 16</a>.</p>
+
+<h2 id="sec14">14. Governing law</h2>
+<p>These Terms and any dispute arising from them are governed by the laws of England and Wales, and the courts of England and Wales have jurisdiction. If you are a consumer living in Scotland or Northern Ireland, you may also bring claims in the courts of the part of the UK where you live, and you keep the protection of any mandatory consumer laws where you live.</p>
+
+<h2 id="sec15">15. Changes to these terms</h2>
+<p>We may update these Terms from time to time, for example to reflect new features or changes in the law. If we make material changes, we will tell you (for example with an in-app notice or by email) before they take effect. If you continue to use the Service after the changes take effect, you accept the updated Terms. If you do not agree, you can stop using the Service and cancel your subscription.</p>
+
+<h2 id="sec16">16. Contact</h2>
+<p>
+  Rubellite Ltd<br>
+  Company number 13504030<br>
+  80 Mary Slessor Street, Coventry, CV3 3BX<br>
+  Email: <a href="mailto:rubellite@write.me">rubellite@write.me</a>
+</p>
+
+<footer>
+  <div class="btn-row btn-row-footer">
+    <a class="btn btn-primary" href="https://rubellite-ltd.github.io/PatternPix/index.html">&larr; Back to PatternPix</a>
+    <a class="btn" href="#top">Back to top &uarr;</a>
+  </div>
+  <p class="footer-links">
+    <a href="https://rubellite-ltd.github.io/PatternPix/support.html">Support</a>
+    <a href="https://rubellite-ltd.github.io/PatternPix/PrivacyPolicy.html">Privacy Policy</a>
+    <a href="https://rubellite-ltd.github.io/PatternPix/Terms.html">Terms of Use</a>
+    <a href="mailto:rubellite@write.me">Contact</a>
   </p>
-  <p>
-    Files you export while your plan is active keep the licence that applied at the time of export,
-    even if you later cancel or downgrade. After cancelling, you cannot make new exports under the
-    paid licence.
-  </p>
-
-  <h2 id="restrictions">5. Restrictions</h2>
-  <p>Whatever licence you have, you may <strong>not</strong>:</p>
-  <ul>
-    <li>Resell, sublicense, rent, lease or redistribute the Designs (including pattern packs, motifs or fills) on their own, as SVG or other files, templates or design assets, whether free or paid.</li>
-    <li>Upload the Designs on their own to stock marketplaces, template libraries, print-on-demand asset stores or NFT platforms.</li>
-    <li>Remove, crop or hide the watermark on free exports, or use watermarked exports commercially.</li>
-    <li>Claim exclusive ownership of, or trade mark rights in, a Design or a pattern that is only slightly changed from a Design.</li>
-    <li>Use the Designs in anything unlawful, defamatory, obscene, or that infringes anyone's rights.</li>
-    <li>Use the Designs to train, fine-tune or build a dataset or model for artificial intelligence without our written permission.</li>
-    <li>Copy, scrape, reverse-engineer or extract the Designs or the app's code, or bypass any paywall or licence limit.</li>
-  </ul>
-
-  <h2 id="ar">6. AR preview</h2>
-  <ul>
-    <li><strong>Preview only.</strong> The AR preview and photo preview are visual aids. Colours, scale, lighting and pattern alignment on screen may differ from the finished product because of your device, camera and room. Check sizes and get a physical sample before ordering or printing.</li>
-    <li><strong>Be safe.</strong> Be aware of your surroundings when using AR, and do not use it while walking, driving or in any situation where it could distract you.</li>
-    <li><strong>Camera use.</strong> The AR preview needs camera access. Only use it where you are allowed to, and do not capture people without their permission. See our <a href="privacy-policy.html">Privacy Policy</a> for how camera data is handled.</li>
-    <li><strong>Compatibility.</strong> AR features need a compatible iPhone or iPad, and some features may work better on devices with a LiDAR scanner.</li>
-  </ul>
-
-  <h2 id="ip">7. Ownership and intellectual property</h2>
-  <p>
-    The Service, the Designs, our software, branding and other content are owned by Rubellite Ltd or
-    our licensors and are protected by copyright and other laws. These Terms give you a licence to
-    use them as described in Section 4, and do not transfer ownership to you. PatternPix and our
-    logos are our trade marks, and you may not use them without our written permission.
-  </p>
-
-  <h2 id="usercontent">8. Your content</h2>
-  <p>
-    You keep ownership of your original content, including the original elements in Your Creations
-    and any photos or images you add. You give us a limited, non-exclusive licence to store, sync
-    and process that content only as needed to provide the Service to you. We do not publish your
-    designs. You are responsible for making sure you have the right to use any image, photo or
-    artwork you add to the Service.
-  </p>
-
-  <h2 id="termination">9. Termination</h2>
-  <p>
-    You can stop using the Service at any time. We may suspend or end your access if you seriously
-    or repeatedly breach these Terms, use the Service fraudulently or abusively, or where the law
-    requires. If we end your access because of your breach, your licence under Section 4 ends and
-    we are not required to refund you, except where the law says otherwise. Sections that are meant
-    to continue after termination (including Sections 5, 7, 10, 11, 12 and 14) will continue.
-  </p>
-
-  <h2 id="disclaimer">10. Disclaimers and your legal rights</h2>
-  <p>
-    We work hard to keep the Service running well, but we cannot promise that it will always be
-    available, error-free or suit every purpose. To the extent the law allows, the Service is
-    provided "as is" and "as available".
-  </p>
-  <p>
-    If you are a consumer, nothing in these Terms affects your legal rights, including your rights
-    under the Consumer Rights Act 2015 (for example, that digital content should be of satisfactory
-    quality, fit for purpose and as described). For advice about your rights, you can contact
-    Citizens Advice.
-  </p>
-
-  <h2 id="liability">11. Limitation of liability</h2>
-  <p>
-    Nothing in these Terms limits or excludes our liability for death or personal injury caused by our
-    negligence, for fraud or fraudulent misrepresentation, or for anything else that cannot be limited
-    or excluded by law.
-  </p>
-  <p>
-    Subject to that, and to the extent the law allows: we are not liable for losses that were not
-    reasonably foreseeable, or for loss of profit, revenue, business or goodwill; and our total liability
-    to you for all claims arising from the Service will not exceed the amount you paid us (through Apple)
-    in the 12 months before the claim. We are not responsible for losses caused by relying only on the AR
-    preview when ordering, printing or buying products.
-  </p>
-
-  <h2 id="indemnity">12. Business use and indemnity</h2>
-  <p>
-    If you use the Service under the Commercial Licence, or otherwise for business purposes, you agree
-    to compensate us for reasonable losses and costs (including reasonable legal fees) that we suffer
-    because you used the Designs outside the licence, breached these Terms, or used content you had
-    no right to use. This section does not apply to you if you are using the Service only as a consumer.
-  </p>
-
-  <h2 id="apple">13. Apple App Store terms</h2>
-  <p>
-    If you get the Service from the Apple App Store, the following also apply. They are between you and
-    us, not Apple.
-  </p>
-  <ul>
-    <li><strong>Agreement with us.</strong> These Terms are between you and Rubellite Ltd only. Apple is not a party and is not responsible for the Service or its content.</li>
-    <li><strong>Scope of licence.</strong> The licence to use the app is limited to use on Apple-branded devices that you own or control, as allowed by Apple's App Store Terms of Service.</li>
-    <li><strong>Support.</strong> We, not Apple, are responsible for maintenance and support of the app. Apple has no obligation to provide any.</li>
-    <li><strong>Warranty.</strong> If the app fails to meet any applicable warranty, you may tell Apple and Apple may refund the price of the app, if any. Apple has no other warranty obligation for the app. Any other claims, losses or costs are our responsibility, to the extent required by law.</li>
-    <li><strong>Claims.</strong> We, not Apple, are responsible for dealing with any claims about the app, including product liability, legal or regulatory compliance, and consumer protection claims.</li>
-    <li><strong>Intellectual property.</strong> If a third party claims that the app infringes its intellectual property rights, we, not Apple, are responsible for investigating and dealing with the claim.</li>
-    <li><strong>Legal compliance.</strong> You confirm you are not in a country under a government embargo or on a list of restricted parties, and that you will follow any applicable third-party terms (such as your mobile network's) when using the app.</li>
-    <li><strong>Third-party beneficiary.</strong> Apple and its subsidiaries are third-party beneficiaries of these Terms and, once you accept them, may enforce them against you.</li>
-  </ul>
-  <p>Our contact details are in Section 16.</p>
-
-  <h2 id="law">14. Governing law</h2>
-  <p>
-    These Terms and any dispute arising from them are governed by the laws of England and Wales, and the
-    courts of England and Wales have jurisdiction. If you are a consumer living in Scotland or Northern
-    Ireland, you may also bring claims in the courts of the part of the UK where you live, and you keep the
-    protection of any mandatory consumer laws where you live.
-  </p>
-
-  <h2 id="changes">15. Changes to these terms</h2>
-  <p>
-    We may update these Terms from time to time, for example to reflect new features or changes in the
-    law. If we make material changes, we will tell you (for example with an in-app notice or by email)
-    before they take effect. If you continue to use the Service after the changes take effect, you accept
-    the updated Terms. If you do not agree, you can stop using the Service and cancel your subscription.
-  </p>
-
-  <h2 id="contact">16. Contact</h2>
-  <p>
-    Rubellite Ltd<br>
-    Company number [COMPANY NUMBER]<br>
-    [REGISTERED OFFICE ADDRESS]<br>
-    Email: <a href="mailto:rubellite@write.me">rubellite@write.me</a>
-  </p>
-
-  <footer>
-    &copy; <span id="year">2026</span> Rubellite Ltd. All rights reserved.
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <p>&copy; 2026 Rubellite Ltd. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
