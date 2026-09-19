@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -6,28 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PatternPix — Pattern design app for iPhone and iPad</title>
 <meta name="description" content="PatternPix is a pattern design app for iPhone and iPad. Build patterns with motifs, fills and effects, preview them in AR, and export files for print.">
-<meta name="theme-color" content="#F7F5FB">
+<meta name="theme-color" content="#F2F2F3">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PatternPix — Design patterns. See them on your wall before you print.">
+<meta property="og:title" content="PatternPix — Design your own patterns. See them on your wall before you print.">
 <meta property="og:description" content="Build patterns with motifs, fills and effects, preview them in AR, and export for print. For iPhone and iPad.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C2306E'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23F2B233'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="app-icon.png">
+<link rel="apple-touch-icon" href="app-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1D1A2F;
-    --paper: #F7F5FB;
+    --ink: #111111;
+    --paper: #F2F2F3;
     --white: #FFFFFF;
-    --berry: #8E8EEE;
-    --berry-dark: #F2A63D;
-    --cobalt: #3B4CCA;
-    --saffron: #F2B233;
-    --mint: #DDF3EC;
-    --line: #DDD8EA;
-    --muted: #5B5872;
-    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-    --body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --accent: #F2A63D;
+    --accent-dark: #F2A63D;
+    --accent-text: #111111;
+    --accent-tint: #F2F2F3;
+    --line: #D9D9DD;
+    --muted: #666666;
+    --font: "Avenir Next", "Avenir", "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -35,100 +33,81 @@
     margin: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: var(--body);
+    font-family: var(--font);
     font-size: 17px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--cobalt); }
-  :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 6px; }
+  a { color: var(--accent-text); }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
-  h1 { font-size: clamp(38px, 5.4vw, 60px); font-weight: 700; }
-  h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 700; }
-  h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.01em; }
+  h1, h2, h3 { font-family: var(--font); line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(24px, 2.7vw, 34px); font-weight: 700; }
+  h2 { font-size: clamp(24px, 2.8vw, 32px); font-weight: 700; }
+  h3 { font-size: 20px; font-weight: 600; }
   p { margin: 0; }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-  header { padding: 20px 0; }
+  header { padding: 18px 0; }
   header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 21px; letter-spacing: -0.01em; }
+  .brand img { width: 36px; height: 36px; display: block; }
   nav { display: flex; align-items: center; gap: 26px; }
-  nav a { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; }
-  nav a:hover { color: var(--berry); }
-  nav .btn { color: var(--white); }
-  nav .btn:hover { color: var(--white); }
+  nav a { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 600; }
+  nav a:hover { color: var(--accent-text); }
+  nav a.btn, nav a.btn:hover { color: var(--ink); }
 
   .btn {
     display: inline-block;
-    background: var(--berry);
-    color: var(--white);
+    background: var(--accent);
+    color: var(--ink);
     text-decoration: none;
     font-weight: 700;
     font-size: 16px;
-    padding: 13px 24px;
+    padding: 12px 24px;
     border-radius: 999px;
-    border: 2px solid var(--berry);
-    transition: background .15s, border-color .15s;
+    border: 2px solid var(--accent);
+    transition: background .15s, border-color .15s, color .15s;
   }
-  .btn:hover { background: var(--berry-dark); border-color: var(--berry-dark); }
+  .btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
   .btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
   .btn.ghost:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
 
-  .hero { padding: 40px 0 88px; }
+  .hero { padding: 36px 0 80px; }
   .hero-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 56px; align-items: center; }
-  .hero p.sub { font-size: 20px; color: var(--muted); margin-top: 22px; max-width: 32em; }
-  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-  .hero .note { margin-top: 18px; font-size: 14px; color: var(--muted); max-width: 30em; }
-
-  .live { background: var(--white); border: 1px solid var(--line); border-radius: 28px; padding: 14px; }
-  .live svg { display: block; width: 100%; height: auto; border-radius: 18px; }
-  .controls { padding: 16px 8px 6px; display: grid; gap: 14px; }
-  .ctl { display: grid; grid-template-columns: 68px 1fr; align-items: center; gap: 12px; }
-  .lbl { font-size: 14px; font-weight: 500; color: var(--muted); }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .chip {
-    font: inherit; font-size: 14px; font-weight: 500;
-    padding: 6px 11px; border-radius: 999px;
-    border: 1.5px solid var(--line); background: var(--white); color: var(--ink);
-    cursor: pointer; transition: background .15s, border-color .15s;
+  .hero p.sub { font-size: 18px; color: var(--muted); margin-top: 18px; max-width: 32em; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .hero .note { margin-top: 16px; font-size: 14px; color: var(--muted); max-width: 30em; }
+  .hero-banner {
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--white);
   }
-  .chip:hover { border-color: var(--ink); }
-  .chip[aria-pressed="true"] { background: var(--ink); color: var(--white); border-color: var(--ink); }
-  .sw { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--white); box-shadow: 0 0 0 1.5px var(--line); cursor: pointer; padding: 0; }
-  .sw[aria-pressed="true"] { box-shadow: 0 0 0 2.5px var(--ink); }
-  input[type=range] { width: 100%; accent-color: var(--berry); }
-  .live .hint { font-size: 13px; color: var(--muted); padding: 10px 8px 4px; }
+  .hero-banner a { display: block; }
+  .hero-banner img { display: block; width: 100%; height: auto; }
 
-  section { padding: 88px 0; }
-  .intro { max-width: 34em; margin-bottom: 44px; }
-  .intro p { margin-top: 14px; color: var(--muted); font-size: 18px; }
+  section { padding: 80px 0; }
+  .intro { max-width: 34em; margin-bottom: 40px; }
+  .intro p { margin-top: 12px; color: var(--muted); font-size: 18px; }
 
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--ink); }
   .step { padding: 26px 28px 8px 0; }
   .step + .step { padding-left: 28px; border-left: 1px solid var(--line); }
-  .step .n { font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--berry); margin-bottom: 10px; }
+  .step .n { font-weight: 700; font-size: 14px; color: var(--accent-text); margin-bottom: 8px; }
   .step p { margin-top: 10px; color: var(--muted); }
 
   .band { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .room-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; }
-  .room-grid .body { margin-top: 16px; color: var(--muted); font-size: 18px; }
-  .room-ctl { display: flex; align-items: center; gap: 10px; margin-top: 26px; }
+  .room-grid .body { margin-top: 14px; color: var(--muted); font-size: 18px; }
+  .room-ctl { display: flex; align-items: center; gap: 10px; margin-top: 24px; }
   .room-ctl .lbl { margin-right: 4px; }
-  .ticks { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 10px; }
+  .ticks { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; }
   .ticks li { padding-left: 26px; position: relative; color: var(--ink); font-size: 16px; }
-  .ticks li::before { content: ""; position: absolute; left: 0; top: 9px; width: 12px; height: 12px; border-radius: 3px; background: var(--saffron); transform: rotate(45deg) scale(.8); }
+  .ticks li::before { content: ""; position: absolute; left: 0; top: 9px; width: 10px; height: 10px; border-radius: 2px; background: var(--accent); transform: rotate(45deg); }
   .room { border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: var(--paper); }
   .room svg { display: block; width: 100%; height: auto; }
   .room .cap { font-size: 13px; color: var(--muted); padding: 10px 16px 14px; background: var(--white); border-top: 1px solid var(--line); }
-
-  .fx-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 18px; }
-  .fx { margin: 0; }
-  .tile { aspect-ratio: 1; border-radius: 20px; background: var(--white); border: 1px solid var(--line); display: grid; place-items: center; }
-  .tile.dark { background: #221C3A; border-color: #221C3A; }
-  .tile svg { width: 78%; height: 78%; overflow: visible; }
-  .fx figcaption { font-size: 15px; font-weight: 500; margin-top: 8px; }
-  .fx-note { margin-top: 22px; font-size: 14px; color: var(--muted); }
 
   .who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
   .who > div { padding: 4px 28px 4px 0; }
@@ -137,34 +116,27 @@
 
   .plans { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 20px; overflow: hidden; border: 1px solid var(--line); font-size: 16px; }
   .plans th, .plans td { text-align: left; padding: 15px 20px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  .plans thead th { font-family: var(--display); font-size: 20px; font-weight: 500; background: var(--paper); }
-  .plans thead th.pro { background: var(--ink); color: var(--white); }
-  .plans tbody th { font-weight: 500; width: 34%; }
-  .plans td.pro { background: #FDF3F7; font-weight: 500; }
+  .plans thead th { font-size: 19px; font-weight: 700; background: var(--paper); }
+  .plans thead th.pro { background: var(--ink); color: var(--accent); }
+  .plans tbody th { font-weight: 600; width: 34%; }
+  .plans td.pro { background: var(--accent-tint); font-weight: 600; }
   .plans tr:last-child th, .plans tr:last-child td { border-bottom: none; }
   .small { font-size: 14px; color: var(--muted); margin-top: 16px; max-width: 46em; }
 
   .faq { max-width: 760px; }
   details { border-bottom: 1px solid var(--line); padding: 18px 0; }
   details:first-of-type { border-top: 1px solid var(--line); }
-  summary { cursor: pointer; font-weight: 500; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary { cursor: pointer; font-weight: 600; font-size: 18px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; font-family: var(--display); font-size: 24px; line-height: 1; color: var(--berry); }
+  summary::after { content: "+"; font-size: 24px; line-height: 1; color: var(--accent-text); }
   details[open] summary::after { content: "\2212"; }
   details p { margin-top: 12px; color: var(--muted); }
 
-  .cta { background: var(--ink); color: var(--white); text-align: left; padding: 72px 0; }
-  .cta .wrap { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-  .cta h2 { max-width: 14em; }
-  .cta p { color: #CFCAE3; margin-top: 12px; font-size: 18px; }
-  .cta .btn { background: var(--saffron); border-color: var(--saffron); color: var(--ink); }
-  .cta .btn:hover { background: #FFC85A; border-color: #FFC85A; }
-
-  footer { padding: 44px 0 60px; font-size: 14px; color: var(--muted); }
+  footer { padding: 40px 0 60px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; }
   footer ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; flex-wrap: wrap; }
-  footer a { color: var(--ink); text-decoration: none; font-weight: 500; }
-  footer a:hover { color: var(--berry); }
+  footer a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  footer a:hover { color: var(--accent-text); }
   footer .legal { max-width: 46em; }
 
   @media (max-width: 900px) {
@@ -172,9 +144,8 @@
     .steps, .who { grid-template-columns: 1fr; }
     .step, .step + .step, .who > div, .who > div + div { padding: 22px 0; border-left: none; }
     .step + .step, .who > div + div { border-top: 1px solid var(--line); }
-    .fx-grid { grid-template-columns: repeat(2, 1fr); }
     nav a:not(.btn) { display: none; }
-    section { padding: 64px 0; }
+    section { padding: 60px 0; }
     .ctl { grid-template-columns: 1fr; gap: 6px; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -185,25 +156,10 @@
 </head>
 <body>
 
-<svg aria-hidden="true" style="position:absolute;width:0;height:0" focusable="false">
-  <defs>
-    <path id="h" d="M50 90 C8 60 6 30 26 18 C40 10 50 18 50 30 C50 18 60 10 74 18 C94 30 92 60 50 90 Z"/>
-    <linearGradient id="e-lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4C0D1"/><stop offset="0.55" stop-color="#C2306E"/><stop offset="1" stop-color="#5A1636"/></linearGradient>
-    <filter id="e-b8" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
-    <filter id="e-b3" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3"/></filter>
-  </defs>
-</svg>
-
 <header>
   <div class="wrap">
     <a class="brand" href="#top" aria-label="PatternPix home">
-      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
-        <rect width="34" height="34" rx="9" fill="#C2306E"/>
-        <circle cx="10" cy="10" r="4" fill="#F2B233"/>
-        <circle cx="24" cy="24" r="4" fill="#F2B233"/>
-        <rect x="19" y="5" width="9" height="9" rx="2" transform="rotate(45 23.5 9.5)" fill="#fff"/>
-        <rect x="6" y="19" width="9" height="9" rx="2" transform="rotate(45 10.5 23.5)" fill="#fff"/>
-      </svg>
+      <img src="app-icon.png" alt="" width="36" height="36">
       PatternPix
     </a>
     <nav aria-label="Main">
@@ -211,7 +167,7 @@
       <a href="#preview">AR preview</a>
       <a href="#pricing">Free and Pro</a>
       <a href="support.html">Support</a>
-      <a class="btn" href="https://apps.apple.com/app/idYOUR_APP_ID">Get the app</a>
+      <a class="btn" href="https://apple.co/3XqHOT1">Get the app</a>
     </nav>
   </div>
 </header>
@@ -222,26 +178,19 @@
     <div class="wrap hero-grid">
       <div>
         <h1>Design your own patterns. See them on your wall before you print.</h1>
-        <p class="sub">PatternPix is the pattern design app for iPhone and iPad. Build repeats from motifs, fills and effects, preview them in AR, and export files ready for print.</p>
+        <p class="sub">PatternPix is a pattern design app for iPhone and iPad. Create your pattern, preview it in your space, and get it ready for print.</p>
         <div class="actions">
-          <a class="btn" href="https://apps.apple.com/app/idYOUR_APP_ID">Download on the App Store</a>
+          <a class="btn" href="https://apple.co/3XqHOT1">Download on the App Store</a>
           <a class="btn ghost" href="#how">See how it works</a>
         </div>
-        <p class="note">Free to start. Pro adds SVG export, exports without a watermark and the full AR preview.</p>
+        <p class="note">Available on the App Store for iPhone and iPad.</p>
       </div>
 
-      <div class="live" aria-label="Live pattern preview">
-        <svg viewBox="0 0 400 400" role="img" aria-label="A repeating pattern that changes as you use the controls below">
-          <defs id="defsA"></defs>
-          <rect width="400" height="400" fill="url(#patA)"/>
-        </svg>
-        <div class="controls">
-          <div class="ctl"><span class="lbl" id="l-motif">Motif</span><div class="chips" id="motifs" role="group" aria-labelledby="l-motif"></div></div>
-          <div class="ctl"><span class="lbl" id="l-pal">Colours</span><div class="chips" id="pals" role="group" aria-labelledby="l-pal"></div></div>
-          <div class="ctl"><label class="lbl" for="size">Size</label><input id="size" type="range" min="0.8" max="2.6" step="0.1" value="1.4"></div>
-          <div class="ctl"><label class="lbl" for="rot">Rotation</label><input id="rot" type="range" min="0" max="90" step="5" value="15"></div>
-        </div>
-        <p class="hint">Try it. This is a live repeating pattern, the same idea as the app.</p>
+      <div class="hero-banner">
+        <a href="https://apple.co/3XqHOT1" aria-label="Download PatternPix on the App Store">
+          <img src="launch-banner.png" width="1280" height="720" alt="PatternPix launch banner with a Download on the App Store button.">
+        </a>
+      </div>
       </div>
     </div>
   </div>
@@ -255,7 +204,7 @@
         <div class="step">
           <div class="n">Step 1</div>
           <h3>Design</h3>
-          <p>Pick motifs and fillers, then set the rotation and size to build your repeat. Add styles and effects to give it character.</p>
+          <p>Create your repeat and adjust the pattern to fit your idea.</p>
         </div>
         <div class="step">
           <div class="n">Step 2</div>
@@ -290,50 +239,31 @@
       <div class="room">
         <svg viewBox="0 0 600 380" role="img" aria-label="Illustration of a living room showing the chosen pattern on the wall or floor">
           <defs id="defsB"></defs>
-          <rect id="wall" x="0" y="0" width="600" height="250" fill="#E9E5F0"/>
-          <rect id="floor" x="0" y="250" width="600" height="130" fill="#D6CCBE"/>
+          <rect id="wall" x="0" y="0" width="600" height="250" fill="#E8E8EA"/>
+          <rect id="floor" x="0" y="250" width="600" height="130" fill="#D5D2CD"/>
           <rect x="0" y="244" width="600" height="8" fill="#FFFFFF" opacity="0.7"/>
-          <rect x="452" y="46" width="108" height="124" rx="4" fill="#DCE9F5" stroke="#FFFFFF" stroke-width="7"/>
+          <rect x="452" y="46" width="108" height="124" rx="4" fill="#E3E8EE" stroke="#FFFFFF" stroke-width="7"/>
           <line x1="506" y1="46" x2="506" y2="170" stroke="#FFFFFF" stroke-width="5"/>
           <line x1="452" y1="108" x2="560" y2="108" stroke="#FFFFFF" stroke-width="5"/>
-          <ellipse cx="290" cy="286" rx="200" ry="12" fill="#1D1A2F" opacity="0.14"/>
-          <rect x="128" y="276" width="10" height="16" rx="3" fill="#2F2A4A"/>
-          <rect x="452" y="276" width="10" height="16" rx="3" fill="#2F2A4A"/>
-          <rect x="150" y="132" width="290" height="110" rx="28" fill="#5B6390"/>
-          <rect x="112" y="204" width="366" height="74" rx="24" fill="#6B74A6"/>
-          <rect x="96" y="172" width="58" height="106" rx="26" fill="#5B6390"/>
-          <rect x="436" y="172" width="58" height="106" rx="26" fill="#5B6390"/>
-          <line x1="295" y1="146" x2="295" y2="204" stroke="#4A5178" stroke-width="2" stroke-linecap="round"/>
-          <rect x="170" y="210" width="250" height="6" rx="3" fill="#FFFFFF" opacity="0.14"/>
-          <rect x="522" y="188" width="4" height="92" rx="2" fill="#2F2A4A"/>
-          <ellipse cx="524" cy="184" rx="26" ry="16" fill="#F2B233"/>
-          <rect x="504" y="278" width="42" height="6" rx="3" fill="#2F2A4A"/>
+          <ellipse cx="290" cy="286" rx="200" ry="12" fill="#111111" opacity="0.14"/>
+          <rect x="128" y="276" width="10" height="16" rx="3" fill="#111111"/>
+          <rect x="452" y="276" width="10" height="16" rx="3" fill="#111111"/>
+          <rect x="150" y="132" width="290" height="110" rx="28" fill="#3A3A3F"/>
+          <rect x="112" y="204" width="366" height="74" rx="24" fill="#4B4B52"/>
+          <rect x="96" y="172" width="58" height="106" rx="26" fill="#3A3A3F"/>
+          <rect x="436" y="172" width="58" height="106" rx="26" fill="#3A3A3F"/>
+          <line x1="295" y1="146" x2="295" y2="204" stroke="#2A2A2E" stroke-width="2" stroke-linecap="round"/>
+          <rect x="170" y="210" width="250" height="6" rx="3" fill="#FFFFFF" opacity="0.12"/>
+          <rect x="522" y="188" width="4" height="92" rx="2" fill="#111111"/>
+          <ellipse cx="524" cy="184" rx="26" ry="16" fill="#F2A63D"/>
+          <rect x="504" y="278" width="42" height="6" rx="3" fill="#111111"/>
         </svg>
         <p class="cap">Illustration of the idea. In the app, the preview appears on surfaces in your own room.</p>
       </div>
     </div>
   </section>
 
-  <section id="styles">
-    <div class="wrap">
-      <div class="intro">
-        <h2>Styles and effects that make a pattern yours</h2>
-        <p>Start with solid, stroke, dashes, stitches and outline, then add effects like gradients and glow.</p>
-      </div>
-      <div class="fx-grid">
-        <figure class="fx"><div class="tile"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(10 9) scale(.8)"><use href="#h" fill="#C2306E"/></g></svg></div><figcaption>Solid</figcaption></figure>
-        <figure class="fx"><div class="tile"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(10 9) scale(.8)"><use href="#h" fill="none" stroke="#C2306E" stroke-width="6" stroke-linejoin="round"/></g></svg></div><figcaption>Stroke</figcaption></figure>
-        <figure class="fx"><div class="tile"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(10 9) scale(.8)"><use href="#h" fill="none" stroke="#C2306E" stroke-width="5" stroke-dasharray="10 9" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div><figcaption>Dashes</figcaption></figure>
-        <figure class="fx"><div class="tile"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(10 9) scale(.8)"><use href="#h" fill="#F6D3E0" stroke="#C2306E" stroke-width="2" stroke-linejoin="round"/><g transform="translate(50 51) scale(.84) translate(-50 -51)"><use href="#h" fill="none" stroke="#C2306E" stroke-width="2.4" stroke-dasharray="4 4" stroke-linejoin="round"/></g></g></svg></div><figcaption>Stitches</figcaption></figure>
-        <figure class="fx"><div class="tile"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(10 9) scale(.8)"><use href="#h" fill="none" stroke="#C2306E" stroke-width="14" stroke-linejoin="round"/><use href="#h" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round"/><use href="#h" fill="#F4C0D1" stroke="#C2306E" stroke-width="2.4" stroke-linejoin="round"/></g></svg></div><figcaption>Outline</figcaption></figure>
-        <figure class="fx"><div class="tile"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(10 9) scale(.8)"><use href="#h" fill="url(#e-lg)"/></g></svg></div><figcaption>Gradient</figcaption></figure>
-        <figure class="fx"><div class="tile dark"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(10 9) scale(.8)"><use href="#h" fill="#F2B233" filter="url(#e-b8)"/><use href="#h" fill="#FAC775" filter="url(#e-b3)" opacity="0.9"/><use href="#h" fill="#FFE9A8"/></g></svg></div><figcaption>Glow</figcaption></figure>
-        <figure class="fx"><div class="tile dark"><svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(10 9) scale(.8)"><use href="#h" fill="none" stroke="#FF4FA3" stroke-width="10" filter="url(#e-b8)"/><use href="#h" fill="none" stroke="#FF4FA3" stroke-width="6" filter="url(#e-b3)"/><use href="#h" fill="none" stroke="#FFE3F1" stroke-width="2.6" stroke-linejoin="round"/></g></svg></div><figcaption>Neon</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
+  <section>
     <div class="wrap">
       <div class="intro">
         <h2>Made for people who make, sell and decorate with patterns</h2>
@@ -355,7 +285,7 @@
     </div>
   </section>
 
-  <section id="pricing">
+  <section id="pricing" class="band">
     <div class="wrap">
       <div class="intro">
         <h2>Start free. Upgrade when you need more.</h2>
@@ -378,7 +308,7 @@
     </div>
   </section>
 
-  <section class="band">
+  <section>
     <div class="wrap">
       <div class="intro"><h2>Questions</h2></div>
       <div class="faq">
@@ -406,16 +336,6 @@
     </div>
   </section>
 
-  <div class="cta">
-    <div class="wrap">
-      <div>
-        <h2>Your next pattern is one tap away</h2>
-        <p>Download PatternPix free for iPhone and iPad.</p>
-      </div>
-      <a class="btn" href="https://apps.apple.com/app/idYOUR_APP_ID">Download on the App Store</a>
-    </div>
-  </div>
-
 </main>
 
 <footer>
@@ -423,7 +343,7 @@
     <div class="legal">
       <p>PatternPix is made by Rubellite Ltd, registered in England and Wales, company number [COMPANY NUMBER].</p>
       <p style="margin-top:8px">Apple, iPhone, iPad and App Store are trademarks of Apple Inc.</p>
-      <p style="margin-top:8px">&copy; <span id="year">2026</span> Rubellite Ltd. All rights reserved.</p>
+      <p style="margin-top:8px">&copy; 2026 Rubellite Ltd. All rights reserved.</p>
     </div>
     <ul>
       <li><a href="support.html">Support</a></li>
@@ -433,101 +353,6 @@
     </ul>
   </div>
 </footer>
-
-<script>
-  var HEART = "M50 90 C8 60 6 30 26 18 C40 10 50 18 50 30 C50 18 60 10 74 18 C94 30 92 60 50 90 Z";
-  var CORNERS = [[0,0],[60,0],[0,60],[60,60]];
-
-  var PALETTES = [
-    { name: "Berry",    bg: "#FBE9EF", a: "#C2306E", b: "#F2B233" },
-    { name: "Lagoon",   bg: "#E4F4F0", a: "#1F7A6D", b: "#F28C6B" },
-    { name: "Cobalt",   bg: "#E9ECFB", a: "#3B4CCA", b: "#F2B233" },
-    { name: "Midnight", bg: "#1D1A2F", a: "#F2B233", b: "#E88BB0" }
-  ];
-
-  var MOTIFS = {
-    bloom: { label: "Bloom", draw: function (c) {
-      var petals = [0, 72, 144, 216, 288].map(function (r) {
-        return '<ellipse cx="0" cy="-9" rx="5" ry="9" fill="' + c.a + '" transform="rotate(' + r + ')"/>';
-      }).join("");
-      var dots = CORNERS.map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="3.2" fill="' + c.b + '"/>'; }).join("");
-      return '<g transform="translate(30 30)">' + petals + '<circle r="4" fill="' + c.b + '"/></g>' + dots;
-    }},
-    leaf: { label: "Leaf", draw: function (c) {
-      var d = "M0 -13 C9 -6 9 7 0 13 C-9 7 -9 -6 0 -13Z";
-      var corner = CORNERS.map(function (p) {
-        return '<path d="' + d + '" fill="' + c.b + '" transform="translate(' + p[0] + ' ' + p[1] + ') rotate(-35) scale(.7)"/>';
-      }).join("");
-      return '<path d="' + d + '" fill="' + c.a + '" transform="translate(30 30) rotate(35)"/>' + corner;
-    }},
-    wave: { label: "Wave", draw: function (c) {
-      return '<path d="M0 15 Q15 0 30 15 T60 15" fill="none" stroke="' + c.a + '" stroke-width="4" stroke-linecap="round"/>' +
-             '<path d="M0 45 Q15 30 30 45 T60 45" fill="none" stroke="' + c.b + '" stroke-width="4" stroke-linecap="round"/>' +
-             '<circle cx="15" cy="30" r="2.6" fill="' + c.a + '"/><circle cx="45" cy="30" r="2.6" fill="' + c.b + '"/>';
-    }},
-    diamond: { label: "Diamond", draw: function (c) {
-      var corner = CORNERS.map(function (p) {
-        return '<rect x="-5" y="-5" width="10" height="10" fill="' + c.b + '" transform="translate(' + p[0] + ' ' + p[1] + ') rotate(45)"/>';
-      }).join("");
-      return '<rect x="-9" y="-9" width="18" height="18" fill="' + c.a + '" transform="translate(30 30) rotate(45)"/>' + corner;
-    }},
-    heart: { label: "Heart", draw: function (c) {
-      var corner = CORNERS.map(function (p) {
-        return '<path d="' + HEART + '" fill="' + c.b + '" transform="translate(' + p[0] + ' ' + p[1] + ') scale(.16) translate(-50 -51)"/>';
-      }).join("");
-      return '<path d="' + HEART + '" fill="' + c.a + '" transform="translate(30 30) scale(.26) translate(-50 -51)"/>' + corner;
-    }}
-  };
-
-  var state = { motif: "bloom", pal: 0, size: 1.4, rot: 15, surface: "wall" };
-
-  function pattern(id, scale) {
-    var c = PALETTES[state.pal];
-    return '<pattern id="' + id + '" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(' + state.rot + ') scale(' + scale + ')">' +
-           '<rect width="60" height="60" fill="' + c.bg + '"/>' + MOTIFS[state.motif].draw(c) + '</pattern>';
-  }
-
-  function render() {
-    document.getElementById("defsA").innerHTML = pattern("patA", state.size);
-    document.getElementById("defsB").innerHTML = pattern("patB", state.size * 0.75);
-    document.getElementById("wall").setAttribute("fill", state.surface === "wall" ? "url(#patB)" : "#E9E5F0");
-    document.getElementById("floor").setAttribute("fill", state.surface === "floor" ? "url(#patB)" : "#D6CCBE");
-
-    document.querySelectorAll("#motifs .chip").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.motif === state.motif));
-    });
-    document.querySelectorAll("#pals .sw").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(Number(b.dataset.pal) === state.pal));
-    });
-    document.querySelectorAll("[data-surface]").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.surface === state.surface));
-    });
-  }
-
-  Object.keys(MOTIFS).forEach(function (key) {
-    var b = document.createElement("button");
-    b.type = "button"; b.className = "chip"; b.dataset.motif = key; b.textContent = MOTIFS[key].label;
-    b.addEventListener("click", function () { state.motif = key; render(); });
-    document.getElementById("motifs").appendChild(b);
-  });
-
-  PALETTES.forEach(function (p, i) {
-    var b = document.createElement("button");
-    b.type = "button"; b.className = "sw"; b.dataset.pal = i; b.setAttribute("aria-label", p.name);
-    b.style.background = "linear-gradient(135deg," + p.bg + " 50%," + p.a + " 50%)";
-    b.addEventListener("click", function () { state.pal = i; render(); });
-    document.getElementById("pals").appendChild(b);
-  });
-
-  document.getElementById("size").addEventListener("input", function (e) { state.size = parseFloat(e.target.value); render(); });
-  document.getElementById("rot").addEventListener("input", function (e) { state.rot = parseInt(e.target.value, 10); render(); });
-  document.querySelectorAll("[data-surface]").forEach(function (b) {
-    b.addEventListener("click", function () { state.surface = b.dataset.surface; render(); });
-  });
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-  render();
-</script>
 
 </body>
 </html>
