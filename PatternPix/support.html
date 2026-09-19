@@ -1,161 +1,99 @@
 <!DOCTYPE html>
+
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support — PatternPix</title>
+
 <style>
   :root {
-    --text: #1a1a1a;
-    --muted: #6b6b6b;
-    --bg: #ffffff;
-    --accent: #2563eb;
-    --border: #e5e5e5;
+    --text: #111111;
+    --muted: #666666;
+    --bg: #F2F2F3;
+    --white: #FFFFFF;
+    --accent: #F2A63D;
+    --border: #D9D9DD;
   }
+
   * { box-sizing: border-box; }
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text);
     background: var(--bg);
     line-height: 1.6;
     max-width: 780px;
     margin: 0 auto;
-    padding: 48px 24px 96px;
+    padding: 32px 24px 96px;
+    -webkit-font-smoothing: antialiased;
   }
-  h1 { font-size: 28px; margin-bottom: 4px; }
-  .lead { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .back-home:hover {
+    color: var(--accent);
+  }
+
+  .back-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--white);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s, border-color .15s;
+  }
+
+  .back-home:hover .back-icon {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 1.15;
+    margin: 0 0 4px;
+    letter-spacing: -0.02em;
+  }
+
+  .lead {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0 0 32px;
+  }
+
   h2 {
     font-size: 19px;
+    line-height: 1.3;
     margin-top: 40px;
     margin-bottom: 12px;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--border);
   }
-  p, li { font-size: 15px; color: #333; }
-  ul, ol { padding-left: 22px; margin: 8px 0; }
-  li { margin-bottom: 6px; }
-  a { color: var(--accent); }
-  .contact {
-    background: #f5f7fa;
-    border-left: 3px solid var(--accent);
-    padding: 18px 22px;
-    border-radius: 4px;
-    margin: 16px 0 8px;
-  }
-  .btn {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 8px;
+
+  p, li {
     font-size: 15px;
-    margin-top: 8px;
+    color: #333333;
   }
-  details {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin-bottom: 10px;
-  }
-  summary { cursor: pointer; font-weight: 600; font-size: 15px; }
-  details p, details ol, details ul { margin-top: 10px; }
-  footer {
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 13px;
-    text-align: center;
-  }
-  @media (max-width: 600px) { body { padding: 32px 16px 64px; } }
-</style>
-</head>
-<body>
 
-  <h1>PatternPix Support</h1>
-  <p class="lead">Help with the app, subscriptions, AR preview and exports.</p>
-
-  <h2>Contact us</h2>
-  <div class="contact">
-    <p style="margin-top:0"><strong>Email:</strong> <a href="mailto:rubellite@write.me?subject=PatternPix%20support">rubellite@write.me</a></p>
-    <p>We aim to reply within 2 working days. To help us solve it faster, please include:</p>
-    <ul>
-      <li>Your iPhone or iPad model and iOS version</li>
-      <li>The PatternPix version (in Settings &gt; General &gt; iPhone Storage &gt; PatternPix)</li>
-      <li>What happened, and a screenshot if you can</li>
-    </ul>
-    <a class="btn" href="mailto:rubellite@write.me?subject=PatternPix%20support">Email support</a>
-  </div>
-
-  <h2>Frequently asked questions</h2>
-
-  <details>
-    <summary>How do I cancel my subscription?</summary>
-    <p>Subscriptions are managed by Apple. On your iPhone or iPad:</p>
-    <ol>
-      <li>Open Settings and tap your name.</li>
-      <li>Tap Subscriptions and choose PatternPix.</li>
-      <li>Tap Cancel Subscription.</li>
-    </ol>
-    <p>You keep paid features until the end of the period you paid for. Deleting the app does not cancel your subscription.</p>
-  </details>
-
-  <details>
-    <summary>How do I get a refund?</summary>
-    <p>Apple handles refunds for App Store purchases. Go to <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>, sign in, and choose the purchase you want to report. We cannot issue refunds directly, but we are happy to help if you are unsure what to do.</p>
-  </details>
-
-  <details>
-    <summary>I paid, but my paid features are locked</summary>
-    <p>Open the subscription screen in the app and tap <strong>Restore Purchases</strong>. Make sure you are signed in to the same Apple ID that made the purchase. If it still does not work, email us with a screenshot of your receipt from Apple.</p>
-  </details>
-
-  <details>
-    <summary>The AR preview is not working</summary>
-    <ul>
-      <li>Allow camera access: Settings &gt; PatternPix &gt; Camera.</li>
-      <li>Use a well-lit room and move your device slowly so it can detect walls, floors and tables.</li>
-      <li>Point at plain, non-shiny surfaces where possible.</li>
-      <li>Check that your device supports AR (iPhone 8 or later, or an AR-capable iPad) and is running the latest iOS.</li>
-      <li>Close and reopen the app.</li>
-    </ul>
-    <p>The AR preview is a guide only. Colours and scale on screen may differ slightly from the finished product.</p>
-  </details>
-
-  <details>
-    <summary>Why is my export watermarked, or why can't I export SVG?</summary>
-    <p>Free exports include a watermark, and SVG export is part of the paid plan. You can see what is included on the subscription screen in the app.</p>
-  </details>
-
-  <details>
-    <summary>Can I use my designs commercially?</summary>
-    <p>It depends on your licence. The Personal Licence is for non-commercial projects, and the Commercial Licence covers products and services you sell. Please read section 4 of our <a href="terms-of-use.html">Terms of Use</a> for the full details.</p>
-  </details>
-
-  <details>
-    <summary>Where are my designs saved, and how do I recover them?</summary>
-    <p>Designs are saved on your device, and in iCloud if you have turned on sync. If you delete the app without iCloud sync, designs stored only on the device are removed. Try to export important designs to Files or Photos as a backup.</p>
-  </details>
-
-  <details>
-    <summary>How do I delete my data or ask what data you hold?</summary>
-    <p>Email us at <a href="mailto:rubellite@write.me?subject=Data%20request">rubellite@write.me</a> with the subject "Data request" and tell us what you would like. See our <a href="privacy-policy.html">Privacy Policy</a> for your rights.</p>
-  </details>
-
-  <h2>Legal</h2>
-  <ul>
-    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-    <li><a href="terms-of-use.html">Terms of Use</a></li>
-  </ul>
-
-  <footer>
-    &copy; <span id="year">2026</span> Rubellite Ltd. All rights reserved.
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+  ul, ol {
+    padding-left: 22px;
+    margi
