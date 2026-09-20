@@ -86,36 +86,39 @@
     gap: 10px;
     margin: 0 0 32px;
   }
-  .btn {
-    display: inline-block;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    background: var(--bg);
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  .btn:hover { background: #f0f5ff; }
-  .btn-primary { background: var(--accent); color: #ffffff; }
-  .btn-primary:hover { background: #1d4fd8; }
-  .btn-row-footer { justify-content: center; margin: 0 0 24px; }
-  .footer-links a { margin: 0 8px; }
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+}
 
-  @media (max-width: 600px) {
-    .toc ol { columns: 1; }
-    body { padding: 32px 16px 64px; }
-    table { font-size: 13px; }
-    .btn { flex: 1 1 auto; text-align: center; }
-  }
+.back-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s, border-color .15s;
+}
+
+.back-home:hover .back-icon {
+  background: var(--accent);
+  border-color: var(--accent);
+}
 </style>
 </head>
 <body id="top">
 
 <nav class="btn-row" aria-label="Site navigation">
-  <a class="btn btn-primary" href="https://rubellite-ltd.github.io/PatternPix/index.html">&larr; Back to PatternPix</a>
+ <a class="back-home" href="https://rubellite-ltd.github.io/PatternPix/index.html">
+  <span class="back-icon">&larr;</span>
+  Back to PatternPix
+</a>
   <!-- <a class="btn" href="https://rubellite-ltd.github.io/PatternPix/PrivacyPolicy.html">Privacy Policy</a>
   <a class="btn" href="https://rubellite-ltd.github.io/PatternPix/support.html">Support</a> -->
 </nav>
