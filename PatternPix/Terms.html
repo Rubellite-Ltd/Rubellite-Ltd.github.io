@@ -57,14 +57,67 @@
   .toc a { color: var(--accent); text-decoration: none; }
   .toc a:hover { text-decoration: underline; }
   a { color: var(--accent); }
-  footer {
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 13px;
-    text-align: center;
+footer {
+  background: #252525;
+  color: #F2A63D;
+  padding: 40px 0;
+  margin-top: 60px;
+  border-top: 1px solid #3a3a3a;
+}
+
+footer .wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+footer .legal {
+  max-width: 650px;
+}
+
+footer p {
+  margin: 0;
+  color: #F2A63D;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer a {
+  color: #F2A63D;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .15s, opacity .15s;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  footer .wrap {
+    flex-direction: column;
+    gap: 24px;
   }
+
+  footer ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
   table {
     width: 100%;
     border-collapse: collapse;
@@ -283,18 +336,20 @@
 </p>
 
 <footer>
-  <div class="btn-row btn-row-footer">
-    <a class="btn btn-primary" href="https://rubellite-ltd.github.io/PatternPix/index.html">&larr; Back to PatternPix</a>
-    <a class="btn" href="#top">Back to top &uarr;</a>
+  <div class="wrap">
+    <div class="legal">
+      <p>PatternPix is made by Rubellite Ltd, registered in England and Wales, company number 13504030.</p>
+      <p style="margin-top:8px">Apple, iPhone, iPad and App Store are trademarks of Apple Inc.</p>
+      <p style="margin-top:8px">&copy; 2026 Rubellite Ltd. All rights reserved.</p>
+    </div>
+    <ul>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+      <li><a href="Terms.html">Terms of Use</a></li>
+      <li><a href="mailto:rubellite@write.me">Contact</a></li>
+    </ul>
   </div>
-  <p class="footer-links">
-    <a href="https://rubellite-ltd.github.io/PatternPix/support.html">Support</a>
-    <a href="https://rubellite-ltd.github.io/PatternPix/PrivacyPolicy.html">Privacy Policy</a>
-    <a href="https://rubellite-ltd.github.io/PatternPix/Terms.html">Terms of Use</a>
-    <a href="mailto:rubellite@write.me">Contact</a>
-  </p>
-  <p>&copy; 2026 Rubellite Ltd. All rights reserved.</p>
-</footer>
+</footer> 
 
 </body>
 </html>
